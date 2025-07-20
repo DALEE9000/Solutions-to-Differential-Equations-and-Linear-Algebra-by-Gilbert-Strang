@@ -1,0 +1,9 @@
+\contentsline {section}{\textsf {1 - First Order Equations}}{3}{section*.1}%
+\contentsline {subsection}{\textsf {1.1 - Four Examples: Linear versus Nonlinear}}{3}{section*.2}%
+\contentsline {subsection}{\textsf {1.3 - The Exponentials \(e^{t}\) and \(e^{at}\)}}{8}{section*.3}%
+\contentsline {subsection}{\textsf {1.4 - Four Particular Solutions}}{19}{section*.4}%
+\contentsline {subsection}{\textsf {1.5 - Real and Complex Sinusoids}}{48}{section*.5}%
+\contentsline {subsection}{\textsf {1.6 - Models of Growth and Decay}}{66}{section*.6}%
+\contentsline {subsection}{\textsf {1.7 - The Logistic Equation}}{79}{section*.7}%
+\contentsline {subsection}{\textsf {1.8 - Separable Equations and Exact Equations}}{105}{section*.8}%
+\contentsfinish 
