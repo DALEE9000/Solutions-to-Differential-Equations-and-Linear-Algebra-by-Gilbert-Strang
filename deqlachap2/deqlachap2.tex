@@ -312,6 +312,131 @@ Ergo, the particular solution is
 
 The angular frequency is \(2 \pi \cdot f = 2 \pi \) radians s\(^{-1}\).
 
+\vspace{12pt}
 
+% QUESTION 19
+\qs{2.1.19}{If the phase lag is \(\alpha \), what is the time lag in graphing \(\cos\left( \omega t - \alpha \right)\)?}
+
+Put differently, we want to find the value of \(t'\) such that we are able to restore \(\omega t\) as the cosine's argument. If we have
+\[
+	t' = t + \alpha / \omega 
+\]
+then we get
+\[
+	\cos\left( \omega t' - \alpha  \right) = \cos\left( \omega \!\left( t + \alpha / \omega  \right) - \alpha  \right) = \cos\left( \omega t \right)
+\]
+Thus the time lag term is \(\alpha / \omega \).
+
+\vspace{12pt}
+
+% QUESTION 20
+\qs{2.1.20}{What is the response \(y \!\left( t \right) \) to a delayed impulse if \(my'' + ky = \delta \!\left( t - T \right) \)?}
+
+The full solution will be a factor of the step function, given by:
+\[
+	y \!\left( t \right) = \int^{t - T}_{0} \frac{\sin\left( \omega_{n} \!\left( t - T - s \right)  \right)}{m \omega_{n}} \delta \!\left( s \right)  \, ds = \frac{\sin\left( \omega_{n} \!\left( t - T \right)  \right)}{m \omega_{n}} H \!\left( t - T \right) 
+\]
+Intuitively, when \(t \le T\), the right-hand side vanishes. No impulse is imparted, and thus there is no response. But when we are at time \(t \ge T\) -- after the threshold -- the response kicks in.
+\vspace{12pt}
+
+% QUESTION 21
+\qs{2.1.21}{(Good challenge) Show that \(\displaystyle{y = \int^{t}_{0} g \!\left( t - s \right) f \!\left( s \right)  \, ds }\) has \(my'' + ky = f \!\left( t \right) \).
+
+\begin{enumerate}[label=\arabic*.]
+	\item Why is \(\displaystyle{y' = \int^{t}_{0} g'\!\left( t - s \right) f \!\left( s \right)  \, ds + g \!\left( 0 \right) f \!\left( t \right)  }\)? Notice the two \(t\)'s in \(y\).
+	\item Using \(g \!\left( 0 \right) = 0\), explain why \(\displaystyle{y'' = \int^{t}_{0} g''\!\left( t - s \right) f \!\left( s \right)  \, ds + g'\!\left( 0 \right) f \!\left( t \right)  }\).
+	\item Now use \(g'\!\left( 0 \right) = 1 / m\) and \(mg'' + kg = 0\) to confirm \(my'' + ky = f \!\left( t \right) \).
+\end{enumerate}}
+
+Use the Leibniz integral rule:
+\[
+	\frac{d }{d t} \!\left( \int^{t}_{0} g \!\left( t - s \right) f \!\left( s \right)  \, ds \right) = g\!\left( 0 \right) f \!\left( t \right) + \int^{t}_{0} \frac{\partial }{\partial t} g \!\left( t - s \right) f \!\left( s \right)  \, ds 
+\]
+
+\begin{enumerate}[label=(\arabic*)]
+	\item By above, applying the partial derivative inside the second term yields the desired result.
+	\item One more application of the Leibniz rule gives us
+	\[
+		y'' = \int^{t}_{0} g''\!\left( t - s \right) f \!\left( s \right)  \, ds + g \!\left( 0 \right) f'\!\left( t \right) + g'\!\left( 0 \right) f \!\left( t \right) 
+	\]
+	With the premise \(g \!\left( 0 \right) = 0\), the second term vanishes and gives us the expected result.
+	\item Derive
+	\[
+		my'' + ky = \int^{t}_{0} \!\left[ mg''\!\left( t - s \right) + kg \!\left( t - s \right)  \right] f \!\left( s \right)  \, ds + f \!\left( t \right) = f \!\left( t \right)   \\
+	\]
+	where the last equality follows by appealing to the nullity of \(g \!\left( t \right) \).
+\end{enumerate}
+
+% QUESTION 22
+\qs{2.1.22}{With \(f = 1\) (direct current has \(\omega = 0\)) verify that \(my'' + ky = 1\) for this \(y\):
+\[
+	\textbf{Step response}
+\]
+\[
+	y \!\left( t \right) = \int^{t}_{0} \frac{\sin\left( \omega_{n} \!\left( t - s \right)  \right)}{m \omega_{n}} \cdot 1 \, ds = y_{p} + y_{n} = \pmb{\frac{1}{k} - \frac{1}{k} \cos\left( \omega_{n}t \right)}
+\]}
+
+We have second derivative
+\[
+	y''\!\left( t \right) = \frac{\omega_{n}^{2}}{k}\cos\left( \omega_{n}t \right)	
+\]
+Since \(\omega_{n} = \sqrt{k / m}\), \(my''\!\left( t \right) = \cos\left( \omega_{n}t \right)\). Ergo, we have
+\[
+	my'' + ky = \cos\left( \omega_{n}t \right) + k \!\left[ \frac{1}{k} - \frac{1}{k}\cos\left( \omega_{n}t \right) \right] = 1
+\]
+
+% QUESTION 23
+\qs{2.1.23}{(Recommended) For the equation \(d^{2}y / dt^{2} = 0\) find the null solution. Then for \(d^{2}g / dt^{2} = \delta \!\left( t \right) \) find the fundamental solution (start the null solution with \(g \!\left( 0 \right) = 0\) and \(g'\!\left( 0 \right) = 1\)). For \(y'' = f \!\left( t \right) \) find the particular solution using formula (16).}
+
+Integrating twice, the null solution is
+\[
+	y \!\left( t \right) = C_{1} t + C_{2}
+\]
+To find the fundamental solution \(g \!\left( t \right) \), imposing the initial conditions \(g \!\left( 0 \right) = 0\) and \(g'\!\left( 0 \right) = 1\) forces \(C_{1} = 1\) and \(C_{2} = 0\), thus
+\[
+	g \!\left( t \right) = t
+\]
+Lastly, if \(y'' = f \!\left( t \right) \), then
+\[
+	y_{p}\!\left( t \right) = \int^{t}_{0} \!\left( t - s \right) f \!\left( s \right)  \, ds 
+\]
+% QUESTION 24
+\qs{2.1.24}{For the equation \(d^{2}y/ dt^{2} = e^{i \omega t}\) find a particular solution \(y = Y \!\left( \omega  \right) e^{i \omega t}\). Then \(Y \!\left( \omega  \right) \) is the frequency response. Note the ``resonance'' when \(\omega = 0\) with the null solution \(y_{n} = 1\).}
+
+One particular solution is
+\[
+	y \!\left( t \right) = -\frac{e^{i \omega t}}{\omega^{2}}
+\]
+meaning that \(Y \!\left( \omega  \right) = - 1 / \omega^{2}\). When \(\omega = 0\), we have resonance, and this particular solution breaks down.
+
+\vspace{12pt}
+
+% QUESTION 25
+\qs{2.1.25}{Find a particular solution \(Ye^{i \omega t}\) to \(my'' - ky = e^{i \omega t}\). The equation has \(-ky\) instead of \(ky\). What is the frequency response \(Y \!\left( \omega  \right) \)? For which \(\omega \) is \(Y\) infinite?}
+
+We have
+\[
+	\frac{d^{2} }{d t^{2}} \!\left( Y e^{i \omega t} \right) = - Y \omega^{2} e^{i \omega t}
+\]
+Substituting and canceling the \(e^{i \omega t}\) terms, we get
+\[
+	-mY \omega^{2} - kY = 1
+\]
+Implying
+\[
+	Y \!\left( \omega  \right) = -\frac{1}{m \omega^{2} + k}
+\]
+If we have
+\[
+	\omega = i \sqrt{\frac{k}{m}}
+\]
+then \(Y \!\left( \omega  \right) \) diverges to infinity -- meaning all real frequencies will not lead to this!
+
+\newpage
+
+\subsection{\textsf{2.2 - Key Facts About Complex Numbers}}
+
+% QUESTION 1
+\qs{2.2.1}{Mark the numbers \(s_{1} = 2 + i\) and \(s_{2} = 1 - 2i\) as points in the complex plane. (The plane has a real axis and an imaginary axis.) Then mark the sum \(s_{1} + s_{2}\) and the difference \(s_{1} - s_{2}\).}
 
 \end{document}
