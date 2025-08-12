@@ -439,4 +439,306 @@ then \(Y \!\left( \omega  \right) \) diverges to infinity -- meaning all real fr
 % QUESTION 1
 \qs{2.2.1}{Mark the numbers \(s_{1} = 2 + i\) and \(s_{2} = 1 - 2i\) as points in the complex plane. (The plane has a real axis and an imaginary axis.) Then mark the sum \(s_{1} + s_{2}\) and the difference \(s_{1} - s_{2}\).}
 
+Arithmetic involving complex numbers simply is vector superposition:
+
+\begin{center}
+\includegraphics[width=1.0\textwidth]{../chap2/sec2.2/chap2sec2.2ex1.eps}
+\end{center}
+
+\vspace{12pt}
+
+% QUESTION 2
+\qs{2.2.2}{Multiply \(s_{1} = 2 + i\) times \(s_{2} = 1 - 2i\). Check absolute values: \(\abs{s_{1}} \abs{s_{2}} = \abs{s_{1}s_{2}}\).}
+
+We have
+\[
+	\!\left( 2 + i \right) \!\left( 1 - 2i \right) = 2 - 4i + i + 2 = 4 - 3i
+\]
+with \(\abs{s_{1}} = \abs{s_{2}} = \sqrt{5}\), \(\abs{s_{1}s_{2}} = \sqrt{16 + 9} = 5\), ascertaining \(\abs{s_{1}}\abs{s_{2}} = \abs{s_{1}s_{2}}\).
+
+\vspace{12pt}
+
+% QUESTION 3
+\qs{2.2.3}{Find the real and imaginary parts of \(1 / \!\left( 2 + i \right) \). 
+
+Multiply by \(\!\left( 2 - i \right) / \!\left( 2 - i \right) \):
+\[
+	\frac{1}{2 + i} \frac{2 - i}{2 - i} = \frac{2 - i}{\abs{2 + i}^{2}} = \quad ?
+\]
+}
+
+The denominator is \(5\), so we have
+\[
+	\underbrace{\frac{2}{5}}_{\text{real}} - \underbrace{\frac{i}{5}}_{\text{imaginary}}
+\]
+
+% QUESTION 4
+\qs{2.2.4}{\textit{Triple angles} \quad Multiply equation (10) by another \(e^{i \theta } = \cos\left( \theta  \right) + i \sin\left( \theta  \right)\) to find formulas for \(\cos\left( 3 \theta  \right)\) and \(\sin\left( 3 \theta  \right)\).}
+
+Derive
+\begin{alignat*}{2}
+	\!\left( \cos\left( \theta  \right) + i \sin\left( \theta  \right) \right)^{3} & = \!\left( \cos^{2}\left( \theta  \right) - \sin^{2}\left( \theta  \right) + 2i \cos\left( \theta  \right) \sin\left( \theta  \right) \right) \!\left( \cos\left( \theta  \right) + i \sin\left( \theta  \right) \right)  \\
+	 & = \cos^{3}\left( \theta  \right) - \sin^{2}\left( \theta  \right) \cos\left( \theta  \right) + 2i \cos^{2}\left( \theta  \right) \sin\left( \theta  \right) \\ 
+	 & \qquad + i \cos^{2}\left( \theta  \right) \sin\left( \theta  \right) - i \sin^{3}\left( \theta  \right) - 2 \cos\left( \theta  \right) \sin^{2}\left( \theta  \right) \\
+	 & = \underbrace{\cos^{3}\left( \theta  \right) - 3 \sin^{2}\left( \theta  \right) \cos\left( \theta  \right) }_{\text{real}} + i \underbrace{\!\left[ 3 \cos^{2}\left( \theta  \right) \sin\left( \theta  \right) - \sin^{3}\left( \theta  \right) \right] }_{\text{imaginary}}
+\end{alignat*}
+
+% QUESTION 5
+\qs{2.2.5}{\textit{Addition formulas} \quad Multiply \(e^{i \theta } = \cos\left( \theta  \right) + i \sin\left( \theta  \right)\) times \(e^{i \phi } = \cos\left( \phi  \right) + i \sin\left( \phi  \right)\) to get \(e^{i \!\left( \theta + \phi  \right) }\). Its real part is \(\cos\left( \theta + \phi  \right) = \cos\left( \theta  \right) \cos\left( \phi  \right) - \sin\left( \theta  \right) \sin\left( \phi  \right)\). What is its imaginary part \(\sin\left( \theta + \phi  \right)\)?}
+
+Derive
+\begin{alignat*}{2}
+	\!\left[ \cos\left( \theta  \right) + i \sin\left( \theta  \right) \right] \!\left[ \cos\left( \phi  \right) + i \sin\left( \phi  \right) \right]  & = \underbrace{\cos\left( \theta  \right)\cos\left( \phi  \right) - \sin\left( \theta  \right)\sin\left( \phi  \right)}_{\text{real}} \\
+																			   & \qquad + i \underbrace{\!\left[ \cos\left( \theta  \right) \sin\left( \phi  \right) + \sin\left( \theta  \right) \cos\left( \phi  \right) \right]}_{\text{imaginary}}  \\
+\end{alignat*}
+
+% QUESTION 6
+\qs{2.2.6}{Find the real part and the imaginary part of each cube root of 1. Show directly that the three roots add to zero, as equation (11) predicts.}
+
+The cube roots, in polar form, are given by
+\begin{alignat*}{2}
+	e^{i 2 \pi / 3} & = -\frac{1}{2} + i \frac{\sqrt{3}}{2} \\
+	e^{i 4 \pi / 3} & = -\frac{1}{2} - i \frac{\sqrt{3}}{2}\\
+	 & \qquad 1 
+\end{alignat*}
+
+which vanish when summed.
+
+\newpage
+
+% QUESTION 7
+\qs{2.2.7}{The three cube roots of 1 are \(z\) and \(z^{2}\) and 1, when \(z = e^{2 \pi i / 3}\). What are the three cube roots of 8 and the three cube roots of \(i\)? (The angle for \(i\) is \(90^{\circ}\) or \(\pi / 2\), so the angle for one of its cube roots will be \underline{\qquad}. The roots are spaced by \(120^{\circ}\).}
+
+In polar form, we can express 8 as \(8e^{2 \pi i}\). Let \(z = e^{2 \pi i / 3}\). Its cube roots are then \(2z\), \(2z^{2}\), and \(2\). 
+
+For \(i\), we have polar form \(e^{\pi i / 2}\). Then its cube roots are \(e^{\pi i / 6}\), \(e^{5 \pi i / 6}\), and \(e^{3 \pi i / 2}\). 
+
+Argue by vector superposition that the cube roots in all cases sum to zero.
+
+\vspace{12pt}
+
+% QUESTION 8
+\qs{2.2.8}{
+	\begin{enumerate}[label=(\alph*)]
+	\item The number \(i\) is equal to \(e^{\pi i / 2}\). Then its \(i^{\text{th}}\) power \(i^{i}\) comes out equal to a real number, using the fact that \(\!\left( e^{s} \right)^{t} = e^{st}\). What is that real number \(i^{i}\)?
+	\item \(e^{i \pi / 2}\) is also equal to \(e^{5 \pi i / 2}\). Increasing the angle by \(2 \pi \) does not change \(e^{i \theta }\) - it comes around a full circle and back to \(i\). Then \(i^{i}\) has another real value \(\!\left( e^{5 \pi i / 2} \right)^{i} = e^{-5 \pi / 2}\). What are all the possible values of \(i^{i}\)?
+\end{enumerate}}
+
+\begin{enumerate}[label=(\alph*)]
+	\item We have \(\!\left( e^{\pi i / 2} \right)^{i} = e^{-\pi / 2}\).
+	\item All possible values of \(i^{i}\) are \(e^{\!\left( - \pi \pm 4n \pi  \right) / 2}\).
+\end{enumerate}
+
+% QUESTION 9
+\qs{2.2.9}{The numbers \(s = 3 + i\) and \(\overline{s} = 3 - i \) are complex conjugates. Find their sum \(s + \overline{s} = -B\) and their product \(\!\left( s \right) \!\left( \overline{s} \right) = C\). Then show that \(s^{2} + Bs + C = 0\) and also \(\overline{s}^{2} + B \overline{s} + C = 0\). Those numbers \(s\) and \(\overline{s}\) are the two roots of the quadratic equation \(x^{2} + Bx + C = 0\).}
+
+The sum is \(s + \overline{s} = 6\), so \(B = -6\). Their product is \(s \overline{s} = 10 = C\). Then we have
+\[
+	s^{2} + Bs + C = s^{2} - \!\left( s + \overline{s} \right) s + s \overline{s} = 0
+\]
+\[
+	\overline{s}^{2} + B \overline{s} + C = \overline{s}^{2} - \!\left( s + \overline{s} \right) \overline{s} + s \overline{s} = 0
+\]
+
+% QUESTION 10
+\qs{2.2.10}{The numbers \(s = a + i \omega \) and \(\overline{s} = a - i \omega \) are complex conjugates. Find their sum \(s + \overline{s} = -B\) and their product \(\!\left( s \right) \!\left( \overline{s} \right) = C\). Then show that \(s^{2} + Bs + C = 0\). The two solutions of \(x^{2} + Bx + C = 0\) are \(s\) and \(\overline{s}\).}
+
+The sum is \(s + \overline{s} = 2a\), so \(B = -2a\). Their product is \(s \overline{s} = a^{2} + \omega^{2}\). By the same argument as the previous problem, the solutions of the given polynomial are \(s\) and \(\overline{s}\).
+
+\vspace{12pt}
+
+% QUESTION 11
+\qs{2.2.11}{\begin{enumerate}[label=(\alph*)]
+	\item Find the numbers \(\!\left( 1 + i \right)^{4} \) and \(\!\left( 1 + i \right)^{8}\).
+	\item Find the polar form \(re^{i \theta }\) of \(\!\left( 1 + i \sqrt{3} \right) / \!\left( \sqrt{3} + i \right) \).
+\end{enumerate}}
+
+\begin{enumerate}[label=(\alph*)]
+	\item We have \(1 + i = \sqrt{2} e^{i \pi / 4}\). Then
+	\[
+		\!\left( \sqrt{2} e^{i \pi / 4} \right)^{4} = 4 e^{i \pi } = -4
+	\]
+	Raising to the eighth power, we simply square our previous answer to get \(\!\left( 1 + i \right)^{8} = 16\).
+	\item The numerator is \(2e^{i \pi / 3}\) and the denominator \(2 e^{i \pi / 6}\). The quotient is \(e^{i \pi / 6}\).
+\end{enumerate}
+
+% QUESTION 12
+\qs{2.2.12}{The number \(z = e^{2 \pi i / n}\) solves \(z^{n} = 1\). The number \(Z = e^{2 \pi i / 2n}\) solves \(Z^{2n} = 1\). How is \(z\) related to \(Z\)? (This plays a big part in the Fast Fourier Transform.)}
+
+They are related by \(z = Z^{2}\).
+
+\vspace{12pt}
+
+% QUESTION 13
+\qs{2.2.13}{\begin{enumerate}[label=(\alph*)]
+	\item If you know \(e^{i \theta }\) and \(e^{-i \theta }\), how can you find \(\sin\left( \theta  \right)\)?
+	\item Find all angles \(\theta \) with \(e^{i \theta } = -1\) and all angles \(\phi \) with \(e^{i \phi } = -i\).
+\end{enumerate}}
+
+\begin{enumerate}[label=(\alph*)]
+	\item One way to write \(\sin\left( \theta  \right)\) is
+	\[
+		\frac{e^{i \theta } - e^{-i \theta }}{2} = \sin\left( \theta  \right)
+	\]
+\item We have \(\theta = \pi \pm 2n \pi \) (which eliminates the imaginary term), and \(\phi = - \frac{\pi }{2} \pm 2n \pi \). 
+\end{enumerate}
+
+% QUESTION 14
+\qs{2.2.14}{Locate all these points on one complex plane:
+\begin{enumerate}[label=(\alph*)]
+	\item \(2 + i\)
+	\item \( \!\left( 2 + i \right)^{2} \)
+	\item \(\displaystyle{\frac{1}{2 + i}}\)
+	\item \(\abs{2 + i}\)
+\end{enumerate}}
+
+% QUESETION 15
+\qs{2.2.15}{Find the absolute values \(r = \abs{z}\) of these four numbers. If \(\theta \) is the angle for \(6 + 8i\), what are the angles for these four numbers?
+\begin{enumerate}[label=(\alph*)]
+	\item \(6 - 8i\)
+	\item \(\!\left( 6 - 8i \right)^{2}\)
+	\item \(\displaystyle{\frac{1}{6 - 8i}}\)
+	\item \(8i + 6\)
+\end{enumerate}}
+
+\begin{enumerate}[label=(\alph*)]
+	\item \(r = 10\), \(\phi = -\theta \), in polar form \(z = 10e^{-i \theta }\)
+	\item \(r = 100\), \(\phi = -2 \theta \), in polar form \(z = 100e^{-2 \theta }\)
+	\item \(r = 1 / 10\), \(\phi = \theta \), in polar form \(\displaystyle{z = \frac{1}{10} e^{i \theta }}\)
+	\item \(r = 10\), \(\phi = \theta \), the original number is unchanged
+\end{enumerate}
+
+% QUESTION 16
+\qs{2.2.16}{What are the real and imaginary parts of \(e^{a + i \pi }\) and \(e^{a + i \omega }\)?}
+
+The real parts are \(-e^{a}\) and \(e^{a} \cos\left( \omega  \right)\) and the imaginary parts are \(0\) and \(e^{a} \sin\left( \omega  \right)\).
+
+\vspace{12pt}
+
+% QUESTION 17
+\qs{2.2.17}{\begin{enumerate}[label=(\alph*)]
+	\item If \(\abs{s} = 2\) and \(\abs{z} = 3\), what are the absolute values of \(sz\) and \(s / z\)?
+	\item Find upper and lower bounds in \(L \le \abs{s + z} \le U\). When does \(\abs{s + z} = U\)?
+\end{enumerate}}
+
+\begin{enumerate}[label=(\alph*)]
+	\item \(\abs{sz} = \abs{s}\abs{z} = 6\), \(\abs{s / z} = \abs{s}/\abs{z} = 2/3\)
+	\item The lower bound is achieved when \(s\) and \(z\) are antiparallel, meaning the modulus of their vector sum is at best \(L = \abs{s + z} = 1\). The upper bound is reached when they are parallel, so \(U = \abs{s + z} = 5\).
+\end{enumerate}
+
+\newpage
+% QUESTION 18
+\qs{2.2.18}{
+\begin{enumerate}[label=(\alph*)]
+	\item Where is the product \(\!\left( \sin\left( \theta  \right) + i \cos\left( \theta  \right) \right) \!\left( \cos\left( \theta  \right) + i \sin\left( \theta  \right) \right) \) in the complex plane?
+	\item Find the absolute value  \(\abs{S}\) and the polar angle \(\phi \) for \(S = \pmb{\sin\left( \theta  \right) + i \cos\left( \theta  \right)}\).
+\end{enumerate}
+This is my favorite problem, because \(S\) combines \(\cos\left( \theta  \right)\) and \(\sin\left( \theta  \right)\) in a new way. To find \(\phi \), you could plot \(S\) or add angles in the multiplication of part (a).}
+
+\begin{enumerate}[label=(\alph*)]
+	\item Note that \(\sin\left( \theta  \right) = \displaystyle{\cos\left( \frac{\pi }{2} - \theta  \right)}\) and \(\cos\left( \theta  \right) = \displaystyle{\sin\left( \frac{\pi }{2} - \theta  \right)}\). Then the first term is equal to \(\displaystyle{\cos\left( \frac{\pi }{2} - \theta  \right) + i \sin\left( \frac{\pi }{2} - \theta  \right) = e^{i \!\left( \pi / 2 - \theta  \right) }}\). Then the product is
+	\[
+		e^{i \!\left( \pi / 2 - \theta  \right) } e^{i \theta } = e^{i \pi / 2} = i
+	\]
+	\item \(\abs{S} = 1\) and \(\displaystyle{\phi = \frac{\pi }{2} - \theta }\).
+\end{enumerate}
+
+% QUESTION 19
+\qs{2.2.19}{Draw the spirals \(e^{\!\left( 1 - i \right)t}\) and \(e^{\!\left( 2 - 2i \right)t}\). Do those follow the same curves? Do they go clockwise or anticlockwise? When the first one reaches the negative \(x\)-axis, what is the time \(T\)? What point has the second one reached at that time?}
+
+% QUESTION 20
+\qs{2.2.20}{The solution to \(d^{2}y / dt^{2} = -y\) is \(y = \cos\left( t \right)\) if the initial conditions are \(y \!\left( 0 \right) = \underline{\qquad}\) and \(y' \!\left( 0 \right) = \underline{\qquad}\). The solution is \(y = \sin\left( t \right)\) when \(y \!\left( 0 \right) = \underline{\qquad}\) and \(y'\!\left( 0 \right) = \underline{\qquad}\). Write each of those solutions in the form \(c_{1}e^{i t} + c_{2}e^{-i t}\), to see that real solutions can come from complex \(c_{1}\) and \(c_{2}\).}
+
+For the case of \(y = \cos\left( t \right)\), the initial conditions are \(y \!\left( 0 \right) = 1\) and \(y'\!\left( 0 \right) = 0\). In the case of \(y  = \sin\left( t \right)\), we have \(y \!\left( 0 \right) = 0\) and \(y'\!\left( 0 \right) = 1\). In the given form, the initial conditions require
+
+\underline{\(y = \cos\left( t \right)\)}
+\begin{align*}
+	y \!\left( 0 \right) & = c_{1} + c_{2} = 1 \\
+	y' \!\left( 0 \right) & = i \!\left( c_{1} - c_{2} \right) = 0
+\end{align*}
+Implying \(c_{1} = c_{2} = 1/2\).
+
+\underline{\( y = \sin\left( t \right) \)}
+\begin{align*}
+	y \!\left( 0 \right)  & = c_{1} + c_{2} = 0 \\
+	y'\!\left( 0 \right)  & = i \!\left( c_{1} - c_{2} \right) = 1  
+\end{align*}
+Implying \(c_{1} = 1 / 2i\) and \(c_{2} = -1 / 2i\).
+
+Thus we can write \(\cos\left( t \right)\) and \(\sin\left( t \right)\) as
+\[
+	\cos\left( t \right) = \frac{e^{i t} + e^{-i t}}{2}, \quad \sin\left( t \right) = \frac{e^{i t} - e^{-i t}}{2i}
+\]
+
+The general solution is given by
+\[
+	y \!\left( t \right) = C_{1} \cos\left( t \right) + C_{2} \sin\left( t \right)
+\]
+which we rewrite as
+\begin{align*}
+	y \!\left( t \right)  & = C_{1} \cos\left( t \right) + C_{2} \sin\left( t \right) \\
+	 & = C_{1} \!\left[ \frac{e^{i t} + e^{-i t}}{2} \right] + C_{2} \!\left[ \frac{e^{i t} - e^{-i t}}{2i} \right]   \\ 
+	 & = \!\left[ \frac{C_{1} - iC_{2}}{2} \right] e^{i t} + \!\left[ \frac{C_{1} + iC_{2}}{2} \right] e^{-i t}
+\end{align*}
+
+% QUESTION 21
+\qs{2.2.21}{Suppose \(y \!\left( t \right) = e^{-t}e^{i t}\) solves \(y'' + By' + Cy = 0\). What are \(B\) and \(C\)? If this equation is solved by \(y = e^{3it}\), what are \(B\) and \(C\)?}
+
+Note that \(y \!\left( t \right) = e^{-t}e^{i t} = e^{\!\left( -1 + i \right) t}\). Then we have
+\[
+	y'' + By' + Cy = \!\left( -1 + i \right)^{2} e^{\!\left( -1 + i \right) t} + B \!\left( -1 + i \right)  e^{\!\left( -1 + i \right) t} + Ce^{\!\left( -1 + i \right) t} = 0
+\]
+from which we derive
+\[
+	\!\left( -1 + i \right)^{2} + B \!\left( -1 + i \right) + C = 0
+\]
+Now wait -- this looks suspiciously familiar to the form seen in question 9:
+\[
+	s^{2} + Bs + C = 0
+\]
+Then we have that \(s + \overline{s} = -B\) and \(s \overline{s} = C\). Thus
+\[
+	s + \overline{s} = -2 = -B \qquad s \overline{s} = 2 = C
+\]
+Therefore, \(B = C = 2\), and the equation is \(y'' + 2y' + 2y = 0\).
+
+In the case of \(y = e^{3it}\), we have polynomial
+\[
+	-9 + 3Bi + C = 0
+\]
+where it follows that \(s = 3i\), \(s + \overline{s} = 0 = -B\), and \(s \overline{s} = 9 = C\). The equation is \(y'' + 9y = 0\).
+
+\newpage
+
+% QUESTION 22
+\qs{2.2.22}{From the multiplication \(e^{iA}e^{-iB} = e^{i \!\left( A - B \right) }\), find the ``subtraction formulas'' for \(\cos\left( A - B \right)\) and \(\sin\left( A - B \right)\).}
+
+Derive
+\begin{align*}
+	e^{iA}e^{-iB} & = \!\left[ \cos\left( A \right) + i \sin\left( A \right) \right] \!\left[ \cos\left( B \right) - i \sin\left( B \right) \right]  \\
+	 & =  \!\left[ \cos\left( A \right)\cos\left( B \right) + \sin\left( A \right) \sin\left( B \right) \right] + i \!\left[ \sin\left( A \right) \cos\left( B \right) - \cos\left( A \right) \sin\left( B \right) \right] \\ 
+	 & = \cos\left( A - B \right) + i \sin\left( A - B \right) \\
+	 & = e^{i \!\left( A - B \right) }
+\end{align*}
+
+% QUESTION 23
+\qs{2.2.23}{
+\begin{enumerate}[label=(\alph*)]
+	\item If \(r\) and \(R\) are the absolute values of \(s\) and \(S\), show that \(rR\) is the absolute value of \(sS\). (Hint: Polar form!)
+	\item If \(\overline{s}\) and \(\overline{S}\) are the complex conjugates of \(s\) and \(S\), show that \(\overline{s}\overline{S}\) is the complex conjugate of \(sS\). (Polar form!)
+\end{enumerate}}
+
+\begin{enumerate}[label=(\alph*)]
+	\item Write \(s = re^{i \theta }\) and \(S = Re^{i \phi }\). Then \(sS = rR e^{i \!\left( \theta + \phi  \right) }\). Then \(rR = \abs{sS}\).
+	\item Using the aforementioned definitions of \(s\) and \(S\), we have 
+	\[
+		\overline{sS} = rRe^{-i \!\left( \theta + \phi  \right)} = \!\left( re^{-i \theta } \right) \!\left( Re^{-i \phi } \right) = \overline{s}\overline{S}
+	\]
+\end{enumerate}
+
+% QUESTION 24
+\qs{2.2.24}{Suppose a complex number \(s\) solves a real equation \(s^{3} + As^{2} + Bs + C = 0\) (with \(A\), \(B\), \(C\) real). Why does the complex conjugate \(\overline{s}\) also solve this equation? ``\textit{Complex solutions to real equations come in conjugate pairs \(s\) and \(\overline{s}\)}.''}
+
+
+
 \end{document}

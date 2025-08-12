@@ -2029,6 +2029,17 @@ INPUT ../chap2/sec2.1/chap2sec2.1ex3.eps
 INPUT ../chap2/sec2.1/chap2sec2.1ex3-eps-converted-to.pdf
 INPUT ../chap2/sec2.1/chap2sec2.1ex3-eps-converted-to.pdf
 INPUT ../chap2/sec2.1/chap2sec2.1ex3-eps-converted-to.pdf
+INPUT ../chap2/sec2.2/chap2sec2.2ex1.eps
+INPUT ../chap2/sec2.2/chap2sec2.2ex1.eps
+INPUT ../chap2/sec2.2/chap2sec2.2ex1.eps
+INPUT ../chap2/sec2.2/chap2sec2.2ex1.eps
+INPUT ../chap2/sec2.2/chap2sec2.2ex1.eps
+INPUT ../chap2/sec2.2/chap2sec2.2ex1-eps-converted-to.pdf
+INPUT ../chap2/sec2.2/chap2sec2.2ex1-eps-converted-to.pdf
+INPUT ../chap2/sec2.2/chap2sec2.2ex1.eps
+INPUT ../chap2/sec2.2/chap2sec2.2ex1-eps-converted-to.pdf
+INPUT ../chap2/sec2.2/chap2sec2.2ex1-eps-converted-to.pdf
+INPUT ../chap2/sec2.2/chap2sec2.2ex1-eps-converted-to.pdf
 INPUT deqlachap2.aux
 INPUT /usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc
 INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmbsy7.pfb
@@ -2049,6 +2060,7 @@ INPUT /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb
 INPUT /usr/share/texmf/fonts/type1/public/cm-super/sfbbx10.pfb
 INPUT /usr/share/texmf/fonts/type1/public/cm-super/sfbmr10.pfb
 INPUT /usr/share/texmf/fonts/type1/public/cm-super/sfbx1000.pfb
+INPUT /usr/share/texmf/fonts/type1/public/cm-super/sfrm0700.pfb
 INPUT /usr/share/texmf/fonts/type1/public/cm-super/sfrm0800.pfb
 INPUT /usr/share/texmf/fonts/type1/public/cm-super/sfrm0900.pfb
 INPUT /usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb
