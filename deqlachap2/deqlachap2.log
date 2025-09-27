@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.4.23)  11 AUG 2025 19:04
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2024.4.23)  27 SEP 2025 12:44
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1332,29 +1332,41 @@ File: tikzlibrarytrees.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \c@tcb@cnt@question=\count474
 \c@tcb@cnt@Property=\count475
 \c@tcb@cnt@Lemma=\count476
-)
-Package translations Info: No language package found. I am going to use `english' as default language. on input line 8.
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf.sty
+Package: epstopdf 2020-01-24 v2.11 Conversion with epstopdf on the fly (HO)
+ (/usr/share/texlive/texmf-dist/tex/latex/grfext/grfext.sty
+Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
+) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 504.
+ (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+)))
+Package translations Info: No language package found. I am going to use `english' as default language. on input line 9.
  (./deqlachap2.aux)
 \openout1 = `deqlachap2.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
@@ -1372,22 +1384,17 @@ Package caption Info: End \AtBeginDocument code.
 \MPnumerator=\count481
 \makeMPintoPDFobject=\count482
 \everyMPtoPDFconversion=\toks65
-) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
-Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
-Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
- (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
-))
-LaTeX Info: Redefining \microtypecontext on input line 8.
+)
+LaTeX Info: Redefining \microtypecontext on input line 9.
 
-[debug] tracing \apptocmd on input line 8
+[debug] tracing \apptocmd on input line 9
 [debug] analyzing '\@item'
 [debug] ++ control sequence is defined
 [debug] ++ control sequence is a macro
 [debug] ++ control sequence is a macro with parameters
 [debug] ++ macro can be retokenized cleanly
 [debug] == retokenizing macro now
-[debug] tracing \patchcmd on input line 8
+[debug] tracing \patchcmd on input line 9
 [debug] analyzing '\@item'
 [debug] ++ control sequence is defined
 [debug] ++ control sequence is a macro
@@ -1395,16 +1402,16 @@ LaTeX Info: Redefining \microtypecontext on input line 8.
 [debug] ++ search pattern found in replacement text
 [debug] ++ patching possible
 [debug] == retokenizing macro now
-Package microtype Info: Applying patch `item' on input line 8.
-[debug] tracing \apptocmd on input line 8
+Package microtype Info: Applying patch `item' on input line 9.
+[debug] tracing \apptocmd on input line 9
 [debug] analyzing '\numberline'
 [debug] ++ control sequence is defined
 [debug] ++ control sequence is a macro
 [debug] ++ control sequence is a macro with parameters
 [debug] ++ macro can be retokenized cleanly
 [debug] == retokenizing macro now
-Package microtype Info: Applying patch `toc' on input line 8.
-[debug] tracing \patchcmd on input line 8
+Package microtype Info: Applying patch `toc' on input line 9.
+[debug] tracing \patchcmd on input line 9
 [debug] analyzing '\tagform@'
 [debug] ++ control sequence is defined
 [debug] ++ control sequence is a macro
@@ -1412,7 +1419,7 @@ Package microtype Info: Applying patch `toc' on input line 8.
 [debug] ++ search pattern found in replacement text
 [debug] ++ patching possible
 [debug] == retokenizing macro now
-[debug] tracing \patchcmd on input line 8
+[debug] tracing \patchcmd on input line 9
 [debug] analyzing '\tagform@'
 [debug] ++ control sequence is defined
 [debug] ++ control sequence is a macro
@@ -1420,7 +1427,7 @@ Package microtype Info: Applying patch `toc' on input line 8.
 [debug] ++ search pattern found in replacement text
 [debug] ++ patching possible
 [debug] == retokenizing macro now
-[debug] tracing \patchcmd on input line 8
+[debug] tracing \patchcmd on input line 9
 [debug] analyzing '\eqref'
 [debug] ++ control sequence is defined
 [debug] ++ control sequence is a macro
@@ -1428,8 +1435,8 @@ Package microtype Info: Applying patch `toc' on input line 8.
 [debug] ++ search pattern found in replacement text
 [debug] ++ patching possible
 [debug] == retokenizing macro now
-Package microtype Info: Applying patch `eqnum' on input line 8.
-[debug] tracing \patchcmd on input line 8
+Package microtype Info: Applying patch `eqnum' on input line 9.
+[debug] tracing \patchcmd on input line 9
 [debug] analyzing '\@footnotetext'
 [debug] ++ control sequence is defined
 [debug] ++ control sequence is a macro
@@ -1437,7 +1444,7 @@ Package microtype Info: Applying patch `eqnum' on input line 8.
 [debug] ++ search pattern found in replacement text
 [debug] ++ patching possible
 [debug] == retokenizing macro now
-[debug] tracing \patchcmd on input line 8
+[debug] tracing \patchcmd on input line 9
 [debug] analyzing '\@footnotetext'
 [debug] ++ control sequence is defined
 [debug] ++ control sequence is a macro
@@ -1445,14 +1452,14 @@ Package microtype Info: Applying patch `eqnum' on input line 8.
 [debug] ++ search pattern found in replacement text
 [debug] ++ patching possible
 [debug] == retokenizing macro now
-Package microtype Info: Applying patch `footnote' on input line 8.
+Package microtype Info: Applying patch `footnote' on input line 9.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
 Package microtype Info: Automatic font expansion enabled (level 2),
 (microtype)             stretch: 20, shrink: 20, step: 1, non-selected.
 Package microtype Info: Using default expansion set `alltext-nott'.
-LaTeX Info: Redefining \showhyphens on input line 8.
+LaTeX Info: Redefining \showhyphens on input line 9.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
@@ -1464,25 +1471,25 @@ Package pgfplots notification 'compat/show suggested version=true': document has
 (/usr/share/texlive/texmf-dist/tex/latex/translations/translations-basic-dictionary-english.trsl
 File: translations-basic-dictionary-english.trsl (english translation file `translations-basic-dictionary')
 )
-Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 8.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 8.
+Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 9.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 9.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 ) (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 8.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 9.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/usr/share/texlive/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-Package xypdf Info: Line width: 0.39998pt on input line 8.
+Package xypdf Info: Line width: 0.39998pt on input line 9.
 \c@lstlisting=\count483
-Package hyperref Info: Link coloring ON on input line 8.
-LaTeX Info: Redefining \ref on input line 8.
-LaTeX Info: Redefining \pageref on input line 8.
-LaTeX Info: Redefining \nameref on input line 8.
+Package hyperref Info: Link coloring ON on input line 9.
+LaTeX Info: Redefining \ref on input line 9.
+LaTeX Info: Redefining \pageref on input line 9.
+LaTeX Info: Redefining \nameref on input line 9.
  (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2021/02/14 v1.3d Input encoding file
 \inpenc@prehook=\toks66
@@ -1490,70 +1497,123 @@ Package: inputenc 2021/02/14 v1.3d Input encoding file
 ) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Trying to load font information for T1+cmbr on input line 12.
+LaTeX Font Info:    Trying to load font information for T1+cmbr on input line 13.
  (/usr/share/texlive/texmf-dist/tex/latex/cmbright/t1cmbr.fd
 File: t1cmbr.fd 2005/04/13 v8.1 (WaS)
 )
 LaTeX Font Info:    Font shape `T1/cmbr/b/n' in size <14.4> not available
-(Font)              Font shape `T1/cmbr/bx/n' tried instead on input line 12.
+(Font)              Font shape `T1/cmbr/bx/n' tried instead on input line 13.
 Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `cmbr' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- (./deqlachap2.toc
-LaTeX Font Info:    Font shape `T1/cmbr/b/n' in size <10> not available
-(Font)              Font shape `T1/cmbr/bx/n' tried instead on input line 1.
-)
+
+
+Package hyperref Warning: old toc file detected, not used; run LaTeX again.
+
 \tf@toc=\write7
 \openout7 = `deqlachap2.toc'.
 
- [2]
+[2]
 LaTeX Font Info:    Font shape `T1/cmbr/b/n' in size <12> not available
-(Font)              Font shape `T1/cmbr/bx/n' tried instead on input line 17.
+(Font)              Font shape `T1/cmbr/bx/n' tried instead on input line 18.
+LaTeX Font Info:    Font shape `T1/cmbr/b/n' in size <10> not available
+(Font)              Font shape `T1/cmbr/bx/n' tried instead on input line 27.
  [3]
 Package epstopdf Info: Source file: <../chap2/sec2.1/chap2sec2.1ex3.eps>
-(epstopdf)                    date: 2025-07-13 10:49:42
+(epstopdf)                    date: 2025-07-13 13:49:42
 (epstopdf)                    size: 126240 bytes
 (epstopdf)             Output file: <../chap2/sec2.1/chap2sec2.1ex3-eps-converted-to.pdf>
-(epstopdf)                    date: 2025-07-13 10:52:11
+(epstopdf)                    date: 2025-07-13 13:52:11
 (epstopdf)                    size: 10938 bytes
 (epstopdf)             Command: <repstopdf --outfile=../chap2/sec2.1/chap2sec2.1ex3-eps-converted-to.pdf ../chap2/sec2.1/chap2sec2.1ex3.eps>
-(epstopdf)             \includegraphics on input line 48.
+(epstopdf)             \includegraphics on input line 49.
 Package epstopdf Info: Output file is already uptodate.
-<../chap2/sec2.1/chap2sec2.1ex3-eps-converted-to.pdf, id=76, 374.00728pt x 249.3315pt>
+<../chap2/sec2.1/chap2sec2.1ex3-eps-converted-to.pdf, id=72, 374.00728pt x 249.3315pt>
 File: ../chap2/sec2.1/chap2sec2.1ex3-eps-converted-to.pdf Graphic file (type pdf)
 <use ../chap2/sec2.1/chap2sec2.1ex3-eps-converted-to.pdf>
-Package pdftex.def Info: ../chap2/sec2.1/chap2sec2.1ex3-eps-converted-to.pdf  used on input line 48.
+Package pdftex.def Info: ../chap2/sec2.1/chap2sec2.1ex3-eps-converted-to.pdf  used on input line 49.
 (pdftex.def)             Requested size: 345.0pt x 229.99646pt.
  [4 <../chap2/sec2.1/chap2sec2.1ex3-eps-converted-to.pdf>] [5] [6] [7] [8] [9] [10] [11] [12] [13]
 Package epstopdf Info: Source file: <../chap2/sec2.2/chap2sec2.2ex1.eps>
-(epstopdf)                    date: 2025-08-01 18:49:55
+(epstopdf)                    date: 2025-08-01 21:49:55
 (epstopdf)                    size: 115577 bytes
 (epstopdf)             Output file: <../chap2/sec2.2/chap2sec2.2ex1-eps-converted-to.pdf>
-(epstopdf)                    date: 2025-08-01 18:55:01
+(epstopdf)                    date: 2025-08-01 21:55:01
 (epstopdf)                    size: 11721 bytes
 (epstopdf)             Command: <repstopdf --outfile=../chap2/sec2.2/chap2sec2.2ex1-eps-converted-to.pdf ../chap2/sec2.2/chap2sec2.2ex1.eps>
-(epstopdf)             \includegraphics on input line 445.
+(epstopdf)             \includegraphics on input line 446.
 Package epstopdf Info: Output file is already uptodate.
-<../chap2/sec2.2/chap2sec2.2ex1-eps-converted-to.pdf, id=156, 501.24263pt x 271.34372pt>
+<../chap2/sec2.2/chap2sec2.2ex1-eps-converted-to.pdf, id=152, 501.24263pt x 271.34372pt>
 File: ../chap2/sec2.2/chap2sec2.2ex1-eps-converted-to.pdf Graphic file (type pdf)
 <use ../chap2/sec2.2/chap2sec2.2ex1-eps-converted-to.pdf>
-Package pdftex.def Info: ../chap2/sec2.2/chap2sec2.2ex1-eps-converted-to.pdf  used on input line 445.
+Package pdftex.def Info: ../chap2/sec2.2/chap2sec2.2ex1-eps-converted-to.pdf  used on input line 446.
 (pdftex.def)             Requested size: 345.0pt x 186.76778pt.
- [14 <../chap2/sec2.2/chap2sec2.2ex1-eps-converted-to.pdf>] [15] [16] [17] [18] [19] [20] [21] (./deqlachap2.aux) ) 
+ [14 <../chap2/sec2.2/chap2sec2.2ex1-eps-converted-to.pdf>] [15] [16] [17]
+Package epstopdf Info: Source file: <../chap2/sec2.2/chap2sec2.2ex14.eps>
+(epstopdf)                    date: 2025-08-12 12:05:44
+(epstopdf)                    size: 128983 bytes
+(epstopdf)             Output file: <../chap2/sec2.2/chap2sec2.2ex14-eps-converted-to.pdf>
+(epstopdf)                    date: 2025-08-12 12:41:46
+(epstopdf)                    size: 10233 bytes
+(epstopdf)             Command: <repstopdf --outfile=../chap2/sec2.2/chap2sec2.2ex14-eps-converted-to.pdf ../chap2/sec2.2/chap2sec2.2ex14.eps>
+(epstopdf)             \includegraphics on input line 605.
+Package epstopdf Info: Output file is already uptodate.
+<../chap2/sec2.2/chap2sec2.2ex14-eps-converted-to.pdf, id=195, 501.24263pt x 382.63953pt>
+File: ../chap2/sec2.2/chap2sec2.2ex14-eps-converted-to.pdf Graphic file (type pdf)
+<use ../chap2/sec2.2/chap2sec2.2ex14-eps-converted-to.pdf>
+Package pdftex.def Info: ../chap2/sec2.2/chap2sec2.2ex14-eps-converted-to.pdf  used on input line 605.
+(pdftex.def)             Requested size: 345.0pt x 263.37346pt.
+ [18 <../chap2/sec2.2/chap2sec2.2ex14-eps-converted-to.pdf>] [19]
+Package epstopdf Info: Source file: <../chap2/sec2.2/chap2sec2.2ex19.eps>
+(epstopdf)                    date: 2025-08-12 13:40:21
+(epstopdf)                    size: 160375 bytes
+(epstopdf)             Output file: <../chap2/sec2.2/chap2sec2.2ex19-eps-converted-to.pdf>
+(epstopdf)                    date: 2025-08-12 13:41:03
+(epstopdf)                    size: 18401 bytes
+(epstopdf)             Command: <repstopdf --outfile=../chap2/sec2.2/chap2sec2.2ex19-eps-converted-to.pdf ../chap2/sec2.2/chap2sec2.2ex19.eps>
+(epstopdf)             \includegraphics on input line 666.
+Package epstopdf Info: Output file is already uptodate.
+<../chap2/sec2.2/chap2sec2.2ex19-eps-converted-to.pdf, id=234, 501.64412pt x 330.37428pt>
+File: ../chap2/sec2.2/chap2sec2.2ex19-eps-converted-to.pdf Graphic file (type pdf)
+<use ../chap2/sec2.2/chap2sec2.2ex19-eps-converted-to.pdf>
+Package pdftex.def Info: ../chap2/sec2.2/chap2sec2.2ex19-eps-converted-to.pdf  used on input line 666.
+(pdftex.def)             Requested size: 345.0pt x 227.21745pt.
+ [20 <../chap2/sec2.2/chap2sec2.2ex19-eps-converted-to.pdf>] [21] [22]
+Package epstopdf Info: Source file: <../chap2/sec2.2/chap2sec2.2ex27.eps>
+(epstopdf)                    date: 2025-08-12 14:12:12
+(epstopdf)                    size: 130695 bytes
+(epstopdf)             Output file: <../chap2/sec2.2/chap2sec2.2ex27-eps-converted-to.pdf>
+(epstopdf)                    date: 2025-08-12 14:14:12
+(epstopdf)                    size: 10464 bytes
+(epstopdf)             Command: <repstopdf --outfile=../chap2/sec2.2/chap2sec2.2ex27-eps-converted-to.pdf ../chap2/sec2.2/chap2sec2.2ex27.eps>
+(epstopdf)             \includegraphics on input line 799.
+Package epstopdf Info: Output file is already uptodate.
+<../chap2/sec2.2/chap2sec2.2ex27-eps-converted-to.pdf, id=270, 438.7893pt x 308.91411pt>
+File: ../chap2/sec2.2/chap2sec2.2ex27-eps-converted-to.pdf Graphic file (type pdf)
+<use ../chap2/sec2.2/chap2sec2.2ex27-eps-converted-to.pdf>
+Package pdftex.def Info: ../chap2/sec2.2/chap2sec2.2ex27-eps-converted-to.pdf  used on input line 799.
+(pdftex.def)             Requested size: 345.0pt x 242.88461pt.
+ [23] [24 <../chap2/sec2.2/chap2sec2.2ex27-eps-converted-to.pdf>] [25] [26] [27]
+<../chap2/sec2.3/chap2sec2.3ex10.pdf, id=326, 397.49564pt x 377.08693pt>
+File: ../chap2/sec2.3/chap2sec2.3ex10.pdf Graphic file (type pdf)
+<use ../chap2/sec2.3/chap2sec2.3ex10.pdf>
+Package pdftex.def Info: ../chap2/sec2.3/chap2sec2.3ex10.pdf  used on input line 953.
+(pdftex.def)             Requested size: 345.0pt x 327.30345pt.
+ [28 <../chap2/sec2.3/chap2sec2.3ex10.pdf>] (./deqlachap2.aux) ) 
 Here is how much of TeX's memory you used:
- 57251 strings out of 478287
- 1325409 string characters out of 5849289
- 1835058 words of memory out of 5000000
- 74074 multiletter control sequences out of 15000+600000
- 503771 words of font info for 212 fonts, out of 8000000 for 9000
+ 57456 strings out of 478287
+ 1330393 string characters out of 5849289
+ 1835809 words of memory out of 5000000
+ 74218 multiletter control sequences out of 15000+600000
+ 504379 words of font info for 222 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  104i,16n,106p,3262b,1384s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmbsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbbx10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbmr10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0700.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1000.pfb>
-Output written on deqlachap2.pdf (21 pages, 402966 bytes).
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmbsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbbx10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbmr10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0700.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1000.pfb>
+Output written on deqlachap2.pdf (28 pages, 529611 bytes).
 PDF statistics:
- 357 PDF objects out of 1000 (max. 8388607)
- 260 compressed objects within 3 object streams
- 75 named destinations out of 1000 (max. 500000)
- 61631 words of extra memory for PDF output out of 61914 (max. 10000000)
+ 478 PDF objects out of 1000 (max. 8388607)
+ 362 compressed objects within 4 object streams
+ 107 named destinations out of 1000 (max. 500000)
+ 61659 words of extra memory for PDF output out of 61914 (max. 10000000)
 

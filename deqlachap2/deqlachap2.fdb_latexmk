@@ -1,12 +1,16 @@
 # Fdb version 3
-["makeindex deqlachap2.idx"] 1754962881 "deqlachap2.idx" "deqlachap2.ind" "deqlachap2" 1754964266
-  "deqlachap2.idx" 1754964263 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+["makeindex deqlachap2.idx"] 1754962881 "deqlachap2.idx" "deqlachap2.ind" "deqlachap2" 1758991489
+  "deqlachap2.idx" 1758991485 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   (generated)
   "deqlachap2.ilg"
   "deqlachap2.ind"
-["pdflatex"] 1754964262 "deqlachap2.tex" "deqlachap2.pdf" "deqlachap2" 1754964266
+["pdflatex"] 1758991484 "deqlachap2.tex" "deqlachap2.pdf" "deqlachap2" 1758991489
   "../chap2/sec2.1/chap2sec2.1ex3.eps" 1752428982 126240 4cb1ec25194787a1d1e2b64c62f6f5e8 ""
   "../chap2/sec2.2/chap2sec2.2ex1.eps" 1754099395 115577 099b42f0a676451da69ef868fbf64611 ""
+  "../chap2/sec2.2/chap2sec2.2ex14.eps" 1755014744 128983 1fc68df90f9224f1e9f9b773275ee596 ""
+  "../chap2/sec2.2/chap2sec2.2ex19.eps" 1755020421 160375 5217ec3c72e2e4db90e06f15b7843c0e ""
+  "../chap2/sec2.2/chap2sec2.2ex27.eps" 1755022332 130695 a339ba0d3a7a7bab7883aeb7848611e6 ""
+  "../chap2/sec2.3/chap2sec2.3ex10.pdf" 1758991151 106458 d124835f0df6bc3a24381c9d40577670 ""
   "/etc/texmf/web2c/texmf.cnf" 1713906074 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/ecbx0500.tfm" 1136768653 3584 0913860e6fa2bdf78ecaf460b391112b ""
@@ -81,8 +85,10 @@
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1248133631 35752 024fb6c41858982481f6968b5fc26508 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1248133631 32722 d7379af29a190c3f453aba36302ff5a9 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb" 1248133631 32362 179c33bbf43f19adbb3825bb4e36e57a ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb" 1248133631 31809 8670ca339bf94e56da1fc21c80635e2a ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb" 1248133631 32762 224316ccc9ad3ca0423a14971cfa7fc1 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
+  "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb" 1248133631 32915 7bf7720c61a5b3a7ff25b0964421c9b6 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb" 1248133631 32716 08e384dc442464e7285e891af9f45947 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmbsy7.pfb" 1248133631 30068 eae4ba75635647d82fb0b7d7bccc4748 ""
   "/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb" 1248133631 39386 0bb525d495ceab21fe797301a586e0d7 ""
@@ -280,6 +286,7 @@
   "/usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty" 1561238569 51697 f8f08183cd2080d9d18a41432d651dfb ""
   "/usr/share/texlive/texmf-dist/tex/latex/environ/environ.sty" 1399239813 4378 f429f0da968c278653359293040a8f52 ""
   "/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty" 1579991033 13886 d1306dcf79a944f6988e688c1785f9ce ""
+  "/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf.sty" 1579991033 4393 47f27fd4d95928d20b1885ba77de11d2 ""
   "/usr/share/texlive/texmf-dist/tex/latex/eso-pic/eso-pic.sty" 1602711807 11772 8d0db0794e6aeb45348f60bbe3a3e093 ""
   "/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.def" 1601931149 2379 6e70819f909ec4223b29a2f77e6e61f5 ""
   "/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty" 1601931149 46845 3b58f70c6e861a13d927bff09d35ecbc ""
@@ -293,6 +300,7 @@
   "/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty" 1622581934 2671 4de6781a30211fe0ea4c672e4a2a8166 ""
   "/usr/share/texlive/texmf-dist/tex/latex/graphics/lscape.sty" 1622581934 1808 e22d55a4f66156801447813626bd4159 ""
   "/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty" 1636758526 4009 187ea2dc3194cd5a76cd99a8d7a6c4d0 ""
+  "/usr/share/texlive/texmf-dist/tex/latex/grfext/grfext.sty" 1575499774 7133 b94bbacbee6e4fdccdc7f810b2aec370 ""
   "/usr/share/texlive/texmf-dist/tex/latex/hycolor/hycolor.sty" 1580250785 17914 4c28a13fc3d975e6e81c9bea1d697276 ""
   "/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def" 1623096352 49890 0bb76a5b745d92e86aed6f3f93e334f0 ""
   "/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref-langpatches.def" 1623096352 1777 940b1aa83773bc035eb882e8d6842769 ""
@@ -434,10 +442,10 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1713908643 4379155 98693266ff65f58d9f98aff394de12d2 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1713908686 2801543 f0f51ed0f0e3810a4816219fc67d25e8 ""
-  "deqlachap2.aux" 1754964266 2698 b31c542161daca4439117a2057fa3fe3 "pdflatex"
-  "deqlachap2.ind" 1754962881 0 d41d8cd98f00b204e9800998ecf8427e "makeindex deqlachap2.idx"
-  "deqlachap2.tex" 1754964261 37477 8462cf46727cd47df87c943568fb93b3 ""
-  "deqlachap2.toc" 1754964266 294 09c07e5230bfad0c5e3c13a5a8b25617 "pdflatex"
+  "deqlachap2.aux" 1758991489 3335 8ca61f525df48a91e809b3e0bd23f093 "pdflatex"
+  "deqlachap2.ind" 1758991374 0 d41d8cd98f00b204e9800998ecf8427e "makeindex deqlachap2.idx"
+  "deqlachap2.tex" 1758991483 47858 b4b4e9dbeca4cdd75c3bd8efb3ae84d7 ""
+  "deqlachap2.toc" 1758991489 418 39beb269d6e8be7a8d61c92f186a16c6 "pdflatex"
   "headerdeqla.tex" 1754962753 10153 bd5825bebfaa4b8e84545cbf3d6b731d ""
   (generated)
   "deqlachap2.aux"

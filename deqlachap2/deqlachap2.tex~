@@ -4,6 +4,7 @@
 \def\nbookshort {DeqLA}
 
 \input{headerdeqla}
+\usepackage{epstopdf}
 
 \begin{document}
 \maketitle
@@ -583,6 +584,7 @@ They are related by \(z = Z^{2}\).
 \item We have \(\theta = \pi \pm 2n \pi \) (which eliminates the imaginary term), and \(\phi = - \frac{\pi }{2} \pm 2n \pi \). 
 \end{enumerate}
 
+\newpage
 % QUESTION 14
 \qs{2.2.14}{Locate all these points on one complex plane:
 \begin{enumerate}[label=(\alph*)]
@@ -592,6 +594,18 @@ They are related by \(z = Z^{2}\).
 	\item \(\abs{2 + i}\)
 \end{enumerate}}
 
+\begin{enumerate}[label=(\alph*)]
+	\item \(2 + i\)
+	\item \(\!\left( 2 + i \right)^{2} = 3 + 4i\)
+	\item \(\displaystyle{\frac{1}{2 + i}} = \frac{2 - i}{5}\)
+	\item \(\abs{2 + i} = \sqrt{5}\)
+\end{enumerate}
+
+\begin{center}
+\includegraphics[width=1.0\textwidth]{../chap2/sec2.2/chap2sec2.2ex14.eps}
+\end{center}
+
+\newpage
 % QUESETION 15
 \qs{2.2.15}{Find the absolute values \(r = \abs{z}\) of these four numbers. If \(\theta \) is the angle for \(6 + 8i\), what are the angles for these four numbers?
 \begin{enumerate}[label=(\alph*)]
@@ -645,6 +659,12 @@ This is my favorite problem, because \(S\) combines \(\cos\left( \theta  \right)
 
 % QUESTION 19
 \qs{2.2.19}{Draw the spirals \(e^{\!\left( 1 - i \right)t}\) and \(e^{\!\left( 2 - 2i \right)t}\). Do those follow the same curves? Do they go clockwise or anticlockwise? When the first one reaches the negative \(x\)-axis, what is the time \(T\)? What point has the second one reached at that time?}
+
+As \(t \rightarrow \infty\), the spirals progress clockwise. When the imaginary part vanishes, we have \(T = \pi \), and \(e^{\!\left( 1 - i \right) \pi } = e^{\pi }\). At that point in time, we also have \(e^{\!\left( 2 - 2i \right) \pi } = e^{2 \pi }\).
+
+\begin{center}
+\includegraphics[width=1.0\textwidth]{../chap2/sec2.2/chap2sec2.2ex19.eps}
+\end{center}
 
 % QUESTION 20
 \qs{2.2.20}{The solution to \(d^{2}y / dt^{2} = -y\) is \(y = \cos\left( t \right)\) if the initial conditions are \(y \!\left( 0 \right) = \underline{\qquad}\) and \(y' \!\left( 0 \right) = \underline{\qquad}\). The solution is \(y = \sin\left( t \right)\) when \(y \!\left( 0 \right) = \underline{\qquad}\) and \(y'\!\left( 0 \right) = \underline{\qquad}\). Write each of those solutions in the form \(c_{1}e^{i t} + c_{2}e^{-i t}\), to see that real solutions can come from complex \(c_{1}\) and \(c_{2}\).}
@@ -708,7 +728,6 @@ In the case of \(y = e^{3it}\), we have polynomial
 \]
 where it follows that \(s = 3i\), \(s + \overline{s} = 0 = -B\), and \(s \overline{s} = 9 = C\). The equation is \(y'' + 9y = 0\).
 
-\newpage
 
 % QUESTION 22
 \qs{2.2.22}{From the multiplication \(e^{iA}e^{-iB} = e^{i \!\left( A - B \right) }\), find the ``subtraction formulas'' for \(\cos\left( A - B \right)\) and \(\sin\left( A - B \right)\).}
@@ -736,7 +755,206 @@ Derive
 	\]
 \end{enumerate}
 
+\newpage
 % QUESTION 24
 \qs{2.2.24}{Suppose a complex number \(s\) solves a real equation \(s^{3} + As^{2} + Bs + C = 0\) (with \(A\), \(B\), \(C\) real). Why does the complex conjugate \(\overline{s}\) also solve this equation? ``\textit{Complex solutions to real equations come in conjugate pairs \(s\) and \(\overline{s}\)}.''}
+
+We generalize the results of question 23 and claim that the complex conjugate of a product is equal to the product of the complex conjugates. For instance, suppose \(s = re^{i \theta }\). Then we prove \(\overline{s^{n}} = \overline{s}^{n}\):
+\[
+	\overline{s^{n}} = r^{n}e^{-in \theta } = \prod_{k=1}^{n} re^{-i \theta } = \overline{s}^{n}
+\]
+We can also prove that the complex conjugate of a sum is the sum of the complex conjugates. Define \(z_{k} = a_{k} + i b_{k}\) for \(k \in \!\left\{ 1, ..., n \right\} \). Then
+\[
+	\overline{\sum_{k=1}^{n} z_{k}} = \overline{\sum_{k=1}^{n} \!\left( a_{k} + ib_{k} \right)} = \overline{\sum_{k=1}^{n} a_{k} + i \sum_{k=1}^{n} b_{k}} = \sum_{k=1}^{n} a_{k} - i \sum_{k=1}^{n} b_{k} = \sum_{k=1}^{n} \overline{z_{k}}
+\]
+With these facts, the complex conjugate of the left side simply yields that \(\overline{s}\) is too a solution of the real equation.
+
+\vspace{12pt}
+
+% QUESTION 25
+\qs{2.2.25}{
+\begin{enumerate}[label=(\alph*)]
+	\item If two complex numbers add to \(s + S = 6\) and multiply to \(sS = 10\), what are \(s\) and \(S\)? (They are complex conjugates.)
+	\item If two numbers add to \(s + S = 6\) and multiply to \(sS = -16\), what are \(s\) and \(S\)? (Now they are real.)
+\end{enumerate}}
+
+\begin{enumerate}[label=(\alph*)]
+	\item \(s = 3 + i\), \(S = 3 - i\)
+	\item \(s = 8\), \(S = -2\)
+\end{enumerate}
+
+% QUESTION 26
+\qs{2.2.26}{If two numbers \(s\) and \(S\) add to \(s + S = -B\) and multiply to \(sS = C\), show that \(s\) and \(S\) solve the quadratic equation \(s^{2} + Bs + C = 0\).}
+
+This is an interesting question because we relax the condition that \(S = \overline{s}\). Substituting for \(B\) and \(C\), we have
+\[
+	s^{2} - \!\left( s + S \right) s + sS = 0, \qquad S^{2} - \!\left( s + S \right)S + sS = 0
+\]
+% QUESETION 27
+\qs{2.2.27}{Find three solutions to \(s^{3} = -8i\) and plot the three points in the complex plane. What is the sum of the three solutions?}
+
+In polar form, \(s^{3} = 8e^{-i \pi / 2}\). Its cube roots are \(2e^{-i \pi / 6}\), \(2e^{i \pi / 2}\), and \(2 e^{i 7 \pi / 6}\). By vector superposition, the roots sum to zero.
+
+\begin{center}
+\includegraphics[width=1.0\textwidth]{../chap2/sec2.2/chap2sec2.2ex27.eps}
+\end{center}
+
+\vspace{12pt}
+
+% QUESTION 28
+\qs{2.2.28}{
+\begin{enumerate}[label=(\alph*)]
+	\item For which complex numbers \(s = a + i \omega \) does \(e^{st}\) approach \(0\) as \(t \rightarrow \infty\)? Those numbers \(s\) fill which ``half-plane'' in the complex plane?
+	\item For which complex numbers \(s = a + i \omega \) does \(s^{n}\) approach \(0\) as \(n \rightarrow \infty\)? Those numbers \(s\) fill which part of the complex plane? Not a half-plane!
+\end{enumerate}}
+
+\begin{enumerate}[label=(\alph*)]
+	\item For \(a < 0\), \(e^{st} = e^{at}e^{i \omega t}\) approaches zero.
+	\item In polar form, \(s = \sqrt{a^{2} + \omega^{2}} e^{i \tan^{-1}\left( \omega / a \right)}\). We must require the modulus to be less than zero, or \(\sqrt{a^{2} + \omega^{2}} < 0\), for \(s^{n}\) to tend towards zero as \(n\) increases.
+\end{enumerate}
+
+\newpage
+
+\subsection{\textsf{2.3 - Constant Coefficients \texorpdfstring{\(\pmb{A}\), \(\pmb{B}\), \(\pmb{C}\)}{A, B, C}}}
+
+% QUESTION 1
+\qs{2.3.1}{Substitute \(y = e^{st}\) and solve the characteristic equation for \(s\):
+\begin{enumerate}[label=(\alph*)]
+	\item \(2y'' + 8y' + 6y = 0\)
+	\item \(y'''' - 2y'' + y = 0\)
+\end{enumerate}}
+
+\begin{enumerate}[label=(\alph*)]
+	\item The characteristic equation is \(2s^{2} + 8s + 6 = 0\) which factorizes into \(2 \!\left( s + 3 \right) \!\left( s + 1 \right) = 0\). Then \(s_{1} = -3\) and \(s_{2} = -1\).
+	\item The characteristic equation is \(s^{4} - 2s^{2} + 1 = 0\) which factorizes into \(\!\left( s^{2} - 1 \right)^{2} = \!\left( s - 1 \right)^{2}\!\left( s + 1 \right)^{2}\). It has repeated solutions: \(s_{1}, s_{2} = 1\) and \(s_{3}, s_{4} = -1\). 
+\end{enumerate}
+
+% QUESTION 2
+\qs{2.3.2}{Substitute \(y = e^{st}\) and solve the characteristic equation for \(s = a + i \omega \):
+\begin{enumerate}[label=(\alph*)]
+	\item \(y'' + 2y' + 5y = 0\)
+	\item \(y'''' + 2y'' + y = 0\)
+\end{enumerate}}
+
+\begin{enumerate}[label=(\alph*)]
+	\item The characteristic equation is \(s^{2} + 2s + 5 = 0\), which by the quadratic formula has roots
+	\[
+		s_{1}, s_{2} = \frac{-2 \pm \sqrt{-16}}{2} = -1 \pm 2i
+	\]
+	\item The characteristic equation is \(s^{4} + 2s^{2} + 1 = 0\), which by the quadratic formula has double root
+	\[
+		s^{2}= \frac{-2}{2} = -1
+	\]
+	Rooting once more, we find repeated roots
+	\[
+		s_{1}, s_{2} = i, \quad s_{3}, s_{4} = -i
+	\]
+\end{enumerate}
+
+% QUESTION 3
+\qs{2.3.3}{Which second order equation is solved by \(y = c_{1}e^{-2t} + c_{2}e^{-4t}\)? Or \(y = te^{5t}\)?}
+
+In the first instance, the roots are \(s_{1} = -2\) and \(s_{2} = -4\). Then the characteristic polynomial is \(\!\left( s + 2 \right) \!\left( s + 4 \right) = s^{2} + 6s + 8\), corresponding to second order equation \(y'' + 6y' + 8y = 0\). In the second case, we have repeated roots \(s_{1}, s_{2} = 5\), which has characteristic polynomial \(\!\left( s - 5 \right)^{2} = s^{2} - 10s + 25\). This corresponds to second order equation \(y'' - 10y' + 25y = 0\).
+
+\vspace{12pt}
+
+% QUESTION 4
+\qs{2.3.4}{Which second order equation has solutions \(y = c_{1}e^{-2t} \cos\left( 3t \right) + c_{2}e^{-2t}\sin\left( 3t \right)\)?}
+
+The complex roots are \(s_{1} = -2 + 3i\) and \(s_{2} = -2 - 3i\), with characteristic polynomial \(s^{2} - 4s + 13\). This corresponds to second order equation 
+\[
+	y'' - 4y' + 13 = 0
+\]
+
+% QUESTION 5
+\qs{2.3.5}{Which numbers \(B\) give (under)(critical)(over) damping in \(4y'' + By' + 16y = 0\)?}
+
+\textbf{Underdamping}: We must have \(B^{2} < 4AC\), or in this case, \(B^{2} < 256\). Then we must have \(\abs{B} < 16\).
+
+\textbf{Critical damping}: We have \(B^{2} = 4AC\), or \(B^{2} = 256\), implying \(\abs{B} = 16\).
+
+\textbf{Overdamping}: We have \(B^{2} > 4AC\), or \(B^{2} > 256\), implying \(\abs{B} > 16\).
+
+\vspace{12pt}
+
+% QUESTION 6
+\qs{2.3.6}{If you want oscillation from \(my'' + by' + ky = 0\), then \(b\) must stay below \underline{\qquad}.}
+
+We must have \(b^{2} < 4mk\) or \(\abs{b} < 2 \sqrt{mk}\).
+
+\vspace{12pt}
+
+% QUESTION 7
+\qs{2.3.7}{The roots \(s_{1}\) and \(s_{2}\) satisfy \(s_{1} + s_{2} = -2p = -B/A\) and \(s_{1}s_{2} = p^{2} + \omega^{2}_{n} = C/A\). Show this two ways:
+
+\begin{enumerate}[label=(\alph*)]
+	\item Start from \(A^{2} + Bs + C = A \!\left( s - s_{1} \right) \!\left( s - s_{2} \right) \). Multiply to see \(s_{1}s_{2}\) and \(s_{1} + s_{2}\).
+	\item Start from \(s_{1} = -p + i \omega_{d}\), \(s_{2} = -p - i \omega_{d}\)
+\end{enumerate}}
+
+\begin{enumerate}[label=(\alph*)]
+	\item We write
+	\begin{align*}
+		A^{2} + Bs + C & = A \!\left( s - s_{1} \right) \!\left( s - s_{2} \right)  \\
+		 & = A \!\left( s^{2} - s \!\left( s_{1} + s_{2} \right) + s_{1}s_{2} \right)  
+	\end{align*}
+	Concluding that \(B = -A\!\left( s_{1} + s_{2} \right) \) and \(C = As_{1}s_{2}\). Then
+	\[
+		-\frac{B}{A} = s_{1} + s_{2}, \quad \frac{C}{A} = s_{1}s_{2}
+	\]
+	\item Let \(s_{1} = -p + i \omega_{d}\) and \(s_{2} = -p - i \omega_{d}\). Then \(s_{1} + s_{2} = -2p\) and
+	\[
+		s_{1}s_{2} = \!\left( -p + i \omega_{d} \right) \!\left( -p - i \omega_{d} \right) = p^{2} + \omega^{2}_{d}
+	\]
+\end{enumerate}
+\textbf{Note}: There are two errors in the problem statement. The textbook erroneously has the equalities \(s_{1} + s_{2} = -B/2A\) and \(s_{1}s_{2} = p^{2} + \omega^{2}_{n}\). The corrections have been made in my writing of the problem above.
+
+\vspace{12pt}
+
+% QUESTION 8
+\qs{2.3.8}{Find \(s\) and \(y\) at the bottom point of the graph of \(y = As^{2} + Bs + C\). At that minimum point \(s = s_{\text{min}}\) and \(y = y_{\text{min}}\), the slope is \(dy/ds = 0\).}
+
+Differentiate with respect to \(s\) to find
+\[
+	\frac{d y}{d s} = 2As + B = 0 \quad \implies \quad s_{\text{min}} = -\frac{B}{2A}
+\]
+The corresponding \(y_{\text{min}}\) is
+\begin{align*}
+	y_{\text{min}} & = A \!\left( - \frac{B}{2A} \right)^{2} + B \!\left( -\frac{B}{2A} \right) + C \\
+		   & = \frac{B^{2}}{4A} - \frac{B^{2}}{2A} + C \\
+		   & = -\frac{B^{2}}{4A} + C
+\end{align*}
+
+% QUESTION 9
+\qs{2.3.9}{The parabolas in Figure 2.10 show how the graph of \(y = As^{2} + Bs + C\) is raised by increasing \(B\). Using Problem 8, show that the bottom point of the graph moves left (change in \(s_{\text{min}}\)) and down (change in \(y_{\text{min}}\)) when \(B\) is increased by \(\Delta B\).}
+
+Assume \(\Delta B > 0\). By Problem 8, the new \(s_{\text{min}}\) becomes
+\[
+	s_{\text{min}} = -\frac{\!\left( B + \Delta B \right) }{2A} < -\frac{B}{2A}
+\]
+and the new \(y_{\text{min}}\)
+\[
+	y_{\text{min}} = -\frac{\!\left( B + \Delta B \right)^{2}}{4A} + C = -\frac{\!\left( B^{2} + 2B \Delta B + \Delta B^{2} \right) }{4A} + C < -\frac{B^{2}}{4A} + C
+\]
+both of which correspond to a leftward and downward shift, respectively.
+
+\vspace{12pt}
+\newpage
+% QUESTION 10
+\qs{2.3.10}{(recommended) Draw a picture to show the paths of \(s_{1}\) and \(s_{2}\) when \(s^{2} + Bs + 1 = 0\) and the damping increases from \(B = 0\) to \(B = \infty\). At \(B = 0\), the roots are on the \underline{\quad} axis. As \(B\) increases, the roots travel on a circle (why?). At \(B = 2\), the roots meet on the real axis. For \(B > 2\) the roots separate to approach \(0\) and \(-\infty\). \textit{Why is their product \(s_{1}s_{2}\) always equal to \(1\)}?}
+
+The roots are
+\[
+	s = \frac{-B \pm \sqrt{B^{2} - 4}}{2}
+\]
+When \(B = 0\), the roots are \(s_{1,2} = \pm i\), which lie on the imaginary axis. 
+
+\begin{center}
+\includegraphics[width=1.0\textwidth]{../chap2/sec2.3/chap2sec2.3ex10.pdf}
+\end{center}
+
+Recall from problem 7 that \(s_{1}s_{2} = C / A = 1\).
+
+
 
 \end{document}
