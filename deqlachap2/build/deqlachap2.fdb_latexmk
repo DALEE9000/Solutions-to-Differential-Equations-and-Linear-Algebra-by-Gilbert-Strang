@@ -1,16 +1,17 @@
 # Fdb version 3
-["makeindex deqlachap2.idx"] 1759006728 "deqlachap2.idx" "deqlachap2.ind" "deqlachap2" 1759006861
-  "deqlachap2.idx" 1759006858 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+["makeindex build/deqlachap2.idx"] 1759009941 "build/deqlachap2.idx" "build/deqlachap2.ind" "build/deqlachap2" 1766265289
+  "build/deqlachap2.idx" 1766265285 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   (generated)
-  "deqlachap2.ilg"
-  "deqlachap2.ind"
-["pdflatex"] 1759006858 "deqlachap2.tex" "deqlachap2.pdf" "deqlachap2" 1759006861
+  "build/deqlachap2.ilg"
+  "build/deqlachap2.ind"
+["pdflatex"] 1766265284 "deqlachap2.tex" "build/deqlachap2.pdf" "deqlachap2" 1766265289
   "../chap2/sec2.1/chap2sec2.1ex3.eps" 1752428982 126240 4cb1ec25194787a1d1e2b64c62f6f5e8 ""
   "../chap2/sec2.2/chap2sec2.2ex1.eps" 1754099395 115577 099b42f0a676451da69ef868fbf64611 ""
   "../chap2/sec2.2/chap2sec2.2ex14.eps" 1755014744 128983 1fc68df90f9224f1e9f9b773275ee596 ""
   "../chap2/sec2.2/chap2sec2.2ex19.eps" 1755020421 160375 5217ec3c72e2e4db90e06f15b7843c0e ""
   "../chap2/sec2.2/chap2sec2.2ex27.eps" 1755022332 130695 a339ba0d3a7a7bab7883aeb7848611e6 ""
   "../chap2/sec2.3/chap2sec2.3ex10.pdf" 1758991151 106458 d124835f0df6bc3a24381c9d40577670 ""
+  "../chap2/sec2.3/chap2sec2.3ex11.pdf" 1766260574 100044 10a81748c7ddb9fd48142d759ace9c2c ""
   "/etc/texmf/web2c/texmf.cnf" 1713906074 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/cantorian_infinity/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1000.600pk" 1759006847 25396 f507c77a46a165d86fc795eb75d784a9 ""
   "/home/cantorian_infinity/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0700.600pk" 1759006845 16976 97bc0479511241b2a7b727e50f49ed91 ""
@@ -435,14 +436,14 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1759006686 4073834 3c52fac3aa7c800a8a3283e75bdba0e4 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1759006533 1442255 474c6c4b03d38f5324e22b719d6432b0 ""
-  "deqlachap2.aux" 1759006861 3335 e7072d7414aef94ecaea76439769002b "pdflatex"
-  "deqlachap2.ind" 1759006728 0 d41d8cd98f00b204e9800998ecf8427e "makeindex deqlachap2.idx"
-  "deqlachap2.tex" 1759006812 47837 72a6b3cccba5348ca41bfffaa91c378d ""
-  "deqlachap2.toc" 1759006861 418 39beb269d6e8be7a8d61c92f186a16c6 "pdflatex"
+  "build/deqlachap2.aux" 1766265288 3335 2f39f9031bbf98406c5f03eb282c1646 "pdflatex"
+  "build/deqlachap2.ind" 1759009942 0 d41d8cd98f00b204e9800998ecf8427e "makeindex build/deqlachap2.idx"
+  "build/deqlachap2.toc" 1766265288 418 39beb269d6e8be7a8d61c92f186a16c6 "pdflatex"
+  "deqlachap2.tex" 1766265283 51521 fbbcf91053e23d4a684cab9b905c6515 ""
   "headerdeqla.tex" 1759006835 10155 fc003c04edcfff93876d3eea7a4201ed ""
   (generated)
-  "deqlachap2.aux"
-  "deqlachap2.idx"
-  "deqlachap2.log"
-  "deqlachap2.pdf"
-  "deqlachap2.toc"
+  "build/deqlachap2.aux"
+  "build/deqlachap2.idx"
+  "build/deqlachap2.log"
+  "build/deqlachap2.pdf"
+  "build/deqlachap2.toc"

@@ -4,7 +4,6 @@
 \def\nbookshort {DeqLA}
 
 \input{headerdeqla}
-\usepackage{epstopdf}
 
 \begin{document}
 \maketitle
@@ -485,7 +484,8 @@ Derive
 \end{alignat*}
 
 % QUESTION 5
-\qs{2.2.5}{\textit{Addition formulas} \quad Multiply \(e^{i \theta } = \cos\left( \theta  \right) + i \sin\left( \theta  \right)\) times \(e^{i \phi } = \cos\left( \phi  \right) + i \sin\left( \phi  \right)\) to get \(e^{i \!\left( \theta + \phi  \right) }\). Its real part is \(\cos\left( \theta + \phi  \right) = \cos\left( \theta  \right) \cos\left( \phi  \right) - \sin\left( \theta  \right) \sin\left( \phi  \right)\). What is its imaginary part \(\sin\left( \theta + \phi  \right)\)?}
+\qs{2.2.5}{\textit{Addition formulas} Multiply 
+\(e^{i \theta } = \cos\left( \theta  \right) + i \sin\left( \theta  \right)\) times \(e^{i \phi } = \cos\left( \phi  \right) + i \sin\left( \phi  \right)\) to get \(e^{i \!\left( \theta + \phi  \right) }\). Its real part is \(\cos\left( \theta + \phi  \right) = \cos\left( \theta  \right) \cos\left( \phi  \right) - \sin\left( \theta  \right) \sin\left( \phi  \right)\). What is its imaginary part \(\sin\left( \theta + \phi  \right)\)?}
 
 Derive
 \begin{alignat*}{2}
@@ -939,6 +939,7 @@ and the new \(y_{\text{min}}\)
 both of which correspond to a leftward and downward shift, respectively.
 
 \vspace{12pt}
+
 \newpage
 % QUESTION 10
 \qs{2.3.10}{(recommended) Draw a picture to show the paths of \(s_{1}\) and \(s_{2}\) when \(s^{2} + Bs + 1 = 0\) and the damping increases from \(B = 0\) to \(B = \infty\). At \(B = 0\), the roots are on the \underline{\quad} axis. As \(B\) increases, the roots travel on a circle (why?). At \(B = 2\), the roots meet on the real axis. For \(B > 2\) the roots separate to approach \(0\) and \(-\infty\). \textit{Why is their product \(s_{1}s_{2}\) always equal to \(1\)}?}
@@ -954,6 +955,11 @@ When \(B = 0\), the roots are \(s_{1,2} = \pm i\), which lie on the imaginary ax
 \end{center}
 
 Recall from problem 7 that \(s_{1}s_{2} = C / A = 1\).
+
+
+
+
+
 
 
 

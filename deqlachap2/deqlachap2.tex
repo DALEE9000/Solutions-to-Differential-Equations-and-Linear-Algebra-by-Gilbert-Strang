@@ -4,7 +4,6 @@
 \def\nbookshort {DeqLA}
 
 \input{headerdeqla}
-\usepackage{epstopdf}
 
 \begin{document}
 \maketitle
@@ -485,7 +484,8 @@ Derive
 \end{alignat*}
 
 % QUESTION 5
-\qs{2.2.5}{\textit{Addition formulas} \quad Multiply \(e^{i \theta } = \cos\left( \theta  \right) + i \sin\left( \theta  \right)\) times \(e^{i \phi } = \cos\left( \phi  \right) + i \sin\left( \phi  \right)\) to get \(e^{i \!\left( \theta + \phi  \right) }\). Its real part is \(\cos\left( \theta + \phi  \right) = \cos\left( \theta  \right) \cos\left( \phi  \right) - \sin\left( \theta  \right) \sin\left( \phi  \right)\). What is its imaginary part \(\sin\left( \theta + \phi  \right)\)?}
+\qs{2.2.5}{\textit{Addition formulas} Multiply 
+\(e^{i \theta } = \cos\left( \theta  \right) + i \sin\left( \theta  \right)\) times \(e^{i \phi } = \cos\left( \phi  \right) + i \sin\left( \phi  \right)\) to get \(e^{i \!\left( \theta + \phi  \right) }\). Its real part is \(\cos\left( \theta + \phi  \right) = \cos\left( \theta  \right) \cos\left( \phi  \right) - \sin\left( \theta  \right) \sin\left( \phi  \right)\). What is its imaginary part \(\sin\left( \theta + \phi  \right)\)?}
 
 Derive
 \begin{alignat*}{2}
@@ -939,6 +939,7 @@ and the new \(y_{\text{min}}\)
 both of which correspond to a leftward and downward shift, respectively.
 
 \vspace{12pt}
+
 \newpage
 % QUESTION 10
 \qs{2.3.10}{(recommended) Draw a picture to show the paths of \(s_{1}\) and \(s_{2}\) when \(s^{2} + Bs + 1 = 0\) and the damping increases from \(B = 0\) to \(B = \infty\). At \(B = 0\), the roots are on the \underline{\quad} axis. As \(B\) increases, the roots travel on a circle (why?). At \(B = 2\), the roots meet on the real axis. For \(B > 2\) the roots separate to approach \(0\) and \(-\infty\). \textit{Why is their product \(s_{1}s_{2}\) always equal to \(1\)}?}
@@ -947,13 +948,69 @@ The roots are
 \[
 	s = \frac{-B \pm \sqrt{B^{2} - 4}}{2}
 \]
-When \(B = 0\), the roots are \(s_{1,2} = \pm i\), which lie on the imaginary axis. 
+When \(B = 0\), the roots are \(s_{1,2} = \pm i\), which lie on the imaginary axis. The roots travel on a circle as \( B  \) grows because they are complex conjugates, and given that the modulus of the roots remains constant, a quarter-circle traced out by the complex vector for one root will be reflected over the real axis for the other root, conforming to the geometry of a circle.
 
 \begin{center}
 \includegraphics[width=1.0\textwidth]{../chap2/sec2.3/chap2sec2.3ex10.pdf}
 \end{center}
 
-Recall from problem 7 that \(s_{1}s_{2} = C / A = 1\).
+Recall from problem 7 that \(s_{1}s_{2} = C / A = 1\). Another, more intuitive approach is to realize that, \( s_{1} = \overline{s_{2}} \), so they are complex conjugates of one another, and their product is the modulus (in this case, unity).
+
+% QUESTION 11
+\qs{2.3.11}{(this too if possible) Draw the paths of \( s_{1} \) and \( s_{2} \) when \( s^{2} + 2s + k = 0\) and the stiffness increases from \( k = 0 \) to \( k = \infty \). When \( k = 0 \), the roots are \underline{\quad}. At \( k = 1 \), the roots meet at \( s =  \) \underline{\qquad}. For \( k \rightarrow \infty \) the two roots travel up/down on a \underline{\qquad} in the complex plane. \textit{Why is their sum \( s_{1} + s_{2} \) always equal to \( -2 \)}?}
+
+The roots are
+\[
+	s = \frac{-2 \pm \sqrt{2^{2} - 4k}}{2} = -1 \pm \sqrt{1 - k}
+\]
+When \( k = 0 \), the roots are \( s_{1,2} = 0, -2 \). Once we reach \( k = 1 \), we have double roots with \( s_{1,2} = -1 \). As \( k \) increases to infinity, the real component remains fixed, while the imaginary component grows in both directions on the vertical axis. Altogether, the trajectory of the roots forms a cross.
+
+\begin{center}
+\includegraphics[width=1.0\textwidth]{../chap2/sec2.3/chap2sec2.3ex11.pdf}
+\end{center}
+
+As for their sum, observe that the imaginary components of \( s_{1,2} \) cancel, and the real parts add to \( -2 \).
+
+\vspace{12pt}
+
+% QUESTION 12
+\qs{2.3.12}{If a polynomial \( P \!\left( s  \right) \) has a double root at \( s = s_{1} \), then \( \!\left( s - s_{1} \right) \) is a double factor and \( P \!\left( s  \right) = \!\left( s - s_{1} \right)^{2} Q \!\left( s  \right) \). Certainly \( P = 0 \) at \( s = s_{1} \). Show that also \( dP/ds = 0 \) at \( s = s_{1} \). use the product rule to find \( dP/ds  \).}
+
+By the product rule, we have
+\[
+	\frac{d P }{d s }_{\!\left( s = 0 \right)} = 2 \!\left( s - s_{1} \right) Q \!\left( s  \right) + \!\left( s - s_{1} \right)^{2} \frac{d Q }{d s } = 0
+\]
+
+% QUESTION 13
+\qs{2.3.13}{Show that \( y'' = 2ay' - \!\left( a^{2} + \omega^{2} \right)y \) leads to \( s = a \pm i \omega \). Solve \( y'' - 2y' + 10y = 0 \).}
+
+The characteristic equation is given by
+\[
+	s^{2} - 2as + \!\left( \alpha^{2} + \omega^{2} \right) = 0 
+\]
+which has roots
+\[
+	s = \frac{2a \pm \sqrt{4a^{2} - 4 \!\left( \alpha^{2} + \omega^{2} \right)}}{2} = a \pm i \omega 
+\]
+For the given equation, we have \( a = 1 \) and \( \omega = 3 \). Then we have solution
+\begin{alignat*}{2}
+y \!\left( t  \right) & = e^{\!\left( 1 + 3i \right)t} + e^{\!\left( 1 - 3i \right)t} \\
+	 & = 2e^{t} \cos\!\left( 3t \right)  \\ 
+\end{alignat*}
+
+% QUESTION 14
+\qs{2.3.14}{The undamped \textit{natural frequency} is \( \omega_{n } = \sqrt{k / m } \). The two roots of \( ms^{2} + k = 0 \) are \( s = \pm i \omega_{n } \) (pure imaginary). With \( p = b / 2m \), the roots of \( ms^{2} + bs + k = 0 \) are \( \pmb{s_{1}, s_{2} = -p \pm \sqrt{p^{2} - \omega^{2}_{n }}} \). The coefficient \( p = b / 2m  \) has the units of 1 / time.
+
+Solve \( s^{2} + 0.1s + 1 = 0 \) and \( s^{2} + 10s + 1 = 0 \) with numbers correct to two decimals.}
+
+In the first equation, we have \( m = 1 \), \( b = 0.1 \), and \( k = 1 \). Then \( p = 0.05 \) and \( \omega_{n } = 1 \). This yields roots \( s_{1,2} = -0.05 \pm 0.99i \).
+
+The second equation gives us \( p = 5 \) and \( \omega_{n } = 1 \), which has roots \( s_{1,2} = -5 \pm \sqrt{24} = -0.10, -9.89 \).
+
+\vspace{12pt}
+
+% QUESTION 15
+\qs{2.3.15}{}
 
 
 
