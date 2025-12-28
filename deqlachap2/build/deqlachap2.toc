@@ -2,4 +2,5 @@
 \contentsline {subsection}{\textsf {2.1 - Second Derivatives in Science and Engineering}}{3}{section*.2}%
 \contentsline {subsection}{\textsf {2.2 - Key Facts About Complex Numbers}}{14}{section*.3}%
 \contentsline {subsection}{\textsf {2.3 - Constant Coefficients \(\pmb {A}\), \(\pmb {B}\), \(\pmb {C}\)}}{25}{section*.4}%
+\contentsline {subsection}{\textsf {2.4 - Forced Oscillations and Exponential Response}}{34}{section*.5}%
 \contentsfinish 
