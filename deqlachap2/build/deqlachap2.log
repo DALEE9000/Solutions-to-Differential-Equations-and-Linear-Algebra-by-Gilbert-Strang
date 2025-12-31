@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.9.27)  31 DEC 2025 01:29
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.9.27)  31 DEC 2025 01:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -21,7 +21,7 @@ File: size10.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
 \abovecaptionskip=\skip47
 \belowcaptionskip=\skip48
 \bibindent=\dimen138
-) (./headerdeqla.tex (/usr/share/texlive/texmf-dist/tex/latex/base/alltt.sty
+) (../headerdeqla.tex (/usr/share/texlive/texmf-dist/tex/latex/base/alltt.sty
 Package: alltt 2021/01/29 v2.0g defines alltt environment
 ) (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
@@ -1492,13 +1492,13 @@ Package pdftex.def Info: ../chap2/sec2.5/chap2sec2.5ex4.pdf  used on input line 
 (pdftex.def)             Requested size: 345.0pt x 262.8033pt.
  [47 <../chap2/sec2.5/chap2sec2.5ex4.pdf>] [48] (build/deqlachap2.aux) ) 
 Here is how much of TeX's memory you used:
- 55690 strings out of 480145
- 1299409 string characters out of 5893300
- 1761588 words of memory out of 5000000
+ 55691 strings out of 480145
+ 1299425 string characters out of 5893300
+ 1761594 words of memory out of 5000000
  72420 multiletter control sequences out of 15000+600000
  497066 words of font info for 102 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 104i,16n,106p,3262b,1385s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 104i,16n,106p,3265b,1385s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/cantorian_infinity/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0700.600pk> </home/cantorian_infinity/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1000.600pk> </home/cantorian_infinity/.texlive2021/texmf-var/fonts/pk/ljfour/public/cmbright/ebbx10.720pk> </home/cantorian_infinity/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1000.600pk> </home/cantorian_infinity/.texlive2021/texmf-var/fonts/pk/ljfour/public/cmbright/ebbx10.600pk> </home/cantorian_infinity/.texlive2021/texmf-var/fonts/pk/ljfour/public/cmbright/ebbx10.864pk> </home/cantorian_infinity/.texlive2021/texmf-var/fonts/pk/ljfour/public/cmbright/ebmr10.600pk> </home/cantorian_infinity/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk> </home/cantorian_infinity/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0800.600pk> </home/cantorian_infinity/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0900.600pk> </home/cantorian_infinity/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmbsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/tex
 live/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
 Output written on build/deqlachap2.pdf (48 pages, 551044 bytes).
