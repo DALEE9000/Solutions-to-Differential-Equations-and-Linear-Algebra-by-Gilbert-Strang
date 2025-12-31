@@ -1357,7 +1357,311 @@ The insights:
 		M  & = \frac{5 \!\left( 3 - \omega^{2} \right)}{\!\left( 3 - \omega^{2} \right)^{2} + \!\left( 4 \omega  \right)^{2}} \\[12pt]
 		N  & = \frac{5 \!\left( 4 \omega  \right)}{\!\left( 3 - \omega^{2} \right)^{2} + \!\left( 4 \omega  \right)^{2}} \\ 
 	\end{align*}
-	\item 
+	\item The amplitude \( A  \) is
+	\[
+		A = \frac{5}{\sqrt{\!\left( 3 - \omega^{2} \right)^{2} + \!\left( 4 \omega  \right)^{2}}} 
+	\]
+	and its phase lag is
+	\[
+		\alpha = \tan^{-1}\!\left( \frac{4 \omega }{3 - \omega^{2}} \right)
+	\]
+	\item When the denominator is smallest, the gain is largest. Differentiate the argument of the square root and optimize to find:
+	\[
+		\frac{d }{d \omega } \!\left( \!\left( 3 - \omega^{2} \right)^{2} + \!\left( 4 \omega \right)^{2} \right) = -4 \omega \!\left( 3 - \omega^{2} \right) + 8 \!\left( 4 \omega \right) = 0 \quad \implies \omega = 0, \pm \sqrt{5}i
+	\]
+	Taking the second derivative and evaluating at \( \omega = 0 \) (we cannot have an imaginary frequency in this instance) ascertains that this is a local minimum.
+	\[
+		\frac{d^{2}}{d \omega^{2}}_{\!\left( \omega = 0 \right)} \!\left( \!\left( 3 - \omega^{2} \right)^{2} + \!\left( 4 \omega  \right)^{2} \right) = -12 + 12 \omega^{2} + 32 = 20
+	\]
+	Thus the maximum amplitude is \( A = 5/3 \). 
 \end{enumerate}
+Conceptually, we can conclude that a higher oscillating frequency contributes to increasing damping of the response function. So much so, that the forcing ought not to oscillate at all: \( \omega = 0 \).
+
+\vspace{12pt}
+
+% QUESTION 12
+\qs{2.4.12}{Solve \( y'' + y = \sin\!\left( \omega t \right)  \) starting from \( y \!\left( 0 \right) = 0 \) and \( y'\!\left( 0 \right) = 0 \). Find the limit of \( y \!\left( t  \right) \) as \( \omega  \) approaches 1, and the problem approaches resonance.}
+
+We have \( y_{n }\!\left( t  \right) = c_{1}\cos\!\left( t \right) + c_{2}\sin\!\left( t \right) \). For the particular solution, let \( y_{p }\!\left( t  \right) = Y \sin\!\left( \omega t \right)  \). Solving for \( Y \), we find
+\[
+	Y = \frac{1}{1 - \omega^{2}} 
+\]
+Imposing the initial conditions, we must have
+\begin{align*}
+	y \!\left( 0 \right) & = c_{1} = 0 \\
+	y'\!\left( 0 \right) & = c_{2} + \frac{\omega}{1 - \omega^{2}} = 0 \quad \implies c_{2} = -\frac{\omega}{1 - \omega^{2}} \\ 
+\end{align*}
+Therefore, our solution is
+\[
+	y \!\left( t  \right) = \frac{-\omega \sin\!\left( t \right) + \sin\!\left(\omega t \right) }{1 - \omega^{2}}
+\]
+Now consider the limit as \( \omega \rightarrow 1 \). Since we have the indeterminate form \( 0 / 0 \), we apply l'H\^opital's rule to find
+\[
+	\lim\limits_{\omega \to 1} y \!\left( t \right) = \lim\limits_{\omega \to 1} \frac{-\sin\!\left( t \right) + t \cos\!\left( \omega t \right) }{-2 \omega} = \frac{\sin\!\left( t \right)  - t \cos\!\left( t \right) }{2}
+\]
+As expected, resonance happens.
+
+\vspace{12pt}
+
+% QUESTION 13
+\qs{2.4.13}{Does critical damping and a double root \( s = -1 \) in \( y'' + 2y' + y = e^{ct } \) produce an extra factor \( t  \) in the null solution \( y_{n } \) or in the particular solution \( y_{p } \) (proportional to \( e^{ct } \))? What is \( y_{n } \) with constants \( c_{1} \), \( c_{2} \)? What is \( y_{p } = Ye^{ct } \)?}
+
+An extra factor \( t  \) appears in the null solution, which is
+\[
+	y_{n } = c_{1} e^{-t } + c_{2}te^{-t}
+\]
+The particular solution is
+\[
+	Yc^{2}e^{ct } + 2Yce^{ct } + Ye^{ct } = e^{ct } \quad \implies Y = \frac{1}{c^{2} + 2c + 1} 
+\]
+\[
+	y_{p } = \frac{e^{ct }}{c^{2} + 2c + 1} 
+\]
+
+% QUESTION 14
+\qs{2.4.14}{If \( c = i \omega  \) in Problem 13, the solution \( y_{p } \) to \( y'' + 2y' + y = e^{i \omega t } \) is \underline{\qquad}. That fraction \( Y \) is the transfer function at \( i \omega  \). What are the magnitude and phase in \( Y = Ge^{-i \alpha} \)?
+
+\textbf{By rescaling both }\( \pmb{t} \) \textbf{and} \( \pmb{y} \),\textbf{ we can reach} \( \pmb{A = C = 1} \). \textbf{Then } \( \pmb{\omega_{n } = 1} \) \textbf{and} \( \pmb{B = 2Z} \). \textbf{The model problem is} \( \pmb{y'' + 2Zy' + y = f \!\left( t  \right)} \).}
+
+The particular solution becomes
+\[
+	y_{p } = \frac{e^{i \omega t }}{1 - \omega^{2} + 2i \omega} 
+\]
+The gain and phase are calculated by
+\[
+	G = \frac{1}{\sqrt{\!\left( 1 - \omega^{2} \right)^{2} + 4 \omega^{2}}}, \quad \alpha = \tan^{-1}\!\left( \frac{2 \omega}{1 - \omega^{2}} \right)
+\]
+
+% QUESTION 15
+\qs{2.4.15}{What are the roots of \( s^{2} + 2Zs + 1 = 0 \)? Find two roots for \( Z = 0, \frac{1}{2}, 1, 2 \) and identify each type of damping. The natural frequency is now \( \omega_{n } = 1 \).}
+
+The roots are
+\[
+	s = \frac{-2Z \pm \sqrt{4Z^{2} - 4}}{2} = -Z \pm \sqrt{Z^{2} - 1}
+\]
+For each value of \( Z \), we have
+\begin{center}
+	\renewcommand{\arraystretch}{2.5}
+	\begin{tabular}{|c|c|c|}
+		\hline
+		\( \pmb{Z} \) & \textbf{Roots} & \textbf{Damping} \\
+		\hline
+		\hline
+		\( 0 \) & \( \pm i \) & No damping\\
+		\hline
+		\( \displaystyle{\frac{1}{2}} \) & \( \displaystyle{-\frac{1}{2} \pm i \frac{\sqrt{3}}{2}} \) & Underdamping \\
+		\hline
+		\( 1 \) & \( -1 \) (double root) & Critical damping\\
+		\hline
+		\( 2 \) & \( -2 \pm \sqrt{3} \) & Overdamping \\
+		\hline
+	\end{tabular}
+\end{center}
+
+% QUESTION 16
+\qs{2.4.16}{Find two solutions to \( y'' + 2Zy' + y = 0 \) for every \( Z \) except \( Z = 1 \) and \( Z = -1 \). Which solution \( g \!\left( t  \right) \) starts from \( g \!\left( 0 \right) = 0 \) and \( g'\!\left( 0 \right) = 1 \)? What is different about \( Z = 1 \)?}
+
+The characteristic polynomial is \( s^{2} + 2Zs + 1 = 0 \), which has roots \( s = -Z \pm \sqrt{Z^{2} - 1} \), as in the previous question. For all \( Z  \) except \( Z = 1, -1 \) (which has repeated roots), we have
+\[
+	y_{n }\!\left( t  \right) = c_{1} e^{\!\left( -Z + \sqrt{Z^{2} - 1} \right) t} + c_{2} e^{\!\left( -Z - \sqrt{Z^{2} - 1} \right) t } 
+\]
+Under the initial conditions, we must have
+\begin{align*}
+	y_{n }\!\left( 0 \right) & = c_{1} + c_{2} = 0 \implies \boxed{c_{1} = - c_{2}} \\[12pt]
+	y_{n }'\!\left( 0 \right) & = c_{1} \!\left( -Z + \sqrt{Z^{2} - 1} \right) + c_{2} \!\left( -Z - \sqrt{Z^{2} - 1} \right) \\[12pt]
+				  & = 2c_{1} \sqrt{Z^{2} - 1} = 1 \implies \boxed{c_{1} = \frac{1}{2 \sqrt{Z^{2} - 1}}}
+\end{align*}
+At \( Z = 1 \), observe that \( c_{1}, c_{2} \) are undefined, as we have resonance and the null solution must feature a \( te^{st } \) term.
+
+\vspace{12pt}
+
+% QUESTION 17
+\qs{2.4.17}{The equation \( my'' + ky = \cos\!\left( \omega_{n } t \right)  \) is exactly at resonance. The driving frequency on the right side equals the natural frequency \( \omega_{n } = \sqrt{k / m } \) on the left side. Substitute \( y = Rt \sin\!\left( \sqrt{k / m } t \right) \) to find \( R  \). This resonant solution grows in time because of the factor \( t  \).}
+
+Substituting, we find
+\[
+	2R \sqrt{mk} \cos\!\left( \sqrt{k / m } t \right) = \cos\!\left( \sqrt{k / m } t \right)  
+\]
+which leads us to conclude that
+\[
+	R = \frac{1}{2 \sqrt{mk}} 
+\]
+
+% QUESTION 18
+\qs{2.4.18}{Comparing the equations \( Ay'' + By' + Cy = f \!\left( t  \right) \) and \( 4Az'' + Bz' + \!\left( C/4 \right)z = f \!\left( t / 4  \right) \), what is the difference in their solutions?}
+
+Note that there is a typo in the book; the argument in the forcing term in the \( z \)-equation needs to be scaled by \( 1/4 \). Let \( y \!\left( t  \right) \) be a solution to the \( y \)-equation. The relationship between the roots of the \( y \)- and \( z \)-equations is \( s_{z} = s_{y}/4 \). This is analogous to ``scaling`` time by \( 1/4 \), which is consistent with the z-forcing function.
+
+Now, we have \( y \!\left( t / 4 \right) \). Its derivatives are
+\[
+	y'\!\left( \frac{t }{4} \right) = \frac{1}{4}y \!\left( \frac{t}{4} \right), \quad y''\!\left( \frac{t }{4} \right) = \frac{1}{16}y \!\left( \frac{t }{4} \right) 
+\]
+Substituting in the \( z \)-equation gives us
+\[
+	\!\left( \frac{A }{4} + \frac{B }{4} + \frac{C }{4} \right) y \!\left( \frac{t }{4} \right) = f \!\left( \frac{t }{4} \right)
+\]
+But since the forcing function here is not itself scaled (only time is scaled), we can throw a 4 in front of \( y \!\left( t/4 \right) \) to conclude that
+\[
+	z \!\left( t  \right) = 4 y \!\left( \frac{t }{4} \right) 
+\]
+
+% QUESTION 19
+\qs{2.4.19}{Find the fundamental solution to the equation \( g'' - 3g' + 2g = \delta \!\left( t  \right) \).}
+
+The characteristic polynomial is \( s^{2} -3s + 2 = 0 \) which has roots \( s_{1,2} = 1, 2 \). Then the equation is overdamped (real roots), and the fundamental solution is given by
+\[
+	g \!\left( t  \right) = e^{2t } - e^{t } 
+\]
+
+% QUESTION 20
+\qs{2.4.20}{(Challenge problem) Find the solution to \( y'' + By' + y = \cos\!\left( t \right)  \) that starts from \( y \!\left( 0 \right) = 0 \) and \( y'\!\left( 0 \right) = 0 \). Then let the damping constant \( B  \) approach zero, to reach the resonant equation \( y'' + y = \cos\!\left( t \right)  \) in Problem 17, with \( m = k = 1 \).
+
+Show that your solution \( y \!\left( t  \right) \) is approaching the resonant solution \( \frac{1}{2}t \sin\!\left( t \right)  \).}
+
+The characteristic polynomial is \( s^{2} + Bs + 1 = 0 \) with roots
+\[
+	s_{1,2} = \frac{-B \pm \sqrt{B^{2} - 4}}{2} 
+\]
+Thus the null solution is
+\[
+	y_{n } \!\left( t  \right) = c_{1} e^{s_{1}t } + c_{2} e^{s_{2} t } 
+\]
+The particular solution is
+\[
+	y_{p } \!\left( t  \right) = \frac{1}{B } \sin\!\left( t \right)  
+\]
+which can be deduced by inspection: notice how the \( y'' \) and \( y \) terms will annihilate each other (made convenient by the fact that \( \omega = 1 \) here), so the forcing has a response offset by 90 degrees (cosine to sine) and scaled in amplitude by \( 1 / B  \). Imposing the initial conditions forces
+\begin{align*}
+	y \!\left( 0 \right) & = c_{1} + c_{2} = 0 \implies \boxed{c_{1} = -c_{2}} \\[12pt]
+	y'\!\left( 0 \right) & = c_{1}s_{1} + c_{2}s_{2} + \frac{1}{B } = 0 \implies \boxed{c_{1} = \frac{1}{B \!\left( s_{2} - s_{1} \right)}} \\ 
+\end{align*}
+Our full solution is
+\[
+	y \!\left( t  \right) = \frac{e^{s_{1}t } - e^{s_{2} t }}{B \!\left( s_{2} - s_{1} \right)} + \frac{1}{B } \sin\!\left( t \right) = \frac{e^{s_{2} t } - e^{s_{1} t }}{B \sqrt{B^{2} - 4}} + \frac{1}{B } \sin\!\left( t \right) 
+\]
+There are many terms so it is mildly confusing, but if you set \( B = 0 \) and algebraically manipulate everything to have common denominators, we end up with \( y \!\left( t  \right) = 0/0 \). The indeterminate form enables us to move forward with l'H\^opital's rule. Unfortunately the algebra will be tedious. Use the following identities:
+\begin{align*}
+	s_{1,2, \!\left( B = 0 \right)} & = \boxed{\pm i} \\[12pt]
+	\frac{d s_{1,2}t}{d B }_{\!\left( B = 0 \right)} & = t \!\left( -\frac{1}{2} \pm \frac{B }{2 \sqrt{B^{2} - 4}} \right) = \boxed{-\frac{t}{2}} \\[12pt]
+	\frac{d }{d B }_{\!\left( B = 0 \right)} \!\left( B \sqrt{B^{2} - 4} \right) & = \sqrt{B^{2} - 4} + \frac{B^{2}}{\sqrt{B^{2} - 4}} = \boxed{2i} \\[12pt]
+	\frac{d }{d B }_{\!\left( B = 0 \right)} \!\left( \sqrt{B^{2} - 4} \right) & = \frac{B }{\sqrt{B^{2} - 4}} = \boxed{0}
+\end{align*}
+
+Now, applying l'H\^opital's rule:
+\begin{align*}
+	\lim\limits_{B  \to 0} y \!\left( t  \right) & = \lim\limits_{B  \to 0} \frac{e^{s_{2} t } \frac{d s_{2}t}{d B } - e^{s_{1} t } \frac{d s_{1}t}{d B} + \frac{d }{d B } \!\left( \sqrt{B^{2} - 4} \right) \sin\!\left( t \right) }{\frac{d }{d B } \!\left( B \sqrt{B^{2} - 4} \right)} \\[12pt]
+						     & = \frac{\frac{t}{2}\!\left( -e^{-it } + e^{it}\right) }{2i} \\[12pt]
+						     & = \frac{1}{2}t \sin\!\left(t\right) 
+\end{align*}
+
+Tiresome, but a deeply satisfying conclusion.
+
+\vspace{12pt}
+
+% QUESTION 21
+\qs{2.4.21}{Suppose you know three solutions \( y_{1} \), \( y_{2} \), \( y_{3} \) to \( y'' + B \!\left( t  \right) y' + C \!\left( t  \right)y = f \!\left( t  \right) \). How could you find \( B \!\left( t  \right) \) and \( C \!\left( t  \right) \) and \( f \!\left( t  \right) \)? }
+
+First determine that \( y_{1} - y_{2} \) and \( y_{2} - y_{3} \) are in the null space of the equation, and one leading to the forcing term. Define each as \( u  \) and \( v  \) respectively. Analogize to solving a system of equations:
+\begin{alignat*}{4}
+	& u'' & + B \!\left( t  \right) u' & + C \!\left( t  \right) u && = 0 \\[6pt]
+	& v'' & + B \!\left( t  \right) v' & + C \!\left( t  \right) v && = 0 \\[6pt]
+	& y_{3}'' & + B \!\left( t  \right) y_{3}' & + C \!\left( t  \right) y_{3} && = f \!\left( t \right) 
+\end{alignat*}
+
+Isolate the \( B \!\left( t  \right) \) and \( C \!\left( t  \right) \) terms. My solutions for each are
+\begin{align*}
+	B \!\left( t  \right) & = \frac{u''v - v''u }{v'u - u'v} \\[12pt]
+	C \!\left( t \right) & = \frac{u''v' - v''u'}{vu' - uv'} \\ 
+\end{align*}
+Now incorporate both into the third equation to derive \( f \!\left( t  \right) \).
+
+\newpage
+\subsection{\textsf{2.5 - Electrical Networks and Mechanical Systems}}
+
+\qs{2.5.1}{(Resistors in parallel) Two parallel resistors \( R_{1} \) and \( R_{2} \) connect a node at voltage \( V  \) to a node at voltage zero. The currents are \( V / R_{1} \) and \( V / R_{2} \). What is the total current \( I \) between the nodes? Writing \( R_{12} \) for the ratio \( V / I  \), what is \( R_{12} \) in terms of \( R_{1} \) and \( R_{2} \)?}
+
+Since the resistors are in parallel, we sum the currents to find
+\[
+	I = I_{1} + I_{2} = \frac{V }{R_{1}} + \frac{V }{R_{2}} = V \!\left( \frac{R_{1} + R_{2}}{R_{1}R_{2}} \right) 
+\]
+Substitute into \( R_{12} = V / I  \) to find
+\[
+	R_{12} = \frac{R_{1}R_{2}}{R_{1} + R_{2}} 
+\]
+
+% QUESTION 2
+\qs{2.5.2}{(Inductor and capacitor in parallel) Those elements connect a node at voltage \( Ve^{i \omega t } \) to a node at voltage zero (grounded node). The currents are \( \!\left( V / i \omega L \right) e^{i \omega t } \) and \( V \!\left( i \omega C  \right)e^{i \omega t } \). The total current \( I e^{i \omega t } \) between the nodes is their sum. Writing \( Z_{12}e^{i \omega t } \) for the ratio \( Ve^{i \omega t } / I e^{i \omega t } \), what is \( Z_{12} \) in terms of \( i \omega L \) and \( i \omega C  \)?}
+
+Deriving the total current, we get
+\[
+	Ie^{i \omega t } = \frac{V }{i \omega L }e^{i \omega t } + V \!\left( i \omega C  \right) e^{i \omega t } = V e^{i \omega t } \!\left( \frac{1}{i \omega L } + i \omega C  \right) 
+\]
+Substituting into the equation for \( Z_{12} \) yields
+\[
+	Z_{12}e^{i \omega t } = \frac{V e^{i \omega t }}{I e^{i \omega t }} = \frac{i \omega L }{1 - \omega^{2} CL } 
+\]
+
+% QUESTION 3
+\qs{2.5.3}{The impedance of an RLC loop is \( Z = i \omega L + R + 1/i \omega C  \). This impedance \( Z  \) is real when \( \omega =  \) \underline{\qquad}. This impedance is pure imaginary when \underline{\qquad}. This impedance is zero when \underline{\qquad}.}
+
+The impedance is real when \( i \omega L = -1/i \omega C \) (assuming there is a signal, i.e. non-zero \( \omega  \)). Solving for \( \omega  \), we find \( \omega = 1 / \sqrt{LC } \). It is pure imaginary when \( R = 0 \). The impedance is zero when both of the aforementioned conditions hold.
+
+\vspace{12pt}
+
+% QUESTION 4
+\qs{2.5.4}{What is the impedance \( Z \) of an RLC loop when \( R = L = C = 1 \)? Draw a graph that shows the magnitude \( \abs{Z} \) as a function of \( \omega  \).}
+
+We get
+\[
+	Z = 1 + i \omega + \frac{1}{i \omega } = 1 + i \!\left( \omega - \frac{1}{\omega } \right) 
+\]
+The magnitude of the impedance is
+\[
+	\abs{Z} = \sqrt{1 + \!\left( \omega - \frac{1}{\omega } \right)^{2}} 
+\]
+Observe that as \( \omega \rightarrow \infty \), only the \( \omega  \) dominates and washes out the others, so we can approximate \( \abs{Z} \approx \omega  \). Conversely, if \( \omega \rightarrow 0 \), then \( 1 / \omega  \) dominates, and we have \( \abs{Z} \approx 1 / \omega  \). We can represent this graphically:
+
+\begin{center}
+\includegraphics[width=1.0\textwidth]{../chap2/sec2.5/chap2sec2.5ex4.pdf}
+\end{center}
+
+\vspace{12pt}
+
+% QUESTION 5
+\qs{2.5.5}{Why does an LC loop with no resistor produce a \( 90^{\circ} \) phase shift between current and voltage? Current goes around the loop from a battery of voltage \( V  \) in the loop.}
+
+Conceptually, think of the impedance \( Z \) as the amount by which current is opposed in a circuit. This opposition can come in two forms: resistance or reactance, the real and imaginary components of \( Z \), respectively. Depending on the values of both, the phase difference between current and voltage changes:
+\[
+	I \!\left( t  \right) = \frac{V }{\abs{Z}} e^{i \!\left( \omega t - \alpha \right)} 
+\]
+Now, under the premise that \( R \) is zero, we have
+\[
+	R \rightarrow 0 \quad \implies \quad \tan\!\left(\alpha\right) = \frac{\omega L - 1 / \omega C }{R} \rightarrow \infty 
+\]
+When \( \tan\!\left(\alpha\right)  \) diverges in this manner, we can conclude that \( \alpha = \pi / 2 \), ascertaining that the phase shift between current and voltage is indeed \( 90^{\circ} \).
+
+\vspace{12pt}
+
+% QUESTION 6
+\qs{2.5.6}{The mechanical equivalent of zero resistance is zero damping: \( my'' + ky = \cos\!\left(\omega t \right)  \). Find \( c_{1} \) and \( Y  \) starting from \( y \!\left( 0 \right) = 0 \) and \( y'\!\left( 0 \right) = 0 \) with \( \omega^{2}_{n } = k/m  \).
+\[
+	y \!\left( t  \right) = c_{1} \cos\!\left(\omega_{n }t \right) + Y \cos\!\left(\omega t \right)  
+\]
+That answer can be written in two equivalent ways:
+\[
+	y = Y \!\left( \cos\!\left(\omega t \right) - \cos\!\left( \omega_{n }t \right)  \right) = 2Y \sin\!\left( \frac{\!\left( \omega_{n } - \omega  \right) t }{2} \right) \sin\!\left( \frac{ \!\left( \omega_{n } + \omega \right) t}{2}\right)  
+\]}
+Substitute \( y_{p } \) into the equation to find
+\[
+	-m \omega^{2}Y + kY = 1 \quad \implies \boxed{Y = \frac{1}{k - m \omega^{2}}}
+\]
+From the first initial condition, we deduce
+\[
+	y \!\left( 0 \right) = c_{1} + Y = 0 \quad \implies \boxed{c_{1} = -Y}
+\]
+which gives us complete solution
+\[
+	y \!\left( t  \right) = \frac{\cos\!\left(\omega_{n }t \right) - \cos\!\left(\omega t \right) }{k - m \omega^{2}} 
+\]
 
 \end{document}
