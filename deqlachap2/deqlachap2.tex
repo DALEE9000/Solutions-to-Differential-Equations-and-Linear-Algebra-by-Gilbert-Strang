@@ -4,6 +4,7 @@
 \def\nbookshort {DeqLA}
 
 \input{../headerdeqla}
+\hfuzz=50pt
 
 \begin{document}
 \maketitle
@@ -1663,5 +1664,296 @@ which gives us complete solution
 \[
 	y \!\left( t  \right) = \frac{\cos\!\left(\omega_{n }t \right) - \cos\!\left(\omega t \right) }{k - m \omega^{2}} 
 \]
+
+% QUESTION 7
+\qs{2.5.7}{Suppose the driving frequency \( \omega  \) is close to \( \omega_{n } \) in Problem 6. A fast oscillation \( \sin \!\left[ \!\left( \omega_{n } + \omega  \right) t/2 \right] \) is multiplying a very slow oscillation \( 2Y \sin \!\left[ \!\left( \omega_{n } - \omega  \right)t/2 \right] \). By hand or by computer, draw the graph of \( y = \sin\!\left(t \right) \sin\!\left(9t \right)  \) from \( 0 \) to \( 2 \pi  \).
+
+You should see a fast sine curve inside a slow sine curve. This is a \textbf{beat}.}
+
+Suppose that \( \omega \rightarrow \omega_{n } \). Then we can write for the fast oscillation
+\[
+	\sin \!\left[ \frac{\!\left( \omega_{n } + \omega \right)t }{2} \right] \approx \sin\!\left(\omega_{n }t\right) 
+\]
+For the slow oscillation, the argument to the sinusoid becomes very small. We can then write the following approximation
+\[
+	2Y \sin \!\left[ \frac{\!\left( \omega_{n } - \omega \right)t }{2} \right] \approx Y \!\left( \omega_{n } - \omega \right)t 
+\]
+Taking the product of the approximations, we get
+\[
+	y \approx Y \!\left( \omega_{n } - \omega \right) t \sin\!\left(\omega_{n } t \right) 
+\]
+In the numerical example, by inspection we can see that \( \omega_{n } = 10 \) and \( \omega = 8 \), which generates the following graph of the product of oscillations:
+
+\begin{center}
+\includegraphics[width=1.0\textwidth]{../chap2/sec2.5/chap2sec2.5ex7.pdf}
+\end{center}
+
+But to see the resonance effects as \( \omega \rightarrow \omega_{n } \), consider \( \omega_{n } = 10 \) and \( \omega = 9.9 \). As the delta between them diminishes, the convergence to the resonance solution (\( y_{\text{approx}} \)) becomes apparent:
+
+\begin{center}
+\includegraphics[width=1.0\textwidth]{../chap2/sec2.5/chap2sec2.5ex7a.pdf}
+\end{center}
+
+% QUESTION 8
+\qs{2.5.8}{What \( m  \), \( b  \), \( k  \), \( F  \) equation for a mass-dashpot-string-force corresponds to Kirchhoff's Voltage Law around a loop? What force balance equation on a mass corresponds to Kirchhoff's Current Law?}
+
+Mass \( m  \) is akin to inductance \( L  \), as both are inertial quantities that resist changes in velocity or electric current, respectively. The damping constant \( b  \) is analogous to circuit resistance \( R  \), as both are measures of the subtractive forces acting on a system's total energy. Lastly, the spring constant \( k  \) serves the function as the reciprocal capacitance \( 1/C  \) -- where \( k  \) quantifies the stiffness of a spring (how hard or easy it is to stretch or compress it), reciprocal capacitance (sometimes called elastance) is a measure of how hard or easy it is to store charge.
+
+In Kirchhoff's Voltage Law, the sum of voltage drops around a closed loop must vanish. It is also the Current Law integrated. The case of the Current Law is perhaps easier to conceptualize: the net sum of current flow at an ode must be zero. In the mechanical analogy, for a multinodal system, every node must have balanced forces.
+
+If we analogize \( y \!\left( t  \right) \) (displacement) to the integral of the current (total distance the charge propagates):
+\[
+	y \!\left( t  \right) \sim \int I \!\left( t  \right) \, dt
+\]
+Then the Voltage Law corresponds to the mechanical equation
+\[
+	my'' + by' + ky = \textbf{applied force} 
+\]
+
+% QUESTION 9
+\qs{2.5.9}{If you only know the natural frequency \( \omega_{n } \) and the damping coefficient \( b  \) for one mass and one spring, why is that \textit{not enough} to find the damped frequency \( \omega_{d } \)? If you know all of \( m  \), \( b  \), \( k \) what is \( \omega_{d } \)?}
+
+The damped frequency is reliant on the damping ratio \( Z = b / 2 \sqrt{mk} \), namely
+\[
+	\omega_{d } = \omega_{n } \sqrt{1- Z^{2}} 
+\]
+Without \( k \), it is impossible to know \( \omega_{d } \).
+
+\vspace{12pt}
+
+% QUESTION 10
+\qs{2.5.10}{Varying the number \( a  \) in a first order equation \( y' - ay = 1 \) changes the \textit{speed} of the response. Varying \( B  \) and \( C  \) in a second order equation \( y'' + By' + Cy = 1 \) changes the \textit{form} of the response. Explain the difference.}
+
+The solution to the first order equation is
+\[
+	y \!\left( t  \right) =\frac{1 - e^{-at }}{a } 
+\]
+where varying \( a \) alters the rate at which \( y \!\left( t  \right) \) grows while maintaining the specific form of the response. In the case of the second order equation, altering \( B  \) and \( C  \) potentially changes the relationship between \( B^{2} \) and \( 4AC \), which criticaly determines the existence and degree of damping in the equation. Moreover, the natural frequency \( \omega_{n } = \sqrt{C/A } = \sqrt{C } \) is altered.
+
+\vspace{12pt}
+
+% QUESTION 11
+\qs{2.5.11}{Find the step response \( r \!\left( t \right) = y_{p } + y_{n } \) for this overdamped system:
+\[
+	r'' + 2.5r' + r = 1 \text{ with } r \!\left( 0 \right) = 0 \text{ and } r'\!\left( 0 \right) = 0 
+\]}
+
+We find \( y_{n } \) and \( y_{p } \) to be
+\[
+	 r \!\left( t  \right) = 1 + c_{1}e^{-2t } + c_{2}e^{-t/2}
+\]
+Applying the initial conditions, the coefficients evaluate to
+\begin{align*}
+	r \!\left( 0 \right) & = 1 + c_{1} + c_{2} = 0 \implies \boxed{c_{1} = -\!\left( 1 + c_{2} \right)} \\
+	r'\!\left( 0 \right) & = -2c_{1} - \frac{c_{2}}{2} = 0 \implies \boxed{c_{1} = -\frac{c_{2}}{4}} \\ 
+\end{align*}
+
+Leading to \( c_{1} = 1/3 \) and \( c_{2} = -4/3 \), and response
+\[
+	r \!\left( t  \right) = 1 + \frac{e^{-2t }}{3} - \frac{4e^{-t/2}}{3}
+\]
+
+% QUESTION 12
+\qs{2.5.12}{Find the step response \( r \!\left( t  \right) = y_{p } + y_{n } \) for this critically damped system. The double root \( s = -1 \) produces what form for the null solution?
+\[
+	r'' + 2r' + r = 1 \text{ with } r \!\left( 0 \right) = 0 \text{ and } r'\!\left( 0 \right) = 0 
+\]}
+
+We have response
+\[
+	r \!\left( t  \right) = 1 + c_{1}e^{-t } + c_{2} te^{-t } 
+\]
+which features resonance from the double root. Applying the initial conditions gives us
+\begin{align*}
+	r \!\left( 0 \right) & = 1 + c_{1} = 0 \implies \boxed{c_{1} = -1} \\
+	r'\!\left( 0 \right) & = 1 - c_{1} + c_{2} = 0 \implies \boxed{c_{2} = -2} \\ 
+\end{align*}
+This gives us final response
+\[
+	r \!\left( t  \right) = 1 -e^{-t } - 2te^{-t} 
+\]
+
+% QUESTION 13
+\qs{2.5.13}{Find the step response \( r \!\left( t  \right) \) for this underdamped system using equation (22):
+\[
+	r'' + r' + r = 1 \text{ with } r \!\left( 0 \right) = 0 \text{ and } r'\!\left( 0 \right) = 0 
+\]}
+
+Using equation (22), we first identify \( p  \), \( \omega^{2}_{n } \), and \( \omega_{d } \). Matching the coefficients in the equation, we have
+\[
+	p = \frac{1}{2}, \quad \omega^{2}_{n } = 1, \quad \omega_{d } = \frac{\sqrt{3}}{2} 
+\]
+which corresponds to response
+\[
+	r \!\left( t  \right) = 1 - \frac{2}{\sqrt{3}}e^{-t/2} \sin\!\left( \frac{\sqrt{3}}{2} t + \frac{\pi }{3} \right)  
+\]
+Note that the phase shift \( \phi = \pi / 3 \) is calculated from \( \phi = \sin^{-1}\!\left( \sqrt{3}/2 \right) = \pi / 3 \).
+
+\vspace{12pt}
+
+% QUESTION 14
+\qs{2.5.14}{Find the step response \( r \!\left( t  \right) \) for this undamped system and compare with (22):
+\[
+	r'' + r = 1 \text{ with } r \!\left( 0 \right) = 0 \text{ and } r'\!\left( 0 \right) = 0 
+\]}
+
+Without using equation (22), we identify the null and particular solutions as 
+\[
+	r \!\left( t  \right) = 1 + c_{1}e^{it } + c_{2}e^{-it } 
+\]
+Applying the initial conditions gives us
+\begin{align*}
+	r \!\left( 0 \right) & = 1 + c_{1} + c_{2} \implies \boxed{c_{1} = -\!\left( 1  + c_{2} \right)} \\
+	r'\!\left( 0 \right) & = c_{1}i - c_{2}i = 0 \implies \boxed{c_{1} = c_{2}}
+\end{align*}
+Combined, we have \( c_{1} = c_{2} = -1/2 \), and solution
+\[
+	r \!\left( t  \right) = 1 - \cos\!\left( t \right)  
+\]
+Now, using equation (22) gives us parameters \( p = 0 \), \( \omega_{n } = 1 \), \( \omega_{d } = 1 \). From this, we calculate \( \sin\!\left(\phi \right) = 1 \implies \phi = \pi / 2 \), giving us the same solution:
+\[
+	r \!\left( t  \right) = 1 - \sin\!\left(t + \pi / 2 \right) = 1 - \cos\!\left( t \right) 
+\]
+
+% QUESTION 15
+\qs{2.5.15}{For \( b^{2} < 4mk \) (underdamping), what parameter decides the speed at which the step response \( r \!\left( t  \right) \) rises to \( r \!\left( \infty \right) = 1 \)? Show that the \textbf{peak time} is \( T = \pi / \omega_{d } \) when \( r \!\left( t  \right) \) reaches its maximum before settling back to \( r = 1 \) at peak time \( r'\!\left( T \right) = 0 \).}
+
+Since we have underdamping (namely, that damping exists), that establishes that \( p \neq 0 \). Then differentiating equation (22) and optimizing the derivative by setting equal to zero, we end up with the following condition:
+\[
+	\omega_{d } \cos\!\left(\omega_{d } t + \phi \right) = p \sin\!\left(\omega_{d }t + \phi \right)  
+\]
+Using the fact that \( \omega_{d } / p = \tan\!\left(\phi \right)  \), divide both sides by \( p  \) and the cosine term to derive the clean relation
+\[
+	\tan\!\left( \phi \right) = \tan\!\left( \omega_{d }t + \phi \right) 
+\]
+which is true if and only if we have
+\[ 
+	t = \frac{k \pi }{\omega_{d }} 
+\]
+For positive integer \( k  \), which presents to us an infinite number of solutions (technically, the oscillation persists forever, even if the amplitude is killed from the exponential decay with time). However, we can only have one solution for the maximum. So let's go with \( k = 1 \), which will be the earliest time as the outer exponential function decays. The peak time, as expected, is derived as 
+\[
+	T = \frac{\pi }{\omega_{d}} 
+\]
+The degree to which the response ``stabilizes'' around \( r \!\left( \infty \right) = 1 \) is contingent on \( p  \), which is the decay parameter in \( e^{-pt } \).
+
+\vspace{12pt}
+
+% QUESTION 16
+\qs{2.5.16}{If the voltage source \( V \!\left( t  \right) \) in an RLC loop is a unit step function, what resistance \( R  \) will produce an overshoot to \( r_{\text{max}} = 1.2 \) if \( C = 10^{-6} \) Farads and \( L = 1 \) Henry? (Problem 15 found the peak time \( T  \) when \( r \!\left( T  \right) = r_{\text{max}} \)).
+
+Sketch two graphs of \( r \!\left( t  \right) \) for \( p_{1} < p_{2} \). Sketch two graphs as \( \omega_{d } \) increases.}
+
+From the Voltage Law, the differential equation we want to solve is
+\[
+	y'' + Ry' + 10^{6}y = 1 
+\]
+and we want \( r_{\text{max}} = 1.2 \). From the previous exercise, we determined that the corresponding time for this maximum response is \( T = \pi / \omega_{d } \). Writing the response in polar form, we have parameters
+\[
+	p = \frac{R }{2}, \quad \omega^{2}_{n } = 10^{6}, \quad \omega^{2}_{d } = 10^{6} - \frac{R^{2}}{4} \quad \!\left( \frac{1}{\omega^{2}_{d }} = \frac{4}{4 \cdot 10^{6} - R^{2}} \right) 
+\]
+Now, we substitute \( T  \) in our response function and isolate \( R  \):
+\begin{alignat*}{4}
+	&& r \!\left( T  \right) && = 1 - \frac{\omega_{n }}{\omega_{d }}e^{-R \pi / 2 \omega_{d }} \sin\!\left( \pi + \phi \right)  & = 1 + \frac{\omega_{n }}{\omega_{d }} e^{-R \pi / 2 \omega_{d }} \frac{\omega_{d }}{\omega_{n }} & \quad \!\left(\text{since } \sin\!\left(\phi \right) = \frac{\omega_{d }}{\omega_{n}} \right)  \\
+	&& \implies && r_{\text{max}} = 1.2 & = 1 + e^{-R \pi / 2 \omega_{d}} & \\ 
+	&& \implies && \ln\!\left(0.2\right) & = -\frac{R \pi }{2} \!\left( \frac{4}{4 \cdot 10^{6} - R^{2}} \right)^{1/2} & \\
+	&& \implies && R^{2} & = \frac{ \ln\!\left(0.2\right)^{2} \cdot 4 \cdot 10^{6}}{\pi^{2} + \ln\!\left(0.2\right)^{2}} & \\
+	&& \implies && R & \approx \boxed{912 \ \Omega}
+\end{alignat*}
+
+DO GRAPHS LATER
+
+\vspace{12pt}
+
+% QUESTION 17
+\qs{2.5.17}{What values of \( m  \), \( b  \), \( k  \) will give the step response \( r \!\left( t  \right) = 1 - \sqrt{2}e^{-t } \sin\!\left(t + \frac{\pi }{4}\right) \) ?}
+
+We have
+\[
+	\frac{\omega_{n }}{\omega_{d }} = \sqrt{2}, \quad p = 1, \quad \omega_{d } = 1 
+\]
+These relations in turn imply
+\[
+	\omega^{2}_{n} = \frac{k}{m } = 2, \quad \frac{b }{m } = 2
+\]
+One choice of paramters that satisfy these relations is \( m = 1 \) and \( b = k = 2 \).
+
+\vspace{12pt}
+
+% QUESTION 18
+\qs{2.5.18}{What happens to the \( p - \omega_{d } - \omega_{n } \) right triangle as the damping ratio \( \omega_{n } / p  \) increases to 1 (critical damping)? At that point the damped frequency \( \omega_{d } \) becomes \underline{\qquad}. The step response becomes \( r \!\left( t  \right) = \underline{\qquad} \).}
+
+We have damped frequency \( \omega_{d } = 0 \), which implies that we have repeated roots \( s_{1,2} = p  \) and \( p = \omega_{n } \). Because of resonance, our solution changes to be 
+\[
+	r \!\left( t  \right) = 1 + c_{1}e^{-pt } + c_{2}te^{-pt } 
+\]
+Applying the initial conditions \( r \!\left( 0 \right) \) and \( r'\!\left( 0 \right) \) give us coefficients \( c_{1} = -1 \) and \( c_{2} = -p  \). Assembling it all together, our solution is
+\[
+	r \!\left( t  \right) = 1 - e^{-pt } \!\left( 1 + pt \right) 
+\]
+
+% QUESTION 19
+\qs{2.5.19}{\textbf{The roots \( \pmb{s_{1}, s_{2} = -p \pm i \omega_{d }} \) are poles of the transfer function \( \pmb{1 / \!\left( As^{2} + Bs + C  \right)} \)}
+
+Show directly that the product of the roots \( s_{1} = -p + i \omega_{d } \) and \( s_{2} = -p - i \omega_{d } \) is \( s_{1}s_{2} = \omega^{2}_{n } \). The sum of the roots is \( -2p \). The quadratic equation with those roots is \( s^{2} + 2ps + \omega^{2}_{n } = 0 \).}
+
+The product is
+\[
+	s_{1}s_{2} = \!\left( -p + i \omega_{d } \right)\!\left( -p - i \omega_{d } \right) = p^{2} + \omega^{2}_{d} = \omega^{2}_{n}
+\]
+The imaginary components cancel in the sum, giving us \( s_{1} + s_{2} = -2p \). These relations are Vieta's formulas for a quadratic, where the sum of the roots equals \( -B/A  \) and their product \( C/A  \).
+
+\vspace{12pt}
+
+% QUESTION 20
+\qs{2.5.20}{Suppose \( p  \) is increased while \( \omega_{n } \) is held constant. How do the roots \( s_{1} \) and \( s_{2} \) move?}
+
+The imaginary component \( \omega_{d } \) decreases in magnitude, meaning that the roots move along the circle of radius \( \omega_{n } \) on the complex plane towards the negative real axis at \(-p \rightarrow -\omega_{n } \).
+
+\vspace{12pt}
+
+% QUESTION 21
+\qs{2.5.21}{Suppose the mass \( m  \) is increased while the coefficients \( b  \) and \( k \) are unchanged. What happens to the roots \( s_{1} \) and \( s_{2} \)?}
+
+All else equal, increasing the mass \( m  \) means that the roots move inward onto a complex circle of smaller radius, approaching zero in the limit. Since the roots are expressed as 
+\[
+	s = -\frac{b }{2m} \pm \frac{\sqrt{b^{2} - 4mk}}{2m}
+\]
+We can see that increasing \( m  \) will eventually force the second term to be imaginary, even as the real and imaginary components in magnitude diminish. Importantly, \( \omega^{2}_{n} = k/m \) 
+
+Intuitively, we imagine a heavy mass-dashpot-spring system. The natural frequency \( \omega_{n } \) will drastically decrease, indicating the increasingly slow oscillation of the mass. Since the damping coefficient is unchanged, the damping per unit mass is increasingly washed out with a heavier mass, indicating a proportionally lower amount of energy loss given an input forcing.
+
+\vspace{12pt}
+
+% QUESTION 22
+\qs{2.5.22}{\textbf{Ramp response} How could you find \( y \!\left( t  \right) \) when \( F = t  \) is a ramp function?
+
+\[
+	y'' + 2py' + \omega^{2}_{n }y = \omega^{2}_{n }t \text{ starting from } y \!\left( 0 \right) = 0 \text{ and } y'\!\left( 0 \right) = 0 
+\]
+A particular solution (straight line) is \( y_{p } =  \) \underline{\qquad}. The null solution still has the form \( y_{n} =  \) \underline{\qquad}. Find the coefficients \( c_{1} \) and \( c_{2} \) in the null solution from the two conditions at \( t = 0 \).
+
+This ramp response \( y \!\left( t \right) \) can also be seen as the integral of \underline{\qquad}.}
+
+The particular solution is \( y_{p } = t - 2p / \omega^{2}_{n} \). The null solution has form \( y_{n } = c_{1}e^{s_{1}t } + c_{2}e^{s_{2}t } \), where the roots are
+\[
+	s_{1,2} = -p \pm \sqrt{p^{2} - \omega^{2}_{n }} = -p \pm i \omega_{d} 
+\]
+This gives us complete solution
+\[
+	y \!\left( t  \right) = c_{1}e^{s_{1}t } + c_{2}e^{s_{2}t } + t - \frac{2p}{\omega^{2}_{n}}
+\]
+To find the coefficients, apply the initial conditions and derive
+\begin{align*}
+	y \!\left( 0 \right) & = c_{1} + c_{2} - \frac{2p}{\omega^{2}_{n}} = 0 \implies \boxed{c_{1} = \frac{2p}{\omega^{2}_{n}} - c_{2}} \\[12pt]
+	y'\!\left( 0 \right) & = c_{1}s_{1} + c_{2}s_{2} + 1 = 0 \implies \boxed{c_{2} = \frac{1 + \frac{2p}{\omega^{2}_{n}}s_{1}}{s_{1} - s_{2}}}
+\end{align*}
+which then implies
+\[
+	\boxed{c_{1} = \frac{1 + \frac{2p}{\omega^{2}_{n}}s_{2}}{s_{2} - s_{1}} }
+\]
+The ramp response (slanted line) is the integral of the step response (horizontal line). 
+
+\newpage
+\subsection{\textsf{2.6 - Solutions to Second Order Equations}}
 
 \end{document}

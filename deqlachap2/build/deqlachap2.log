@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.9.27)  31 DEC 2025 01:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2025.9.27)  5 JAN 2026 18:03
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1309,28 +1309,28 @@ File: tikzlibrarytrees.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 \c@tcb@cnt@Property=\count473
 \c@tcb@cnt@Lemma=\count474
 )
-Package translations Info: No language package found. I am going to use `english' as default language. on input line 8.
+Package translations Info: No language package found. I am going to use `english' as default language. on input line 9.
  (build/deqlachap2.aux)
 \openout1 = `deqlachap2.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 8.
-LaTeX Font Info:    ... okay on input line 8.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 9.
+LaTeX Font Info:    ... okay on input line 9.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
@@ -1359,21 +1359,21 @@ Package pgfplots notification 'compat/show suggested version=true': document has
 (/usr/share/texlive/texmf-dist/tex/latex/translations/translations-basic-dictionary-english.trsl
 File: translations-basic-dictionary-english.trsl (english translation file `translations-basic-dictionary')
 )
-Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 8.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 8.
+Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 9.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 9.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 8.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 9.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-Package xypdf Info: Line width: 0.39998pt on input line 8.
+Package xypdf Info: Line width: 0.39998pt on input line 9.
 \c@lstlisting=\count481
-Package hyperref Info: Link coloring ON on input line 8.
-LaTeX Info: Redefining \ref on input line 8.
-LaTeX Info: Redefining \pageref on input line 8.
-LaTeX Info: Redefining \nameref on input line 8.
+Package hyperref Info: Link coloring ON on input line 9.
+LaTeX Info: Redefining \ref on input line 9.
+LaTeX Info: Redefining \pageref on input line 9.
+LaTeX Info: Redefining \nameref on input line 9.
  (/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2021/02/14 v1.3d Input encoding file
 \inpenc@prehook=\toks65
@@ -1381,12 +1381,12 @@ Package: inputenc 2021/02/14 v1.3d Input encoding file
 ) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Trying to load font information for T1+cmbr on input line 12.
+LaTeX Font Info:    Trying to load font information for T1+cmbr on input line 13.
  (/usr/share/texlive/texmf-dist/tex/latex/cmbright/t1cmbr.fd
 File: t1cmbr.fd 2005/04/13 v8.1 (WaS)
 )
 LaTeX Font Info:    Font shape `T1/cmbr/b/n' in size <14.4> not available
-(Font)              Font shape `T1/cmbr/bx/n' tried instead on input line 12.
+(Font)              Font shape `T1/cmbr/bx/n' tried instead on input line 13.
  (build/deqlachap2.toc
 LaTeX Font Info:    Font shape `T1/cmbr/b/n' in size <10> not available
 (Font)              Font shape `T1/cmbr/bx/n' tried instead on input line 1.
@@ -1396,7 +1396,7 @@ LaTeX Font Info:    Font shape `T1/cmbr/b/n' in size <10> not available
 
  [2]
 LaTeX Font Info:    Font shape `T1/cmbr/b/n' in size <12> not available
-(Font)              Font shape `T1/cmbr/bx/n' tried instead on input line 17.
+(Font)              Font shape `T1/cmbr/bx/n' tried instead on input line 18.
  [3]
 Package epstopdf Info: Source file: <../chap2/sec2.1/chap2sec2.1ex3.eps>
 (epstopdf)                    date: 2025-07-13 13:49:42
@@ -1405,12 +1405,12 @@ Package epstopdf Info: Source file: <../chap2/sec2.1/chap2sec2.1ex3.eps>
 (epstopdf)                    date: 2025-07-13 13:52:11
 (epstopdf)                    size: 10938 bytes
 (epstopdf)             Command: <repstopdf --outfile=../chap2/sec2.1/chap2sec2.1ex3-eps-converted-to.pdf ../chap2/sec2.1/chap2sec2.1ex3.eps>
-(epstopdf)             \includegraphics on input line 48.
+(epstopdf)             \includegraphics on input line 49.
 Package epstopdf Info: Output file is already uptodate.
-<../chap2/sec2.1/chap2sec2.1ex3-eps-converted-to.pdf, id=84, 374.00728pt x 249.3315pt>
+<../chap2/sec2.1/chap2sec2.1ex3-eps-converted-to.pdf, id=86, 374.00728pt x 249.3315pt>
 File: ../chap2/sec2.1/chap2sec2.1ex3-eps-converted-to.pdf Graphic file (type pdf)
 <use ../chap2/sec2.1/chap2sec2.1ex3-eps-converted-to.pdf>
-Package pdftex.def Info: ../chap2/sec2.1/chap2sec2.1ex3-eps-converted-to.pdf  used on input line 48.
+Package pdftex.def Info: ../chap2/sec2.1/chap2sec2.1ex3-eps-converted-to.pdf  used on input line 49.
 (pdftex.def)             Requested size: 345.0pt x 229.99646pt.
  [4 <../chap2/sec2.1/chap2sec2.1ex3-eps-converted-to.pdf>] [5] [6] [7] [8] [9] [10] [11] [12] [13]
 Package epstopdf Info: Source file: <../chap2/sec2.2/chap2sec2.2ex1.eps>
@@ -1420,12 +1420,12 @@ Package epstopdf Info: Source file: <../chap2/sec2.2/chap2sec2.2ex1.eps>
 (epstopdf)                    date: 2025-08-01 21:55:01
 (epstopdf)                    size: 11721 bytes
 (epstopdf)             Command: <repstopdf --outfile=../chap2/sec2.2/chap2sec2.2ex1-eps-converted-to.pdf ../chap2/sec2.2/chap2sec2.2ex1.eps>
-(epstopdf)             \includegraphics on input line 445.
+(epstopdf)             \includegraphics on input line 446.
 Package epstopdf Info: Output file is already uptodate.
-<../chap2/sec2.2/chap2sec2.2ex1-eps-converted-to.pdf, id=164, 501.24263pt x 271.34372pt>
+<../chap2/sec2.2/chap2sec2.2ex1-eps-converted-to.pdf, id=166, 501.24263pt x 271.34372pt>
 File: ../chap2/sec2.2/chap2sec2.2ex1-eps-converted-to.pdf Graphic file (type pdf)
 <use ../chap2/sec2.2/chap2sec2.2ex1-eps-converted-to.pdf>
-Package pdftex.def Info: ../chap2/sec2.2/chap2sec2.2ex1-eps-converted-to.pdf  used on input line 445.
+Package pdftex.def Info: ../chap2/sec2.2/chap2sec2.2ex1-eps-converted-to.pdf  used on input line 446.
 (pdftex.def)             Requested size: 345.0pt x 186.76778pt.
  [14 <../chap2/sec2.2/chap2sec2.2ex1-eps-converted-to.pdf>] [15] [16] [17]
 Package epstopdf Info: Source file: <../chap2/sec2.2/chap2sec2.2ex14.eps>
@@ -1435,12 +1435,12 @@ Package epstopdf Info: Source file: <../chap2/sec2.2/chap2sec2.2ex14.eps>
 (epstopdf)                    date: 2025-08-12 12:41:46
 (epstopdf)                    size: 10233 bytes
 (epstopdf)             Command: <repstopdf --outfile=../chap2/sec2.2/chap2sec2.2ex14-eps-converted-to.pdf ../chap2/sec2.2/chap2sec2.2ex14.eps>
-(epstopdf)             \includegraphics on input line 605.
+(epstopdf)             \includegraphics on input line 606.
 Package epstopdf Info: Output file is already uptodate.
-<../chap2/sec2.2/chap2sec2.2ex14-eps-converted-to.pdf, id=206, 501.24263pt x 382.63953pt>
+<../chap2/sec2.2/chap2sec2.2ex14-eps-converted-to.pdf, id=208, 501.24263pt x 382.63953pt>
 File: ../chap2/sec2.2/chap2sec2.2ex14-eps-converted-to.pdf Graphic file (type pdf)
 <use ../chap2/sec2.2/chap2sec2.2ex14-eps-converted-to.pdf>
-Package pdftex.def Info: ../chap2/sec2.2/chap2sec2.2ex14-eps-converted-to.pdf  used on input line 605.
+Package pdftex.def Info: ../chap2/sec2.2/chap2sec2.2ex14-eps-converted-to.pdf  used on input line 606.
 (pdftex.def)             Requested size: 345.0pt x 263.37346pt.
  [18 <../chap2/sec2.2/chap2sec2.2ex14-eps-converted-to.pdf>] [19]
 Package epstopdf Info: Source file: <../chap2/sec2.2/chap2sec2.2ex19.eps>
@@ -1450,12 +1450,12 @@ Package epstopdf Info: Source file: <../chap2/sec2.2/chap2sec2.2ex19.eps>
 (epstopdf)                    date: 2025-08-12 13:41:03
 (epstopdf)                    size: 18401 bytes
 (epstopdf)             Command: <repstopdf --outfile=../chap2/sec2.2/chap2sec2.2ex19-eps-converted-to.pdf ../chap2/sec2.2/chap2sec2.2ex19.eps>
-(epstopdf)             \includegraphics on input line 666.
+(epstopdf)             \includegraphics on input line 667.
 Package epstopdf Info: Output file is already uptodate.
-<../chap2/sec2.2/chap2sec2.2ex19-eps-converted-to.pdf, id=245, 501.64412pt x 330.37428pt>
+<../chap2/sec2.2/chap2sec2.2ex19-eps-converted-to.pdf, id=247, 501.64412pt x 330.37428pt>
 File: ../chap2/sec2.2/chap2sec2.2ex19-eps-converted-to.pdf Graphic file (type pdf)
 <use ../chap2/sec2.2/chap2sec2.2ex19-eps-converted-to.pdf>
-Package pdftex.def Info: ../chap2/sec2.2/chap2sec2.2ex19-eps-converted-to.pdf  used on input line 666.
+Package pdftex.def Info: ../chap2/sec2.2/chap2sec2.2ex19-eps-converted-to.pdf  used on input line 667.
 (pdftex.def)             Requested size: 345.0pt x 227.21745pt.
  [20 <../chap2/sec2.2/chap2sec2.2ex19-eps-converted-to.pdf>] [21] [22]
 Package epstopdf Info: Source file: <../chap2/sec2.2/chap2sec2.2ex27.eps>
@@ -1465,46 +1465,57 @@ Package epstopdf Info: Source file: <../chap2/sec2.2/chap2sec2.2ex27.eps>
 (epstopdf)                    date: 2025-08-12 14:14:12
 (epstopdf)                    size: 10464 bytes
 (epstopdf)             Command: <repstopdf --outfile=../chap2/sec2.2/chap2sec2.2ex27-eps-converted-to.pdf ../chap2/sec2.2/chap2sec2.2ex27.eps>
-(epstopdf)             \includegraphics on input line 799.
+(epstopdf)             \includegraphics on input line 800.
 Package epstopdf Info: Output file is already uptodate.
-<../chap2/sec2.2/chap2sec2.2ex27-eps-converted-to.pdf, id=281, 438.7893pt x 308.91411pt>
+<../chap2/sec2.2/chap2sec2.2ex27-eps-converted-to.pdf, id=283, 438.7893pt x 308.91411pt>
 File: ../chap2/sec2.2/chap2sec2.2ex27-eps-converted-to.pdf Graphic file (type pdf)
 <use ../chap2/sec2.2/chap2sec2.2ex27-eps-converted-to.pdf>
-Package pdftex.def Info: ../chap2/sec2.2/chap2sec2.2ex27-eps-converted-to.pdf  used on input line 799.
+Package pdftex.def Info: ../chap2/sec2.2/chap2sec2.2ex27-eps-converted-to.pdf  used on input line 800.
 (pdftex.def)             Requested size: 345.0pt x 242.88461pt.
  [23] [24 <../chap2/sec2.2/chap2sec2.2ex27-eps-converted-to.pdf>] [25] [26] [27]
-<../chap2/sec2.3/chap2sec2.3ex10.pdf, id=336, 397.49564pt x 377.08693pt>
+<../chap2/sec2.3/chap2sec2.3ex10.pdf, id=338, 397.49564pt x 377.08693pt>
 File: ../chap2/sec2.3/chap2sec2.3ex10.pdf Graphic file (type pdf)
 <use ../chap2/sec2.3/chap2sec2.3ex10.pdf>
-Package pdftex.def Info: ../chap2/sec2.3/chap2sec2.3ex10.pdf  used on input line 954.
+Package pdftex.def Info: ../chap2/sec2.3/chap2sec2.3ex10.pdf  used on input line 955.
 (pdftex.def)             Requested size: 345.0pt x 327.30345pt.
  [28 <../chap2/sec2.3/chap2sec2.3ex10.pdf>]
-<../chap2/sec2.3/chap2sec2.3ex11.pdf, id=353, 397.49564pt x 377.08693pt>
+<../chap2/sec2.3/chap2sec2.3ex11.pdf, id=355, 397.49564pt x 377.08693pt>
 File: ../chap2/sec2.3/chap2sec2.3ex11.pdf Graphic file (type pdf)
 <use ../chap2/sec2.3/chap2sec2.3ex11.pdf>
-Package pdftex.def Info: ../chap2/sec2.3/chap2sec2.3ex11.pdf  used on input line 969.
+Package pdftex.def Info: ../chap2/sec2.3/chap2sec2.3ex11.pdf  used on input line 970.
 (pdftex.def)             Requested size: 345.0pt x 327.30345pt.
  [29 <../chap2/sec2.3/chap2sec2.3ex11.pdf>] [30] [31] [32] [33] [34] [35] [36] [37] [38] [39] [40] [41] [42] [43] [44] [45] [46]
-<../chap2/sec2.5/chap2sec2.5ex4.pdf, id=478, 502.32887pt x 382.64247pt>
+<../chap2/sec2.5/chap2sec2.5ex4.pdf, id=480, 502.32887pt x 382.64247pt>
 File: ../chap2/sec2.5/chap2sec2.5ex4.pdf Graphic file (type pdf)
 <use ../chap2/sec2.5/chap2sec2.5ex4.pdf>
-Package pdftex.def Info: ../chap2/sec2.5/chap2sec2.5ex4.pdf  used on input line 1625.
+Package pdftex.def Info: ../chap2/sec2.5/chap2sec2.5ex4.pdf  used on input line 1626.
 (pdftex.def)             Requested size: 345.0pt x 262.8033pt.
- [47 <../chap2/sec2.5/chap2sec2.5ex4.pdf>] [48] (build/deqlachap2.aux) ) 
+ [47 <../chap2/sec2.5/chap2sec2.5ex4.pdf>] [48]
+<../chap2/sec2.5/chap2sec2.5ex7.pdf, id=499, 519.65205pt x 384.42026pt>
+File: ../chap2/sec2.5/chap2sec2.5ex7.pdf Graphic file (type pdf)
+<use ../chap2/sec2.5/chap2sec2.5ex7.pdf>
+Package pdftex.def Info: ../chap2/sec2.5/chap2sec2.5ex7.pdf  used on input line 1688.
+(pdftex.def)             Requested size: 345.0pt x 255.22565pt.
+<../chap2/sec2.5/chap2sec2.5ex7a.pdf, id=500, 519.65205pt x 384.42026pt>
+File: ../chap2/sec2.5/chap2sec2.5ex7a.pdf Graphic file (type pdf)
+<use ../chap2/sec2.5/chap2sec2.5ex7a.pdf>
+Package pdftex.def Info: ../chap2/sec2.5/chap2sec2.5ex7a.pdf  used on input line 1694.
+(pdftex.def)             Requested size: 345.0pt x 255.22565pt.
+ [49 <../chap2/sec2.5/chap2sec2.5ex7.pdf>] [50 <../chap2/sec2.5/chap2sec2.5ex7a.pdf>] [51] [52] [53] [54] [55] [56] [57] (build/deqlachap2.aux) ) 
 Here is how much of TeX's memory you used:
- 55691 strings out of 480145
- 1299425 string characters out of 5893300
- 1761594 words of memory out of 5000000
- 72420 multiletter control sequences out of 15000+600000
+ 55788 strings out of 480145
+ 1301797 string characters out of 5893300
+ 1761595 words of memory out of 5000000
+ 72505 multiletter control sequences out of 15000+600000
  497066 words of font info for 102 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
  104i,16n,106p,3265b,1385s stack positions out of 5000i,500n,10000p,200000b,80000s
- </home/cantorian_infinity/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0700.600pk> </home/cantorian_infinity/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1000.600pk> </home/cantorian_infinity/.texlive2021/texmf-var/fonts/pk/ljfour/public/cmbright/ebbx10.720pk> </home/cantorian_infinity/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1000.600pk> </home/cantorian_infinity/.texlive2021/texmf-var/fonts/pk/ljfour/public/cmbright/ebbx10.600pk> </home/cantorian_infinity/.texlive2021/texmf-var/fonts/pk/ljfour/public/cmbright/ebbx10.864pk> </home/cantorian_infinity/.texlive2021/texmf-var/fonts/pk/ljfour/public/cmbright/ebmr10.600pk> </home/cantorian_infinity/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk> </home/cantorian_infinity/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0800.600pk> </home/cantorian_infinity/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0900.600pk> </home/cantorian_infinity/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmbsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on build/deqlachap2.pdf (48 pages, 551044 bytes).
+ </home/cantorian_infinity/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0700.600pk> </home/cantorian_infinity/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecti1000.600pk> </home/cantorian_infinity/.texlive2021/texmf-var/fonts/pk/ljfour/public/cmbright/ebbx10.720pk> </home/cantorian_infinity/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1000.600pk> </home/cantorian_infinity/.texlive2021/texmf-var/fonts/pk/ljfour/public/cmbright/ebbx10.600pk> </home/cantorian_infinity/.texlive2021/texmf-var/fonts/pk/ljfour/public/cmbright/ebbx10.864pk> </home/cantorian_infinity/.texlive2021/texmf-var/fonts/pk/ljfour/public/cmbright/ebmr10.600pk> </home/cantorian_infinity/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1000.600pk> </home/cantorian_infinity/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0800.600pk> </home/cantorian_infinity/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm0900.600pk> </home/cantorian_infinity/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecrm1200.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmbsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmmib7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
+Output written on build/deqlachap2.pdf (57 pages, 613453 bytes).
 PDF statistics:
- 1016 PDF objects out of 1200 (max. 8388607)
- 525 compressed objects within 6 object streams
- 165 named destinations out of 1000 (max. 500000)
- 245 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1091 PDF objects out of 1200 (max. 8388607)
+ 584 compressed objects within 6 object streams
+ 175 named destinations out of 1000 (max. 500000)
+ 263 words of extra memory for PDF output out of 10000 (max. 10000000)
 
