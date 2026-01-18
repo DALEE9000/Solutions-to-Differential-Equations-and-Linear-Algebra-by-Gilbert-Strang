@@ -1963,4 +1963,552 @@ The ramp response (slanted line) is the integral of the step response (horizonta
 \newpage
 \subsection{\textsf{2.6 - Solutions to Second Order Equations}}
 
+\textbf{Find a particular solution by inspection} (or the method of undetermined coefficients)
+
+\vspace{12pt}
+
+% QUESTION 1
+\qs{2.6.1}{
+\begin{enumerate}[label=(\alph*)]
+	\item \( y'' + y = 4 \)
+	\item \( y'' + y' = 4 \)
+	\item \( y'' = 4 \)
+\end{enumerate}}
+
+\begin{enumerate}[label=(\alph*)]
+	\item \( y_{p } = 4 \)
+	\item \( y_{p } = 4t \)
+	\item \( y_{p } = 2t^{2} \)
+\end{enumerate}
+
+% QUESTION 2
+\qs{2.6.2}{
+\begin{enumerate}[label=(\alph*)]
+	\item \( y'' + y' + y = e^{t } \)
+	\item \( y'' + y' + y = e^{ct } \)
+\end{enumerate}}
+
+\begin{enumerate}[label=(\alph*)]
+	\item \( y_{p } = \frac{1}{3}e^{t } \)
+	\item Substitute \( y_{p } = Ye^{ct } \) to find
+	\[
+	      c^{2}Y + cY + Y = 1 \implies Y = \frac{1}{c^{2} + c + 1}
+	\]
+\end{enumerate}
+
+% QUESTION 3
+\qs{2.6.3}{
+\begin{enumerate}[label=(\alph*)]
+	\item \( y'' - y  =\cos\!\left(t \right)  \)
+	\item \( y'' + y = \cos\!\left(2t \right)  \)
+	\item \( y'' + y = t + e^{t } \)
+\end{enumerate}}
+
+\begin{enumerate}[label=(\alph*)]
+	\item Substitute \( y_{p } = Y\cos\!\left(t \right)  \) to find
+	\[
+		 -2Y \cos\!\left(t \right) = \cos\!\left(t \right) \implies Y = -\frac{1}{2}
+	\]
+	\item Substitute \( y_{p } = Y \cos\!\left(2t\right)  \) to find
+	\[
+		-3Y \cos\!\left(2t\right)  = \cos\!\left(2t\right) \implies Y = -\frac{1}{3}
+	\]
+	\item \( y_{p } = t + \frac{1}{2}e^{t} \)
+\end{enumerate}
+
+% QUESTION 4
+\qs{2.6.4}{For these \( f \!\left( t  \right) \), predict the form of \( y \!\left( t  \right) \) with undetermined coefficients:
+\begin{enumerate}[label=(\alph*)]
+	\item \( f \!\left( t  \right) = t^{3} \)
+	\item \( f \!\left( t  \right) = \cos\!\left(2t\right)  \)
+	\item \( f \!\left( t  \right) = t \cos\!\left(t \right)  \)
+\end{enumerate}}
+
+\begin{enumerate}[label=(\alph*)]
+	\item \( y_{p } \!\left( t  \right) = at^{3} + bt^{2} + ct + d  \)
+	\item \( y_{p } \!\left( t  \right) = a \cos\!\left(2t\right) + b \sin\!\left(2t\right)  \)
+	\item \( y_{p } \!\left( t  \right) = \!\left( at + b  \right) \cos\!\left(t \right) + \!\left( ct + d  \right) \sin\!\left(t \right) \)
+\end{enumerate}
+
+% QUESTION 5
+\qs{2.6.5}{Predict the form for \( y \!\left( t  \right) \) when the right hand side is
+\begin{enumerate}[label=(\alph*)]
+	\item \( f \!\left( t  \right) = e^{ct } \)
+	\item \( f \!\left( t  \right) = te^{ct } \)
+	\item \( f \!\left( t  \right) = e^{t }\cos\!\left(t \right) \)
+\end{enumerate}}
+
+\begin{enumerate}[label=(\alph*)]
+	\item \( y_{p } \!\left( t  \right) = Ye^{ct } \)
+	\item \( y_{p } \!\left( t  \right) = \!\left( at + b  \right)e^{ct } \)
+	\item \( y_{p } \!\left( t  \right) = e^{t } \!\left( a \cos\!\left(t \right) + b \sin\!\left(t \right)  \right) \)
+\end{enumerate}
+
+% QUESTION 6
+\qs{2.6.6}{For \( f \!\left( t  \right) = e^{ct } \) when is the prediction for \( y \!\left( t  \right) \) different from \( Ye^{ct } \)?}
+
+If \( e^{ct } \) is one of the null solutions, we must have a \( Yte^{ct } \) term to account for the resonance.
+
+\vspace{12pt}
+
+\textbf{Use the method of undetermined coefficients to find a solution \( \pmb{y_{p } \!\left( t  \right)} \).}
+
+\vspace{12pt}
+
+% QUESTION 7
+\qs{2.6.7}{
+\begin{enumerate}[label=(\alph*)]
+	\item \( y'' + 9y = e^{2t} \)
+	\item \( y'' + 9y = te^{2t} \)
+\end{enumerate}}
+
+\begin{enumerate}[label=(\alph*)]
+	\item Let \( y_{p } \!\left( t  \right) = Ye^{2t} \). Then
+	\[
+		4Ye^{2t} + 9Ye^{2t} = e^{2t} \implies Y = \frac{1}{13} \implies y_{p } \!\left( t  \right) = \frac{e^{2t}}{13}
+	\]
+	\item Let \( y_{p } \!\left( t  \right) = \!\left( at + b  \right)e^{2t} \). Then 
+	\begin{align*}
+		y_{p }' \!\left( t  \right) & = ae^{2t} + 2 \!\left( at + b  \right)e^{2t} \\
+					    & = \!\left( 2at + a + 2b \right)e^{2t} \\ 
+		y_{p }''\!\left( t  \right) & = 2ae^{2t} + 2 \!\left( 2at + a + 2b \right)e^{2t} \\
+					    & = \!\left( 4at + 4a + 4b \right)e^{2t}
+	\end{align*}
+	Substituting into the equation, we derive
+	\[
+		\!\left( 4at + 4a + 4b \right)e^{2t} + 9 \!\left( at + b  \right)e^{2t} = \!\left( 13at  + 4a + 13b \right)e^{2t} = te^{2t}
+	\]
+	Here, we can deduce that \( a = \displaystyle{\frac{1}{13}} \) and \( b = \displaystyle{-\frac{4}{13}\frac{1}{13}} \). Our particular solution is
+	\[
+		y_{p } \!\left( t  \right) = \frac{1}{13}\!\left( t - \frac{4}{13} \right)e^{2t} 
+	\]
+\end{enumerate}
+
+% QUESTION 8
+\qs{2.6.8}{
+\begin{enumerate}[label=(\alph*)]
+	\item \( y'' + y' = t + 1 \)
+	\item \( y'' + y' = t^{2} + 1 \)
+\end{enumerate}}
+
+\begin{enumerate}[label=(\alph*)]
+	\item Observe that the roots of the characteristic polynomial are \( s = 0, -1 \). Then one of the null solutions is simply a constant, so that cannot be present in our particular solution. Let \( y_{p } \!\left( t  \right) = at^{2} + bt \) (no constant term). Then
+		\begin{align*}
+			y'\!\left( t  \right) & = 2at + b  \\
+			y''\!\left( t  \right) & = 2a
+		\end{align*}
+	Substituting, we get
+	\[
+		2at + \!\left( 2a + b  \right) = t + 1 
+	\]
+	Where we can conclude \( a = 1/2 \) and \( b = 0 \), and
+	\[
+		y_{p } \!\left( t  \right) = \frac{1}{2}t^{2} 
+	\]
+	\item The equation is the same but the forcing changes, so we have ansatz \( y_{p } \!\left( t  \right) = at^{3} + bt^{2} + ct  \) (again, no constant term). Then
+		\begin{align*}
+			y'\!\left( t  \right) & = 3at^{2} + 2bt + c  \\[12pt]
+			y''\!\left( t  \right) & = 6at + 2b
+		\end{align*}
+	We substitute to get
+	\[
+		3at^{2} + \!\left( 6a + 2b \right)t + 2b + c = t^{2} + 1 
+	\]
+	Concluding that \( a = 1/3 \), \( b = -1 \), and \( c = 2 \). This corresponds to particular solution
+	\[
+		y_{p }\!\left( t  \right) = \frac{1}{3}t^{3} - t^{2} + 2t 
+	\]
+\end{enumerate}
+
+% QUESTION 9
+\qs{2.6.9}{
+\begin{enumerate}[label=(\alph*)]
+	\item \( y'' + 3y = \cos\!\left(t \right)  \)
+	\item \( y'' + 3y = t \cos\!\left(t \right)  \)
+\end{enumerate}}
+
+\begin{enumerate}[label=(\alph*)]
+	\item Let \( y_{p } \!\left( t  \right) = a \cos\!\left(t \right) + b \sin\!\left(t \right)  \). Substituting gives us
+	\[
+		2a \cos\!\left(t \right) + 2b \sin\!\left(t \right) = \cos\!\left(t \right)  
+	\]
+	From which we can deduce \( a = 1/2 \) and \( b = 0 \), yielding solution
+	\[
+		y_{p } \!\left( t  \right) = \frac{1}{2}\cos\!\left(t \right)  
+	\]
+	\item Let \( y_{p } \!\left( t  \right) = \!\left( at + b  \right)\cos\!\left(t \right) + \!\left( ct + d  \right) \sin\!\left(t \right)   \). Then
+	\begin{align*}
+		y'_{p} \!\left( t  \right) & = a \cos\!\left(t \right) - \!\left( at + b  \right) \sin\!\left(t \right) +c \sin\!\left(t \right) + \!\left( ct + d  \right) \cos\!\left(t \right) \\
+					   & = \!\left( ct + a + d  \right) \cos\!\left(t \right) + \!\left( -at - b + c  \right) \sin\!\left(t \right) \\
+		y''_{p } \!\left( t  \right) & = c \cos\!\left(t \right) - \!\left( ct + a + d  \right) \sin\!\left(t \right) - a \sin\!\left(t \right) + \!\left( -at - b + c  \right) \cos\!\left(t \right) \\
+					     & = \!\left( -at - b + 2c \right) \cos\!\left(t \right) - \!\left( ct + 2a + d \right) \sin\!\left(t \right) 
+	\end{align*}
+	Substituting gives us
+	\[
+		 \!\left( 2at + 2b + 2c \right) \cos\!\left(t \right) + \!\left( 2ct - 2a + 2d \right) \sin\!\left(t \right) = t \cos\!\left(t \right) 
+	\]
+	We must have \( a = d - 1/2 \) and \( b = c = 0 \), which corresponds to particular solution
+	\[
+		y_{p } \!\left( t  \right) = \frac{1}{2}t \cos\!\left(t \right) + \frac{1}{2} \sin\!\left(t \right)  
+	\]
+\end{enumerate}
+
+% QUESTION 10
+\qs{2.6.10}{
+\begin{enumerate}[label=(\alph*)]
+	\item \( y'' + y' + y = t^{2} \)
+	\item \( y'' + y' + y = t^{3} \)
+\end{enumerate}}
+
+\begin{enumerate}[label=(\alph*)]
+	\item Let \( y_{p } \!\left( t  \right) = at^{2} + bt + c  \). Then \( y_{p}'\!\left( t \right) = 2at + b  \) and \( y_{p }''\!\left( t  \right) = 2a \). Substituting yields
+	\[
+		at^{2} + \!\left( 2a + b  \right)t + 2a + b + c = t^{2} 
+	\]
+	where we can deduce that \( a = 1 \), \( b = -2 \), and \( c = 0 \), and solution
+	\[
+		y_{p } \!\left( t  \right) = t^{2} - 2t
+	\]
+	\item Let \( y_{p } \!\left( t  \right) = at^{3} + bt^{2} + ct + d  \). Then \( y_{p }'\!\left( t  \right) = 3at^{2} + 2bt + c  \) and \( y_{p }''\!\left( t  \right) = 6at + 2b \). Substituting yields
+	\[
+		 at^{3} + \!\left( 3a + b  \right)t^{2} + \!\left( 6a + 2b + c  \right)t + 2b + c + d = t^{3}
+	\]
+	which gives us coefficients \( a = 1 \), \( b = -3 \), \( c = 0 \), and \( d = 6 \). We have particular solution
+	\[
+		y_{p } \!\left( t  \right) = t^{3} - 3t^{2} + 6 
+	\]
+\end{enumerate}
+
+% QUESTION 11
+\qs{2.6.11}{
+\begin{enumerate}[label=(\alph*)]
+	\item \( y'' + y' + y = \cos\!\left(t \right)  \)
+	\item \( y'' + y' + y = t \sin\!\left(t \right)  \)
+\end{enumerate}}
+
+\begin{enumerate}[label=(\alph*)]
+	\item Let \( y_{p } \!\left( t  \right) = a \cos\!\left(t \right) + b \sin\!\left(t \right)  \). Then \( y_{p }'\!\left( t  \right) = -a \sin\!\left(t \right) + b \cos\!\left(t \right)  \) and \( y_{p }''\!\left( t  \right) = -a \cos\!\left(t \right) - b \sin\!\left(t \right)  \). Substituting gives us
+	\[
+		-a \sin\!\left(t \right) + b \cos\!\left(t \right) = \cos\!\left(t \right)  
+	\]
+	which has \( a = 0 \) and \( b = 1 \), with solution \( y_{p } \!\left( t  \right) = \sin\!\left(t \right)  \).
+	\item Let \( y_{p } \!\left( t  \right) = \!\left( at + b  \right)\cos\!\left(t \right) + \!\left( ct + d  \right)\sin\!\left(t \right)  \). Then
+	\begin{align*}
+		y_{p }'\!\left( t  \right) & = a \cos\!\left(t \right) - \!\left( at + b  \right)\sin\!\left(t \right) + c \sin\!\left(t \right) + \!\left( ct + d  \right)\cos\!\left(t \right)  \\
+					   & = \!\left( ct + a + d  \right)\cos\!\left(t \right) + \!\left( -at - b + c  \right)\sin\!\left(t \right) \\
+		y_{p }''\!\left( t  \right) & = c \cos\!\left(t \right) - \!\left( ct + a + d  \right) \sin\!\left(t \right) - a \sin\!\left(t \right) + \!\left( -at - b + c  \right) \cos\!\left(t \right)  \\ 
+					    & = \!\left( -at - b + 2c \right) \cos\!\left(t \right) + \!\left( -ct - 2a - d  \right) \sin\!\left(t \right) 
+	\end{align*}
+	Substituting gives us
+	\[
+		\!\left( ct + a + 2c + d  \right) \cos\!\left(t \right) + \!\left( -at - b - 2a + c  \right) \sin\!\left(t \right) = t \sin\!\left(t \right)  
+	\]
+	This forces \( c = 0 \), \( a = -1 \), \( d = 1 \), and \( b = 2 \), which corresponds to solution
+	\[
+		y_{p } \!\left( t  \right) = \!\left( -t + 2 \right)\cos\!\left(t \right) + \sin\!\left(t \right)  
+	\]
+\end{enumerate}
+
+\textbf{Problems 12-14 involve resonance. Multiply the usual form of \( \pmb{y_{p}} \) by \( \pmb{t} \).}
+
+\vspace{12pt}
+
+% QUESTION 12
+\qs{2.6.12}{
+\begin{enumerate}[label=(\alph*)]
+	\item \( y'' + y = e^{it } \)
+	\item \( y'' + y = \cos\!\left(t \right)  \)
+\end{enumerate}}
+
+\begin{enumerate}[label=(\alph*)]
+	\item Let \( y_{p } \!\left( t  \right) = Yte^{it } \). Then \( y_{p }'\!\left( t  \right) = Y \!\left( e^{it } + ite^{it } \right) = Y \!\left( 1 + it  \right)e^{it } \) and \( y_{p }''\!\left( t  \right) = Y \!\left( ie^{it } + \!\left( i - t  \right)e^{it } \right) = Y \!\left( 2i - t  \right)e^{it} \). Substituting gives us
+	\[
+		2iYe^{it } = e^{it } \implies Y = -\frac{i }{2} 
+	\]
+	which corresponds to solution
+	\[
+		y_{p } \!\left( t  \right) = -\frac{i }{2}te^{it } 
+	\]
+	\item Let \( y_{p } \!\left( t  \right) = t \!\left( a \cos\!\left(t \right) + b \sin\!\left(t \right)  \right) \). Then
+	\begin{align*}
+		y_{p }'\!\left( t  \right) & = a \cos\!\left(t \right) + b \sin\!\left(t \right) + t \!\left( -a \sin\!\left(t \right) + b \cos\!\left( t \right)  \right) \\
+					   & = \!\left( bt + a  \right)\cos\!\left(t \right) + \!\left( -at + b  \right)\sin\!\left(t \right) \\
+		y_{p }''\!\left( t  \right) & = b \cos\!\left(t \right) - \!\left( bt + a  \right) \sin\!\left(t \right) - a \sin\!\left(t \right) + \!\left( -at + b  \right) \cos\!\left(t \right) \\ 
+					    & = \!\left( -at + 2b \right) \cos\!\left(t \right) - \!\left( bt + 2a \right) \sin\!\left( t \right)
+	\end{align*}
+	Substituting gives us
+	\[
+		2b \cos\!\left(t \right) - 2a \sin\!\left(t \right) = \cos\!\left(t \right)  
+	\]
+	Forcing \( a = 0 \) and \( b = 1/2 \), and solution
+	\[
+		y_{p } \!\left( t  \right) = \frac{1}{2}t \sin\!\left(t\right) 
+	\]
+\end{enumerate}
+
+% QUESTION 13
+\qs{2.6.13}{
+\begin{enumerate}[label=(\alph*)]
+	\item \( y'' - 4y' + 3y = e^{t } \)
+	\item \( y'' - 4y' + 3y = e^{3t} \)
+\end{enumerate}}
+
+\begin{enumerate}[label=(\alph*)]
+	\item Let \( y_{p } \!\left( t  \right) = Yte^{t } \). Then \( y_{p }'\!\left( t  \right) = Y \!\left( e^{t } + te^{t } \right) \) and \( y_{p }''\!\left( t  \right) = Y \!\left( 2e^{t } + te^{t} \right) \). Substituting gives us
+	\[
+		-2Ye^{t } = e^{t } \implies Y = -\frac{1}{2}
+	\]
+	which corresponds to solution
+	\[
+		y_{p } \!\left( t  \right) = -\frac{1}{2}te^{t} 
+	\]
+	\item Let \( y_{p } \!\left( t  \right) = Yte^{3t} \). Then \( y_{p }'\!\left( t  \right) = Y \!\left( e^{3t} + 3te^{3t} \right) \) and \( y_{p }''\!\left( t  \right) = Y \!\left( 6e^{3t} + 9te^{3t} \right) \). Substituting gives us
+	\[
+		2Ye^{3t} = e^{3t} \implies Y = \frac{1}{2}
+	\]
+	which corresponds to solution
+	\[
+		y_{p } \!\left( t  \right) = \frac{1}{2}te^{3t} 
+	\]
+\end{enumerate}
+
+% QUESTION 14
+\qs{2.6.14}{
+\begin{enumerate}[label=(\alph*)]
+	\item \( y' - y = e^{t } \)
+	\item \( y' - y = te^{t } \)
+	\item \( y' - y = e^{t } \cos\!\left(t\right)  \)
+\end{enumerate}}
+
+\begin{enumerate}[label=(\alph*)]
+	\item Let \( y_{p } \!\left( t  \right) = Yte^{t } \). Then \( y_{p }'\!\left( t  \right) = Y \!\left( e^{t } + te^{t } \right) \). Then we substitute to derive
+	\[
+		Ye^{t } = e^{t } \implies Y = 1 
+	\]
+	Then we have \( y_{p } \!\left( t  \right) = te^{t } \).
+	\item Let \( y_{p } \!\left( t  \right) = Yt^{2}e^{t } \). Then \( y_{p }'\!\left( t  \right) = Y \!\left( t^{2}e^{t } + 2te^{t } \right) \). We substitute to get
+	\[
+		2Yte^{t } = te^{t } \implies Y = \frac{1}{2} 
+	\]
+	Our solution is
+	\[
+		y_{p } \!\left( t  \right) = \frac{1}{2}t^{2}e^{t }
+	\]
+	\item Let \( y_{p }\!\left( t  \right) = e^{t } \!\left( a \cos\!\left(t \right) + b \sin\!\left(t \right)  \right) \). Then 
+	\begin{align*}
+		y_{p}'\!\left( t \right) & = e^{t}\!\left[ \!\left( a \cos\!\left(t \right) + b \sin\!\left(t \right)  \right) + \!\left( -a \sin\!\left(t \right) + b \cos\!\left(t \right)  \right) \right] \\
+					 & = e^{t } \!\left[ \!\left( a + b  \right)\cos\!\left(t \right) + \!\left( b - a  \right) \sin\!\left(t \right)  \right]
+	\end{align*}
+	We substitute to get
+	\[
+		e^{t } \!\left( b \cos\!\left(t \right) - a \sin\!\left(t \right)  \right) = e^{t } \cos\!\left(t \right)  \implies a = 0, b = 1
+	\]
+	Therefore our solution is
+	\[
+		y_{p }\!\left( t  \right) = e^{t }\sin\!\left(t\right)  
+	\]
+\end{enumerate}
+
+% QUESTION 15
+\qs{2.6.15}{For \( y'' - 4y = e^{t }\sin\!\left(t \right)  \) (exponential times sinusoidal) we have two choices:
+\begin{alignat*}{2}
+	\textbf{1} \quad & \text{(Real)} && \quad \text{Substitute } y_{p } = Me^{t } \cos\!\left(t \right) + Ne^{t }\sin\!\left(t \right): \\
+		   & 		   && \quad \text{determine } M \text{ and } N \\
+	\textbf{2} \quad & \text{(Complex)} && \quad \text{Solve } z'' + 4z = e^{\!\left( 1 + i  \right)t }. \\
+		   &                  && \quad \text{Then } y \text{ is the imaginary part of } z. 
+\end{alignat*}
+Use both methods to find the same \( y \!\left( t  \right) \) -- which do you prefer?}
+
+\begin{enumerate}[label=\arabic*.]
+	\item Let \( y_{p } \) be as given. Then
+	\begin{align*}
+		y'_{p } & = Me^{t} \!\left( \cos\!\left(t \right) - \sin\!\left(t \right)  \right) + Ne^{t} \!\left( \sin\!\left(t \right) + \cos\!\left(t\right)  \right)  \\
+		y''_{p} & = -2Me^{t} \sin\!\left(t \right) + 2Ne^{t} \cos\!\left(t\right) 
+	\end{align*}
+	Substituting gives us
+	\[
+		e^{t } \!\left[ \!\left( 2N - 4M \right)e^{t }\cos\!\left(t \right) - \!\left( 2M + 4N \right)\sin\!\left(t\right) \right] = e^{t }\sin\!\left(t\right) 
+	\]
+	We must have \( -4M + 2N = 0 \) and \( -\!\left( 2M + 4N \right) = 1 \). Solve the matrix equation:
+	\[
+		\begin{bmatrix}
+			-4 & 2\\
+			-2 & -4\\
+		\end{bmatrix}
+		\begin{bmatrix}
+			M \\
+			N \\
+		\end{bmatrix} = 
+		\begin{bmatrix}
+			1 \\
+			0 \\
+		\end{bmatrix}
+	\]
+	Which gives us \( M = -1/5 \) and \( N = 1/10 \).
+	\item In the complex case, let \( y_{p } = Ye^{\!\left( 1 + i  \right)t} \). Then \( y'_{p } = Y \!\left( 1 + i  \right)e^{\!\left( 1 + i  \right)t } \) and \( y''_{p } = Y \!\left( 1 + i  \right)^{2}e^{\!\left( 1 + i  \right)t } \), and our task reduces to isolating \( Y  \) in the equation
+	\[
+		Y \!\left( 1 + i  \right)^{2} - 4Y \!\left( 1 + i  \right) = 1 
+	\]
+	Doing so yields
+	\[
+		Y = -\frac{1}{4 + 2i} = \frac{-4 + 2i}{20} = \frac{-2 + i }{10}
+	\]
+	Our particular solution is
+	\begin{align*}
+		y_{p } & = \!\left( \frac{-2 + i}{10} \right) e^{t} \!\left( \cos\!\left(t \right) + i \sin\!\left(t\right)  \right) \\
+		       & = -\frac{1}{5} e^{t }\cos\!\left(t \right) + \frac{1}{10}e^{t }\sin\!\left(t \right) + i \!\left[ \frac{1}{10}e^{t }\cos\!\left(t \right) - \frac{1}{5}e^{t }\sin\!\left(t\right)  \right]
+	\end{align*}
+	Taking the real component, we see that it matches with what we had in part 1.
+\end{enumerate}
+
+% QUESTION 16
+\qs{2.6.16}{
+\begin{enumerate}[label=(\alph*)]
+	\item Which values of \( c  \) give resonance for \( y'' + 3y' - 4y = te^{ct } \)?
+	\item What form would you substitute for \( y \!\left( t  \right) \) if there is no resonance?
+	\item What form would you use when \( c  \) produces resonance?
+\end{enumerate}}
+
+\begin{enumerate}[label=(\alph*)]
+	\item The characteristic polynomial is \( s^{2} + 3s - 4 \) which has roots \( s_{1} = -4 \) and \( s_{2} = 1 \), so those values of \( c  \) will give resonance. This is because our ansatz, when of the form \( y_{p } = \!\left( at + b  \right)e^{ct } \), includes the form of the null solutions.
+	\item If no resonance, then we can safely put forth our ansatz with the form \( y_{p }= \!\left( at + b  \right)e^{ct } \).
+	\item Otherwise, use form \( y_{p } = \!\left( at^{2} + bt  \right)e^{ct } \).
+\end{enumerate}
+
+% QUESTION 17
+\qs{2.6.17}{This is the rule for equations \( P \!\left( D  \right)y = e^{ct } \) with resonance \( P \!\left( c  \right) = 0 \):
+
+If \( P \!\left( c  \right) = 0 \) and \( P'\!\left( c  \right) \neq 0 \), look for a solution \( y_{p } = Cte^{ct } \) (\( m = 1 \))
+
+If \( c  \) is a root of multiplicity \( m  \), then \( y_{p } \) has the form \underline{\qquad}.}
+
+Then \( y_{p } \) has form \( Ct^{m }e^{ct } \).
+
+\vspace{12pt}
+
+\newpage
+% QUESTION 18
+\qs{2.6.18}{
+\begin{enumerate}[label=(\alph*)]
+	\item To solve \( d^{4}y / dt^{4} - y = t^{3}e^{5t} \), what form do you expect for \( y \!\left( t  \right) \)?
+	\item If the right side becomes \( t^{3}\cos\!\left(5t\right)  \), which 8 coefficients are to be determined?
+\end{enumerate}}
+
+\begin{enumerate}[label=(\alph*)]
+	\item The characteristic polynomial is \( s^{4} - 1 \), which gives us roots \( s = \pm 1, \pm i  \). Since \( c = 5 \), we need not concern ourselves with resonance, and we guess \( y_{p } = \!\left( at^{3} + bt^{2} + ct + d  \right)e^{5t} \).
+	\item In this case, we then determine the number of combinations between sine and cosine and the four terms of a third-degree polynomial:
+	\begin{alignat*}{3}
+		t^{3}\cos\!\left(5t \right) & \quad t^{2}\cos\!\left(5t \right) & \quad t\cos\!\left(5t \right) & \quad \cos\!\left(5t \right)  \\
+		t^{3}\sin\!\left(5t \right) & \quad t^{2}\sin\!\left(5t \right) & \quad t \sin\!\left(5t \right) & \quad \sin\!\left(5t \right)  \\ 
+	\end{alignat*}
+\end{enumerate}
+
+% QUESTION 19
+\qs{2.6.19}{For \( y' - ay = f \!\left( t  \right) \), the method of undetermined coefficients is looking for all \( f \!\left( t  \right) \) so that the usual formula \( y_{p } = e^{at } \int e^{-as } f \!\left( s  \right) \, ds  \) is easy to integrate. Find these integrals for the ``nice functions'' \( f = e^{ct } \), \( f = e^{i \omega t } \), and \( f = t  \):
+\[
+	\int e^{-as }e^{cs}  \, ds \qquad \int e^{-as } e^{i \omega s } \, ds \qquad \int e^{-as }s \, ds
+\]}
+
+\begin{enumerate}[label=(\alph*)]
+	\item 
+	\[
+		\int e^{-as }e^{cs } \, ds = \int e^{\!\left( -a + c  \right)s } \, ds = \frac{e^{\!\left( -a + c  \right)s }}{-a + c } + C
+	\]
+	\item 
+	\[
+		\int e^{-as }e^{i \omega s } \, ds = \int e^{\!\left( -a + i \omega  \right)s } \, ds = \frac{e^{\!\left( -a + i \omega  \right)s }}{-a + i \omega } + C
+	\]
+	\item 
+	Resort to integration by parts. Let \( u = s  \) and \( dv = e^{-as } ds  \). Then \( du = ds  \) and \( v = -e^{-as } / a \).
+	\[
+		\int e^{-as }s \, ds = -\frac{e^{-as }s }{a } + \frac{1}{a } \int e^{-as } \, ds = -e^{-as } \!\left( \frac{s }{a } + \frac{1}{a^{2}} \right)
+	\]
+\end{enumerate}
+
+\vspace{12pt}
+
+\newpage
+\textbf{Problems 20-27 develop the method of variation of parameters.}
+
+\vspace{12pt}
+
+% QUESTION 20
+\qs{2.16.20}{Find two solutions \( y_{1} \), \( y_{2} \) to \( y'' + 3y' + 2y = 0 \). Use those in formula (13) to solve
+\begin{enumerate}[label=(\alph*)]
+	\item \( y'' + 3y' + 2y = e^{t } \)
+	\item \( y'' + 3y' + 2y = e^{-t } \)
+\end{enumerate}}
+
+\begin{enumerate}[label=(\alph*)]
+	\item The roots to the characteristic polynomial are \( s_{1,2} = -2, -1 \). Then we have null solutions \( y_{1} = e^{-2t} \) and \( y_{2} = e^{-t } \), and correspondingly \( y'_{1} = -2e^{-2t} \) and \( y'_{2} = -e^{-t } \). The Wronskian is calculated as 
+\[
+	W \!\left( t  \right) = -e^{-3t} + 2e^{-3t} = e^{-3t}
+\]
+By the variation of parameters, the particular solution is
+\begin{align*}
+	y_{p } \!\left( t  \right) & = - e^{-2t} \int e^{3t} \, dt + e^{-t } \int e^{2t } \, dt \\
+	 & = -\frac{e^{t }}{3} + \frac{e^{t }}{2} \\ 
+	 & = \frac{e^{t }}{6}
+\end{align*}
+	\item In the second case, we have resonance, since \( c = -1 \) which is one of our roots. The particular solution becomes
+	\begin{align*}
+		y_{p }\!\left( t  \right) & = -e^{-2t} \int e^{t } \, dt + e^{-t } \int \, dt  \\
+		 & = e^{-t } \!\left( t - 1 \right)
+	\end{align*}
+\end{enumerate}
+
+% QUESTION 21
+\qs{2.6.21}{Find two solutions to \( y'' + 4y' = 0 \) and use variation of parameters for 
+\begin{enumerate}[label=(\alph*)]
+	\item \( y'' + 4y' = e^{2t} \)
+	\item \( y'' + 4y' = e^{-4t} \)
+\end{enumerate}}
+
+\begin{enumerate}[label=(\alph*)]
+	\item The characteristic polynomial has roots \( s_{1,2} = 0, -4 \). Then we have null solutions \( y_{1} = 1  \) and \( y_{2} = e^{-4t} \), and correspondingly \( y'_{1} = 0 \) and \( y'_{2} = -4e^{-4t} \). The Wronksian is
+\[
+	W \!\left( t  \right) = -4e^{-4t} 
+\]
+Variation of parameters gives us particular solution
+\begin{align*}
+	y_{p }\!\left( t  \right) & = \frac{1}{4}\int e^{2t} \, dt - \frac{e^{-4t}}{4} \int e^{6t} \, dt \\
+				  & = \!\left( \frac{1}{8} - \frac{1}{24} \right)e^{2t} \\
+				  & = \frac{e^{2t}}{12}
+\end{align*}
+	\item Again, resonance presents itself. Calculate
+	\[
+		y_{p }\!\left( t  \right) = \frac{1}{4} \int e^{-4t} \, dt - \frac{e^{-4t}}{4} \int dt = -e^{-4t} \!\left( \frac{t }{4} + \frac{1}{16} \right)
+	\]
+\end{enumerate}
+
+% QUESTION 22
+\qs{2.6.22}{Find an equation \( y'' + By' + Cy = 0 \) that is solved by \( y_{1} = e^{t } \) and \( y_{2} = te^{t } \). If the right side is \( f \!\left( t  \right) = 1 \), what solution comes from the \( VP \) formula (13)?}
+
+The null solutions imply a double root \( s = 1 \), so we have \( B = 2 \) and \( C = 1 \) for 
+\[
+	 y'' + 2y' + 1 = 0
+\]
+The derivatives of the null solutions are \( y'_{1} = e^{t } \) and \( y'_{2} = e^{t } \!\left( 1 + t \right) \). The Wronskian is
+\[
+	W \!\left( t  \right) = e^{2t}\!\left( 1 + t  \right) - te^{2t} = e^{2t}
+\]
+and the particular solution is
+\begin{align*}
+	y_{p }\!\left( t  \right) & = -e^{t } \int te^{-t } \, dt + te^{t } \int e^{-t } \, dt \\
+				  & = t + 1 - t \\
+				  & = 1
+\end{align*}
+We could have come to this conclusion on inspection, but good to see that variation of parameters brings us to this result nonetheless.
+
+\vspace{12pt}
+
+% QUESTION 23
+\qs{2.6.23}{\( y'' - 5y' + 6y = 0 \) is solved by \( y_{1} = e^{2t} \) and \( y_{2} = e^{3t} \), because \( s = 2 \) and \( s = 3 \) come from \( s^{2} - 5s + 6 = 0 \). Now solve \( y'' - 5y' + 6y = 12 \) in two ways:
+
+\textbf{1.} Undetermined coefficients (or inspection)
+
+\textbf{2.} Variation of parameters using (13)
+
+The answers are different. Are the initial conditions different?}
+
 \end{document}
