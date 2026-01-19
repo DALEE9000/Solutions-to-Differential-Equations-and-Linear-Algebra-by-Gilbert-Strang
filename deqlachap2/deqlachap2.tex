@@ -2511,4 +2511,143 @@ We could have come to this conclusion on inspection, but good to see that variat
 
 The answers are different. Are the initial conditions different?}
 
+\begin{enumerate}[label=\arabic*.]
+	\item By inspection, \( y_{p } = 2 \). Our complete solution is
+	\[
+		y \!\left( t  \right) = c_{1}e^{2t} + c_{2}e^{3t} + 2 
+	\]
+	\item The Wronskian is calculated as 
+	\[
+		W \!\left( t  \right) = 3e^{5t} - 2e^{5t} = e^{5t} 
+	\]
+	Our particular solution is
+	\[
+		y_{p } \!\left( t  \right) = -e^{2t} \int 12 e^{-2t} \, dt + e^{3t} \int 12e^{-3t} \, dt = 2
+	\]
+	Both deriving the particular solution by inspection and variation of parameters lead to the same result, but if we integrate from \( 0 \) to \( t  \) to incorporate initial conditions, we see
+	\begin{align*}
+		y \!\left( t \right) & = -e^{2t} \int_{0}^{t} 12 e^{-2s} \, ds + e^{3t} \int_{0}^{t} 12e^{-3s} \, ds \\
+		 & = 6e^{2t} \!\left( e^{-2t} - 1 \right) - 4e^{3t} \!\left( e^{-3t} - 1 \right) \\ 
+		 & = 2 - 6e^{2t} + 4e^{3t}
+	\end{align*}
+	Which is the full solution -- including the null solutions -- implying \( y \!\left( 0 \right) = y'\!\left( 0 \right) = 0 \).
+\end{enumerate}
+
+% QUESTION 24
+\qs{2.6.24}{What are the initial conditions \( y \!\left( 0 \right) \) and \( y'\!\left( 0 \right) \) for the solution (13) coming from the variation of parameters, starting from any \( y_{1} \) and \( y_{2} \)?}
+
+We can see that \( y \!\left( 0 \right) = 0 \), as both terms cancel each other out at \( t = 0 \). To find the time derivative, use the dummy variable \( s  \) inside the integral and apply Leibniz's rule:
+\begin{align*}
+	y'\!\left( t  \right) & = \frac{d }{d t } \!\left[ -y_{1}\!\left( t  \right) \int_{0}^{t } \frac{y_{2}\!\left( s  \right)f \!\left( s  \right)}{W \!\left( s  \right)} \, ds + y_{2}\!\left( t  \right) \int_{0}^{t } \frac{y_{1}\!\left( s  \right) f \!\left( s  \right)}{W \!\left( s  \right)} \, ds \right] \\
+	 & = -y'_{1}\!\left( t  \right) \int_{0}^{t } \frac{y_{2} \!\left( s  \right) f \!\left( s  \right)}{W \!\left( s  \right)} \, ds - \frac{y_{1}\!\left( t  \right) y_{2}\!\left( t  \right) f \!\left( t  \right)}{W \!\left( t  \right)}  \\ 
+	 & \qquad + y'_{2} \!\left( t  \right) \int_{0}^{t } \frac{y_{1}\!\left( s  \right) f \!\left( s  \right)}{W \!\left( s  \right)} \, ds + \frac{y_{1} \!\left( t  \right) y_{2} \!\left( t  \right) f \!\left( t  \right)}{W \!\left( t  \right)} \\
+	\implies y'\!\left( 0 \right) & = 0
+\end{align*}
+The initial position and velocity are assumed to be zero.
+
+\vspace{12pt}
+
+% QUESTION 25
+\qs{2.6.25}{The equation \( y'' = 0 \) is solved by \( y_{1} = 1 \) and \( y_{2} = t  \). Use variation of parameters to solve \( y'' = t  \) and also \( y'' = t^{2} \).}
+
+We have derivatives \( y'_{1} = 0 \) and \( y'_{2} = 1 \), and Wronskian
+\[
+	W \!\left( t  \right) = 1 
+\]
+The particular solution for \( y'' = t  \) is derived as 
+\[
+	y_{p }\!\left( t  \right) = -\int t^{2} \, dt + t \int t \, dt = -\frac{t^{3}}{3} + \frac{t^{3}}{2} = \frac{t^{3}}{6}
+\]
+And for \( y'' = t^{2} \) we have
+\[
+	y_{p }\!\left( t  \right) = - \int t^{3} \, dt + t \int t^{2} \, dt = -\frac{t^{4}}{4}+ \frac{t^{4}}{3} = \frac{t^{4}}{12}
+\]
+
+% QUESTION 26
+\qs{2.6.26}{Solve \( y''_{s} + y_{s } = 1 \) for the step response using variation of parameters, starting from the null solutions \( y_{1} = \cos\!\left(t \right)  \) and \( y_{2} = \sin\!\left(t \right)  \).}
+
+We have \( y'_{1} = -\sin\!\left(t \right)  \) and \( y'_{2} = \cos\!\left(t \right)  \), and Wronskian
+\[
+	W \!\left( t  \right) = \sin^{2}\!\left(t\right) + \cos^{2}\!\left(t\right) = 1
+\]
+The particular solution is
+\[
+	y_{p }\!\left( t  \right) = -\cos\!\left(t \right) \int \sin\!\left(t \right) \, dt + \sin\!\left(t \right) \int \cos\!\left(t \right) \, dt = \cos^{2}\!\left(t\right) + \sin^{2}\!\left(t\right) = 1
+\]
+If we impose initial conditions \( y \!\left( 0 \right) = y'\!\left( 0 \right) = 0 \), then we have
+\begin{align*}
+	y \!\left( t  \right) & = -\cos\!\left(t \right) \int_{0}^{t } \sin\!\left(t \right)  \, dt + \sin\!\left(t \right) \int_{0}^{t } \cos\!\left(t \right)  \, dt \\
+			      & = \cos^{2}\!\left(t\right) - \cos\!\left(t \right) + \sin^{2}\!\left(t\right) \\
+			      & = 1 - \cos^{2}\!\left(t\right) 
+\end{align*}
+
+% QUESTION 27
+\qs{2.6.27}{Solve \( y''_{s } + 3y'_{s } + 2y_{s } = 1 \) for the step response starting from the null solutions \( y_{1} = e^{-t } \) and \( y_{2} = e^{-2t} \).}
+
+We have \( y'_{1} = -e^{-t } \) and \( y'_{2} = -2e^{-2t} \), with Wronskian
+\[
+	W \!\left( t  \right) = -2e^{-3t} + e^{-3t} = -e^{-3t} 
+\]
+The particular solution is
+\[
+	y_{p }\!\left( t  \right) = e^{-t } \int e^{t } \, dt - e^{-2t} \int e^{2t} \, dt = 1 - \frac{1}{2} = \frac{1}{2}
+\]
+If we impose initial conditions \( y \!\left( 0 \right) = y'\!\left( 0 \right) = 0 \), then we have
+\begin{align*}
+	y \!\left( t  \right) & = e^{-t } \int_{0}^{t } e^{t } \, dt - e^{-2t} \int_{0}^{t } e^{2t} \, dt   \\
+	 & = \frac{1}{2} - e^{-t } + \frac{1}{2}e^{-2t} \\ 
+\end{align*}
+
+% QUESTION 28
+\qs{2.6.28}{Solve \( Ay'' + Cy = \cos\!\left(\omega t \right) \) when \( A \omega^{2} = C  \) (the case of resonance). Example 4 suggests to substitute \( y = Mt \cos\!\left(\omega t \right) + Nt \sin\!\left(\omega t \right)  \). Find \( M  \) and \( N  \).}
+
+We have 
+\begin{align*}
+	y' & = M \cos\!\left(\omega t \right) + N \sin\!\left(\omega t \right) + t \!\left( -M \omega \sin\!\left(\omega t \right) + N \omega \cos\!\left(\omega t \right)  \right) \\
+	   & = \!\left( M + N \omega t  \right) \cos\!\left(\omega t \right) + \!\left( N - M \omega t  \right) \sin\!\left(\omega t \right) \\
+       y'' & = N \omega \cos\!\left( \omega t \right) - \!\left( M \omega + N \omega^{2} t  \right) \sin\!\left(\omega t \right) \\
+	   & \qquad - M \omega \sin\!\left( \omega t \right) + \!\left( N \omega - M \omega^{2} t  \right) \cos\!\left(\omega t \right) \\
+	   & = \!\left( 2N \omega - M \omega^{2} t  \right) \cos\!\left(\omega t \right) - \!\left( 2M \omega + N \omega^{2} t  \right) \sin\!\left(\omega t \right) 
+\end{align*}
+Substituting and letting \( A = C / \omega^{2} \), we find
+\begin{alignat*}{2}
+	&& C \!\left[ \!\left( \frac{2N}{\omega } - Mt  \right)\cos\!\left(\omega t \right) - \!\left( \frac{2M}{\omega } + Nt  \right)\sin\!\left(\omega t \right)  \right] \quad &  \\
+	&& \quad + Ct \!\left[ M \cos\!\left(\omega t \right) + N \sin\!\left(\omega t \right)  \right] & =  \\ 
+	\implies && 2C \!\left[ \frac{N }{\omega } \cos\!\left(\omega t \right) - \frac{M }{\omega }\sin\!\left(\omega t \right)  \right] & = \cos\!\left(\omega t \right) 
+\end{alignat*}
+We can conclude that \( M = 0 \) and \( N = \omega / 2C \), and our particular solution is
+\[
+	y_{p } \!\left( t  \right) = \frac{\omega}{2C} t \sin\!\left(\omega t \right)  
+\]
+
+% QUESTION 29
+\qs{2.6.29}{Put \( g \!\left( t  \right) \) into the great formulas (17)-(18) to see the equations above them.}
+
+(17): We define \( g \!\left( t  \right) \) as 
+\[
+	g \!\left( t  \right) = \frac{e^{s_{1}t } - e^{s_{2}t }}{s_{1} - s_{2}} 
+\]
+Substituting gives us:
+
+\textbf{Particular solution, constant coefficients}
+\begin{align*}
+	y_{p } \!\left( t  \right) & = \int_{0}^{t } \!\left( \frac{e^{s_{1}\!\left( t - T  \right)} - e^{s_{2}\!\left( t - T  \right)}}{s_{1} - s_{2}} \right)f \!\left( T  \right) \, dT  \\
+	 & = \frac{e^{s_{1}t }}{s_{1} - s_{2}} \int_{0}^{t } e^{s_{1}T } f \!\left( T  \right) \, dT - \frac{e^{s_{2}t }}{s_{1} - s_{2}} \int_{0}^{t } e^{s_{2}T } f \!\left( T  \right) \, dT   \\ 
+\end{align*}
+(18): We define \( g \!\left( t  \right) \) as 
+\[
+	g \!\left( t  \right) = te^{st } 
+\]
+Substituting gives us:
+
+Particular solution \( y_{p } \), null solutions \( e^{st } \), \( te^{st } \)
+\begin{align*}
+	y_{p }\!\left( t  \right) & = \int_{0}^{t } \!\left( t - T  \right)e^{s \!\left( t - T  \right)} f \!\left( T  \right) \, dT \\
+	 & = \int_{0}^{t } te^{s \!\left( t - T  \right)} f \!\left( T  \right) \, dT - \int_{0}^{t } Te^{s \!\left( t - T  \right)} f \!\left( T  \right) \, dT \\ 
+	 & = te^{st} \int_{0}^{t } e^{-sT } f \!\left( T  \right) \, dT - e^{st } \int_{0}^{t } Te^{-sT } f \!\left( T  \right) \, dT  
+\end{align*}
+
+\newpage
+\subsection{\textsf{2.7 - Laplace Transforms \texorpdfstring{\( Y \!\left( s  \right) \) and \( F \!\left( s \right) \)}{Y(s) and F(s)}}}
+
 \end{document}

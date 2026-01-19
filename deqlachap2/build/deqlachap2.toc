@@ -5,4 +5,5 @@
 \contentsline {subsection}{\textsf {2.4 - Forced Oscillations and Exponential Response}}{34}{section*.5}%
 \contentsline {subsection}{\textsf {2.5 - Electrical Networks and Mechanical Systems}}{46}{section*.6}%
 \contentsline {subsection}{\textsf {2.6 - Solutions to Second Order Equations}}{58}{section*.7}%
+\contentsline {subsection}{\textsf {2.7 - Laplace Transforms \( Y \!\left ( s \right ) \) and \( F \!\left ( s \right ) \)}}{73}{section*.8}%
 \contentsfinish 
