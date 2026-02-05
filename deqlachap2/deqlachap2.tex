@@ -3104,5 +3104,185 @@ We have
 \]
 
 % QUESTION 18
+\qs{2.7.18}{Transform \( y'' - 2y' + y = \delta \!\left( t  \right) \). The \textbf{impulse response} \( y \!\left( t  \right) \) transforms into \( Y \!\left( s  \right) = \) \textbf{transfer function}. The double root \( s_{1} = s_{2} = 1 \) gives a double pole and a new \( y \!\left( t  \right) \).}
+
+We have
+\[
+	\!\left( s^{2} - 2s + 1 \right) Y \!\left( s  \right) - \!\left( s + 2 \right) y \!\left( 0 \right) - y'\!\left( 0 \right) = \int_{0}^{\infty} \delta \!\left( t  \right) e^{-st } \, dt = 1 
+\]
+Assume \( y \!\left( 0 \right) = y'\!\left( 0 \right) = 0 \) and simplfy to
+\[
+	\!\left( s^{2} - 2s + 1 \right) Y \!\left( s  \right) = 1 \qquad \implies \qquad Y \!\left( s  \right) = \frac{1}{s^{2} - 2s + 1} = \frac{1}{\!\left( s - 1 \right)^{2}}
+\]
+The inverse transform gives us \( y \!\left( t  \right) = te^{t } \).
+
+\vspace{12pt}
+
+\newpage
+% QUESTION 19
+\qs{2.7.19}{Find the inverse transforms \( y \!\left( t  \right) \) of these transfer functions \( Y \!\left( s  \right) \):
+\begin{enumerate}[label=(\alph*)]
+	\item \( \displaystyle{\frac{s }{s - a }} \)
+	\item \( \displaystyle{\frac{s }{s^{2} - a^{2}}} \)
+	\item \( \displaystyle{\frac{s^{2}}{s^{2} - a^{2}}} \)
+\end{enumerate}}
+
+Rewrite each of these transfer functions as
+\begin{enumerate}[label=(\alph*)]
+	\item 
+	\begin{align*}
+		Y \!\left( s  \right) & = \frac{s }{s - a } = \frac{a }{s - a } + \frac{s - a }{s - a } \\
+				      & = \frac{a }{s - a } + 1 \\
+				    \implies y \!\left( t \right) & = ae^{at} + \delta \!\left( t \right)
+	\end{align*}
+	Observe that this implies the inverse transform of 
+	\[
+		Y \!\left( s  \right) = \frac{s }{s + a } 
+	\]
+	is 
+	\[
+		y \!\left( t  \right) = -ae^{-at } + \delta \!\left( t \right) 
+	\]
+	\item 
+	We can deduce
+	\begin{align*}
+		Y \!\left( s  \right) & = \frac{s }{s^{2} - a^{2}} = \frac{s }{\!\left( s - a  \right)\!\left( s + a \right)} \\
+				      & = \frac{s }{2a \!\left( s - a \right)} - \frac{s }{2a \!\left( s + a \right)} \\
+				     \implies y \!\left( t \right) & = \frac{1}{2} \!\left[ e^{at } + e^{-at} \right] = \cosh\!\left( at \right)
+	\end{align*}
+	which we know is the hyperbolic cosine. Alternatively, if you know that \( \cos\!\left( iat \right) = \cosh\!\left( at \right) \), this is a simple substitution in our transform for cosine.
+	\item 
+	\begin{align*}
+		Y \!\left( s  \right) & = \frac{s^{2}}{s^{2} - a^{2}} = \frac{a^{2}}{s^{2} - a^{2}} + \frac{s^{2} - a^{2}}{s^{2} - a^{2}} \\ 
+				      & = a \!\left( \frac{a}{s^{2} - a^{2}} \right) + 1 \\
+	\end{align*}
+	Now, let \( a = i \omega \) to get
+	\begin{align*}
+				      & = i \omega \!\left( \frac{i \omega}{s^{2} + \omega^{2}} \right) + 1 \\
+	\implies y \!\left( t \right) & = - \omega \sin\!\left( \omega t \right) + \delta \!\left( t \right) \\
+				      & = -ia \sin\!\left(iat\right) + \delta \!\left( t \right) \\
+				      & = a \sinh\!\left( at \right) + \delta \!\left( t \right)
+	\end{align*}
+	In the last line, we employ the identity \( \sinh\!\left( at \right) = -i \sin\!\left(iat\right)  \).
+\end{enumerate}
+
+% QUESTION 20
+\qs{2.7.20}{Solve \( y'' + y = \delta \!\left( t  \right) \) by Laplace transform, with \( y \!\left( 0 \right) = y'\!\left( 0 \right) = 0 \). If you found \( y \!\left( t  \right) = \sin\!\left( t \right) \) as I did, this involves a serious mystery: \textit{That sine solves} \( y'' + y = 0 \), and it doesn't have \( y'\!\left( 0 \right)  = 0 \). \textit{Where does} \( \delta \!\left( t  \right) \) \textit{come from}? In other words, what is the derivative of \( y' = \cos\!\left( t \right) \) if all functions are zero for \( t < 0 \)?
+
+\vspace{6pt}
+
+\textbf{If} \( \pmb{y = \sin\!\left( t \right) } \) \textbf{, explain why} \( \pmb{y'' = -\sin\!\left( t \right) + \delta \!\left( t \right)} \) \textbf{. Remember that} \( y = 0 \) \textbf{for} \( t < 0 \).
+
+\vspace{6pt}
+
+Problem (20) connects to a remarkable fact. The same impulse response \( y = g \!\left( t \right) \) solves both of these equations: \textbf{An impulse at} \( \pmb{t = 0} \) \textbf{makes the velocity} \( \pmb{y'\!\left( 0 \right)} \) \textbf{jump by 1}. Both equations start from \( y \!\left( 0 \right) = 0 \).
+
+\[
+	y'' + By' + Cy = \pmb{\delta \!\left( t  \right)} \text{ with } y'\!\left( 0 \right) = \pmb{0} \quad y'' + By' + Cy = \pmb{0} \text{ with } y'\!\left( 0 \right) = \pmb{1}. 
+\]}
+
+Applying the Laplace transform gives us
+\[
+	\!\left( s^{2} + 1 \right)Y = 1 \quad \implies \quad Y \!\left( s  \right) = \frac{1}{s^{2} + 1} \quad \implies \quad y \!\left( t \right) = \sin\!\left( t \right) 
+\]
+Consider \( y' = \cos\!\left( t \right)  \). Formally, consider a piecewise function as such:
+\[
+	y' =
+	\begin{cases}
+		0 & t \le 0 \\
+		\cos\!\left( t \right) & t > 0 \\
+	\end{cases}
+\]
+Notice that there is a discontinuity at the boundary \( t = 0 \). Specifically, \( y' \) jumps from \( 0 \) immediately to the open point \( 1 \). In an intuitive sense, \( y' \) changes ``infinitely'' at that instant, which leads to the appearance of the \( \delta \!\left( t \right) \) term in the second derivative.
+
+\newpage
+
+% QUESTION 21
+\qs{2.7.21}{(Similar mystery) These two problems give the same \( Y \!\left( s  \right) = s / \!\left( s^{2} + 1 \right) \) and the same impulse response \( y \!\left( t  \right) = g \!\left( t  \right) = \cos\!\left( t \right)  \). How can this be?
+\[
+	y' = -\sin\!\left( t \right) \text{ with } y \!\left( 0 \right) = \pmb{1} \qquad y' = -\sin\!\left( t \right) + \pmb{\delta \!\left( t \right)} \text{ with } ``y \!\left( 0 \right) = 0'' 
+\]}
+
+Once more, we have a discontinuous piecewise function in the form of
+\[
+	y = 
+	\begin{cases}
+		0 & t \le 0 \\
+		\cos\!\left( t \right) & t > 0 \\
+	\end{cases}
+\]
+Not only is the initial condition \( y \!\left( 0 \right) = 0 \) satisfied, but the appearance of the \( \delta \!\left( t \right) \) accounts for the discontinuity as the boundary \( t = 0 \) is crossed.
+
+\vspace{12pt}
+
+\textbf{Problems 22-24 involve the Laplace transform of the integral of \( \pmb{y \!\left( t \right)} \).}
+
+\vspace{12pt}
+
+% QUESTION 22
+\qs{2.7.22}{If \( f \!\left( t \right) \) transforms to \( F \!\left( s \right) \), what is the transform of the integral \( h \!\left( t \right) = \int^{t}_{0} f \!\left( T \right) \, dT  \)? Answer by transforming the equation \( dh / dt = f \!\left( t \right) \) with \( h \!\left( 0 \right) = 0 \).}
+
+By the Fundamental Theorem of Calculus, differentiating \( h \!\left( t \right) \) gives us
+\[
+	\frac{d h }{d t } = \frac{d }{d t } \int^{t }_{0} f \!\left( T \right) \, dT = f \!\left( t \right)  
+\]
+Transforming, we have
+\[
+	sH \!\left( s \right) = F \!\left( s \right) \quad \implies \quad H \!\left( s \right) = \frac{F \!\left( s \right)}{s} 
+\]
+
+% QUESTION 23
+\qs{2.7.23}{Transform and solve the integro-differential equation \( y' + \int^{t }_{0} y \, dt = 1 \), \( y \!\left( 0 \right) = 0 \). A mystery like Problem 20: \( y = \cos\!\left( t \right) \) seems to solve \( y' + \int^{t}_{0} y \, dt = 0 \), \( y \!\left( 0 \right) = 1 \).}
+
+The transform is
+\[
+	s Y \!\left( s \right) + \frac{Y \!\left( s \right)}{s} = \frac{1}{s} \quad \implies \quad Y \!\left( s \right) = \frac{1}{s^{2} + 1} \quad \implies \quad y \!\left( t \right) = \sin\!\left( t \right) 
+\]
+
+% QUESTION 24
+\qs{2.7.24}{Transform and solve the amazing equation \( dy / dt + \int^{t}_{0} y \, dt = \delta \!\left( t \right) \).}
+
+Transforming gives us (assuming \( y \!\left( 0 \right) = 0 \))
+\[
+	sY \!\left( s \right) + \frac{Y \!\left( s \right)}{s} = 1 \quad \implies \quad Y \!\left( s \right) = \frac{s}{s^{2} + 1} \quad \implies \quad y \!\left( t \right) = \cos\!\left( t \right)  
+\]
+
+% QUESTION 25
+\qs{2.7.25}{The derivative of the delta function is not easy to imagine -- it is called a ``doublet'' because it jumps up to \( +\infty \) and back down to \( -\infty \). Find the Laplace transform of the doublet \( d \delta / dt \) from the rule for the transform of a derivative.
+
+A doublet \( \delta'\!\left( t \right) \) is known by its integral: 
+\[ 
+	\int \delta'\!\left( t \right) F \!\left( t \right) \, dt = -\int \delta \!\left( t \right) F'\!\left( t \right) \, dt = \pmb{-F'\!\left( 0 \right) } 
+\]}
+
+The transform is (assuming \( y \!\left( 0 \right) = 0 \))
+\[
+	s Y \!\left( s \right) = s
+\]
+with equality ensuing from the transform of \( \delta \!\left( t \right) \) being 1.
+
+\vspace{12pt}
+
+% QUESTION 26
+\qs{2.7.26}{(Challenge) What function \( y \!\left( t \right) \) has the transform 
+
+\( Y \!\left( s \right) = 1 / \!\left( s^{2} + \omega^{2} \right)\!\left( s^{2} + a^{2} \right) \)? First use partial fractions to find \( H \) and \( K \):
+\[
+	Y \!\left( s \right) = \frac{H}{s^{2} + \omega^{2}} + \frac{K}{s^{2} + a^{2}} 
+\]}
+Equivalently, we solve
+\[
+	H \!\left( s^{2} + a^{2} \right) + K \!\left( s^{2} + \omega^{2} \right) = \!\left( H + K \right)s^{2} + Ha^{2} + K \omega^{2} = 1 
+\]
+from which we have \( H + K = 0 \), itself implying \( H = 1 / \!\left( a^{2} - \omega^{2} \right) \) and \( K = -H \). Then in the \( t \)-domain
+\[
+	y \!\left( t \right) = \frac{1}{\omega \!\left( a^{2} - \omega^{2} \right)} \sin\!\left( \omega t \right) - \frac{1}{a \!\left( a^{2} - \omega^{2} \right)} \sin\!\left( at \right) 
+\]
+
+% QUESTION 27
+\qs{2.7.27}{Why is the Laplace transform of a unit step function \( H \!\left( t \right) \) the same as the Laplace transform of a constant function \( f \!\left( t \right) = 1 \)?}
+
+We assume that all functions are 0 for \( t < 0 \), so \( f \!\left( t \right) = 1 \) is definitionally exact to the Heaviside step function.
+
 
 \end{document}

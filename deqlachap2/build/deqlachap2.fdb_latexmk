@@ -1,10 +1,10 @@
 # Fdb version 3
-["makeindex build/deqlachap2.idx"] 1759009941 "build/deqlachap2.idx" "build/deqlachap2.ind" "build/deqlachap2" 1769972874
-  "build/deqlachap2.idx" 1769972866 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+["makeindex build/deqlachap2.idx"] 1759009941 "build/deqlachap2.idx" "build/deqlachap2.ind" "build/deqlachap2" 1770323537
+  "build/deqlachap2.idx" 1770323527 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   (generated)
   "build/deqlachap2.ilg"
   "build/deqlachap2.ind"
-["pdflatex"] 1769972866 "deqlachap2.tex" "build/deqlachap2.pdf" "deqlachap2" 1769972874
+["pdflatex"] 1770323526 "deqlachap2.tex" "build/deqlachap2.pdf" "deqlachap2" 1770323537
   "../chap2/sec2.1/chap2sec2.1ex3.eps" 1752428982 126240 4cb1ec25194787a1d1e2b64c62f6f5e8 ""
   "../chap2/sec2.2/chap2sec2.2ex1.eps" 1754099395 115577 099b42f0a676451da69ef868fbf64611 ""
   "../chap2/sec2.2/chap2sec2.2ex14.eps" 1755014744 128983 1fc68df90f9224f1e9f9b773275ee596 ""
@@ -443,10 +443,10 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1759006686 4073834 3c52fac3aa7c800a8a3283e75bdba0e4 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1769947089 1442194 29a51f5875371c0a59209fa02fe86892 ""
-  "build/deqlachap2.aux" 1769972874 6222 720361a220a562894a012d088ca955af "pdflatex"
+  "build/deqlachap2.aux" 1770323537 6222 8d840f472f0550e6439e013e9fc55188 "pdflatex"
   "build/deqlachap2.ind" 1759009942 0 d41d8cd98f00b204e9800998ecf8427e "makeindex build/deqlachap2.idx"
-  "build/deqlachap2.toc" 1769972874 867 072905d571c7161d52d8c6a90e89bfb2 "pdflatex"
-  "deqlachap2.tex" 1769972865 164848 c3fe407ee608f9426393001931f9a2d6 ""
+  "build/deqlachap2.toc" 1770323537 867 072905d571c7161d52d8c6a90e89bfb2 "pdflatex"
+  "deqlachap2.tex" 1770323525 174357 cee93d0e584bf11f36afba24d4a0d71f ""
   (generated)
   "build/deqlachap2.aux"
   "build/deqlachap2.idx"
