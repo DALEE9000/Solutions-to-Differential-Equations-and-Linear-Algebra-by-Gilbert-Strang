@@ -1,0 +1,3 @@
+\contentsline {section}{\textsf {8 - Fourier and Laplace Transforms}}{3}{section*.1}%
+\contentsline {subsection}{\textsf {8.1 - Fourier Series}}{3}{section*.2}%
+\contentsfinish 
