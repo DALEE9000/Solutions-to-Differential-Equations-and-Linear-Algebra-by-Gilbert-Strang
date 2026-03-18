@@ -608,4 +608,700 @@ The jumps occur at every \( x = \!\left( 2k + 1 \right)\pi \), where we go from 
 	\]
 \end{enumerate}
 
+\newpage
+\subsection{\textsf{8.2 - The Fast Fourier Transform}}
+% QUESTION 1
+\qs{8.2.1}{Multiply the three matrices in equation (11) and compare with \( F \). In which six entries do you need to know that \( i^{2} = -1 \)? This is \( \!\left( w_{4} \right)^{2} = w_{2} \). If \( M = N / 2 \), why is \( \!\left( w_{N}^{M} = -1 \right) \)?}
+
+\begin{align*}
+	F_{4} & = \begin{bmatrix}
+		1 &  & 1 & \\
+		 & 1 &  & i \\
+		1 &  & -1 & \\
+		 & 1 &  & -i \\
+	\end{bmatrix} 
+	\begin{bmatrix}
+		1 & 1 &  & \\
+		1 & i^{2} &  & \\
+		 &  & 1 & 1\\
+		 &  & 1 & i^{2} \\
+	\end{bmatrix}
+	\begin{bmatrix}
+		1 &  &  & \\
+		 &  & 1 & \\
+		 & 1 &  & \\
+		 &  &  & 1 \\
+	\end{bmatrix} \\
+	      & = \begin{bmatrix}
+	      	1 & 1 & 1 & 1 \\
+	      	1 & i^{2} & i & i^{3} \\
+	      	1 & 1 & -1 & -1 \\
+	      	1 & i^{2} & -i & -i^{3} \\
+	      \end{bmatrix}
+	      \begin{bmatrix}
+	      	1 &  &  & \\
+	      	 &  & 1 & \\
+	      	 & 1 &  & \\
+	      	 &  &  & 1 \\
+	      \end{bmatrix} \\
+	      & = \begin{bmatrix}
+	      	1 & 1 & 1 & 1 \\
+	      	1 & i & i^{2} & i^{3} \\
+	      	1 & -1 & 1 & -1 \\
+	      	1 & -i & i^{2} & -i^{3} \\
+	      \end{bmatrix} \\
+	      & = \begin{bmatrix}
+	      	1 & 1 & 1 & 1 \\
+	      	1 & i & i^{2} & i^{3} \\
+	      	1 & i^{2} & i^{4} & i^{6} \\
+	      	1 & i^{3} & i^{6} & i^{9}\\
+	      \end{bmatrix}
+\end{align*}
+
+The right-most three entries of the bottom two rows require knowledge of \( i^{2} = -1 \).
+
+For \( M = N / 2 \), we have
+\[
+	w^{M}_{N} = w^{N / 2}_{N} = e^{i 2 \pi \cdot N / 2N} = e^{i \pi} = -1
+\]
+These are the roots of unity on opposite ends of the real axis.
+
+\vspace{12pt}
+
+% QUESTION 2
+\qs{8.2.2}{\textit{Why is row} \( i \) \textit{of} \( \overline{F} \) \textit{the same as row} \( N - i \) of \( F \) (numbered from \( 0 \) to \( N - 1 \))?}
+
+I will switch the index to \( k \) as the book's choice is confusing. One intuitive, geometric analogy to make here is \( \overline{F} \) \textit{reverses} the direction of the roots of unity starting from zero. As we move down the Fourier matrix row by row, instead of moving counterclockwise around the unit circle to the \( k \)-th step, the conjugate changes the sign, causing us to move in the clockwise direction.
+
+The other argument is the powers of \( \omega = e^{i 2 \pi / N} \) are computed modulo \( N \).
+The \( k \)-th row of \( \overline{F} \) has \( \omega = e^{-i 2k \pi / N} \) and the \( N - k \)-th row of \( F \) has \( \omega = e^{i 2 \pi \!\left( N - k \right)} / N = e^{-i 2k \pi / N} \). In this sense, row ``\( N \)'' of \( F \) simply corresponds to row 0: which is a row of 1's in both of \( F \) and \( \overline{F} \).
+
+\vspace{12pt}
+
+% QUESTION 3
+\qs{8.2.3}{From Problem 2, find the 4 by 4 permutation matrix \( P \) so that \( F = P \overline{F} \). Check that \( P^{2} = I \) so that \( P = P^{-1} \). Then from \( \overline{F}F = 4I \) show that \( F^{2} = 4P \).
+
+It is amazing that \( F^{4} = 16P^{2} = 16I \). \textit{Four transforms of any \( \pmb{c} \) bring back \( \pmb{16c} \)}. For all \( N \), \( F^{2} / N \) is a permutation matrix \( P \) and \( \pmb{F^{4} = N^{2}I} \).}
+
+In the 4 by 4 case, we need only switch rows 1 and 3:
+\[
+	P = \begin{bmatrix}
+		1 &  &  & \\
+		 &  & & 1 \\
+		 &  & 1 & \\
+		 & 1 &  &
+	\end{bmatrix} 
+\]
+Check that
+\[
+	P^{2} = \begin{bmatrix}
+		1 &  &  & \\
+		 &  &  & 1 \\
+		 &  & 1 & \\
+		 & 1 &  & 
+	\end{bmatrix} 
+	\begin{bmatrix}
+		1 &  &  & \\
+		 &  &  & 1 \\
+		 &  & 1 & \\
+		 & 1 &  & 
+	\end{bmatrix}
+	= \begin{bmatrix}
+		1 &  &  & \\
+		 & 1 &  & \\
+		 &  & 1 & \\
+		 &  &  & 1 
+	\end{bmatrix}
+	= I
+\]
+Next, we can prove
+\begin{alignat*}{2}
+	\overline{F}F & = PF^{2} & \quad \!\left( PF = \overline{F} \iff F = P \overline{F} \right)\\
+	\implies F^{2} & = 4P & 
+\end{alignat*}
+
+% QUESTION 4
+\qs{8.2.4}{Invert the three factors in equation (11) to find a fast factorization of \( F^{-1} \).}
+
+\begin{align*}
+	\begin{bmatrix}
+		1 &  & 1 & \\
+		 & 1 &  & i \\
+		1 &  & -1 & \\
+		 & 1 &  & -i
+	\end{bmatrix}^{-1} & = \frac{1}{2}\begin{bmatrix}
+		1 &  & 1 & \\
+		 & 1 &  & 1 \\
+		1 &  & -1 & \\
+		 & -i &  & i
+	\end{bmatrix} \\
+	\begin{bmatrix}
+		1 & 1 &  & \\
+		1 & i^{2} &  & \\
+		 &  & 1 & 1 \\
+		 &  & 1 & i^{2}
+	\end{bmatrix}^{-1} & = \frac{1}{2}\begin{bmatrix}
+		1 & 1 &  & \\
+		1 & -1 &  & \\
+		 &  & 1 & 1 \\
+		 &  & 1 & -1
+	\end{bmatrix} \\
+	\begin{bmatrix}
+		1 &  &  & \\
+		 &  & 1 & \\
+		 & 1 &  & \\
+		 &  &  & 1
+	\end{bmatrix}^{-1} & = \begin{bmatrix}
+		1 &  &  & \\
+		 &  & 1 & \\
+		 & 1 &  & \\
+		 &  &  & 1
+	\end{bmatrix}
+\end{align*}
+
+The fast factorization of \( F^{-1}_{4} \) is
+\[
+	F^{-1}_{4} = \frac{1}{4}\begin{bmatrix}
+		1 &  &  & \\
+		 &  & 1 & \\
+		 & 1 &  & \\
+		 &  &  & 1
+	\end{bmatrix} 
+	\begin{bmatrix}
+		1 & 1 &  & \\
+		1 & -1 &  & \\
+		 &  & 1 & 1 \\
+		 &  & 1 & -1
+	\end{bmatrix}
+	\begin{bmatrix}
+		1 &  & 1 & \\
+		 & 1 &  & 1 \\
+		1 &  & -1 & \\
+		 & -i &  & i
+	\end{bmatrix}
+\]
+
+% QUESTION 5
+\qs{8.2.5}{\( F \) is symmetric. Transpose equation (11) to find a new Fast Fourier Transform.}
+
+\[
+	F^{\textsc{T}} = \begin{bmatrix}
+		1 &  &  & \\
+		 &  & 1 & \\
+		 & 1 &  & \\
+		 &  &  & 1
+	\end{bmatrix}
+	\begin{bmatrix}
+		1 & 1 &  & \\
+		1 & i^{2} &  & \\
+		 &  & 1 & 1 \\
+		 &  & 1 & i^{2}
+	\end{bmatrix}
+	\begin{bmatrix}
+		1 &  & 1 & \\
+		 & 1 &  & 1 \\
+		1 &  & -1 & \\
+		 & i &  & -i
+	\end{bmatrix}
+\]
+
+% QUESTION 6
+\qs{8.2.6}{All entries in the factorization of \( F_{6} \) involve powers of \( w = \) sixth root of 1:
+\[
+	F_{6} = \begin{bmatrix}
+		I & D \\
+		I & -D
+	\end{bmatrix} 
+	\begin{bmatrix}
+		F_{3} & \\
+		 & F_{3}
+	\end{bmatrix}
+	\left[
+		\hphantom{\begin{bmatrix} F_{3} \end{bmatrix}} \\
+		\vphantom{\begin{bmatrix} F_{3} & \\ & F_{3} \end{bmatrix}} \\
+		P
+		\hphantom{\begin{bmatrix} F_{3} \end{bmatrix}} \\
+	\right]
+\]
+Write down these factors with \( 1 \), \( w \), \( w^{2} \) in \( D \) and powers of \( w^{2} \) in \( F_{3} \). Multiply!}
+
+\[
+	I = \begin{bmatrix}
+		1 &  & \\
+		 & 1 & \\
+		 &  & 1
+	\end{bmatrix}, \quad
+	D = \begin{bmatrix}
+		1 &  & \\
+		 & w & \\
+		 &  & w^{2}
+	\end{bmatrix}, \quad
+	F_{3} = \begin{bmatrix}
+		1 & 1 & 1 \\
+		1 & w^{2} & \!\left( w^{2} \right)^{2} \\
+		1 & \!\left( w^{2} \right)^{2} & \!\left( w^{2} \right)^{4}
+	\end{bmatrix}
+\]
+\[
+	P = \begin{bmatrix}
+		1 &  &  &  &  & \\
+		 &  &  & 1 &  & \\
+		 & 1 &  &  &  & \\
+		 &  &  &  & 1 & \\
+		 &  & 1 &  &  & \\
+		 &  &  &  &  & 1
+	\end{bmatrix}
+\]
+
+A point of confusion is in conflating \( w_{3} \) and \( w_{6} \), so to clarify, above we have \( w = w_{6} \). Use the relationship \( \!\left( w_{6} \right)^{2} = w_{3} \). This gives us \( F_{3} \). Multiplying the factors gives us 
+
+{\footnotesize
+\begin{align*}
+	F_{6} & = \begin{bmatrix}
+		1 &  &  & 1 &  & \\
+		 & 1 &  &  & w & \\
+		 &  & 1 &  &  & w^{2} \\
+		1 &  &  & -1 &  & \\
+		 & 1 &  &  & -w & \\
+		 &  & 1 &  &  & -w^{2}
+	\end{bmatrix} 
+	\begin{bmatrix}
+		1 & 1 & 1 &  &  & \\
+		1 & w^{2} & \!\left( w^{2} \right)^{2} &  &  & \\
+		1 & \!\left( w^{2} \right)^{2} & \!\left( w^{2} \right)^{4} &  &  & \\
+		 &  &  & 1 & 1 & 1 \\
+		 &  &  & 1 & w^{2} & \!\left( w^{2} \right)^{2} \\
+		 &  &  & 1 & \!\left( w^{2} \right)^{2} & \!\left( w^{2} \right)^{4}
+	\end{bmatrix}
+	\begin{bmatrix}
+		1 &  &  &  &  & \\
+		 &  & 1 &  &  & \\
+		 &  &  &  & 1 & \\
+		 & 1 &  &  &  & \\
+		 &  &  & 1 &  & \\
+		 &  &  &  &  & 1
+	\end{bmatrix} \\
+	 & = 
+	 \begin{bmatrix}
+		1 &  &  & 1 &  & \\
+		 & 1 &  &  & w & \\
+		 &  & 1 &  &  & w^{2} \\
+		1 &  &  & -1 &  & \\
+		 & 1 &  &  & -w & \\
+		 &  & 1 &  &  & -w^{2}
+	\end{bmatrix}
+	 \begin{bmatrix}
+	 	1 &  & 1 &  & 1 & \\
+	 	1 &  & w^{2} &  & \!\left( w^{2} \right)^{2} & \\
+	 	1 &  & \!\left( w^{2} \right)^{2} &  & \!\left( w^{2} \right)^{4} & \\
+	 	 & 1 &  & 1 &  & 1 \\
+	 	 & 1 &  & w^{2} &  & \!\left( w^{2} \right)^{2} \\
+	 	 & 1 &  & \!\left( w^{2} \right)^{2} &  & \!\left( w^{2} \right)^{4}
+	 \end{bmatrix} \\ 
+	 & = \begin{bmatrix}
+	 	1 & 1 & 1 & 1 & 1 & 1 \\
+	 	1 & w & w^{2} & w^{3} & \!\left( w^{2} \right)^{2} & w^{5} \\
+	 	1 & w^{2} & \!\left( w^{2} \right)^{2} & \!\left( w^{2} \right)^{3} & \!\left( w^{2} \right)^{4} & \!\left( w^{2} \right)^{5} \\
+	 	1 & -1 & 1 & -1 & 1 & -1 \\
+	 	1 & -w & w^{2} & -w^{3} & \!\left( w^{2} \right)^{2} & -w^{5} \\
+	 	1 & -w^{2} & \!\left( w^{2} \right)^{2} & -\!\left( w^{2} \right)^{3} & \!\left( w^{2} \right)^{2} & -\!\left( w^{2} \right)^{5}
+	 \end{bmatrix}
+\end{align*}}
+
+% QUESTION 7
+\qs{8.2.7}{Put the vector \( \pmb{c} = \!\left( 1,0,1,0 \right) \) through the three steps of the FFT to find \( \pmb{y} = F \pmb{c} \). Do the same for \( \pmb{c} = \!\left( 0,1,0,1 \right) \).}
+
+\begin{align*}
+	F_{4}c_{1} & = \begin{bmatrix}
+		1 &  & 1 & \\
+		 & 1 &  & i \\
+		1 &  & -1 & \\
+		 & 1 &  & -i \\
+	\end{bmatrix} 
+	\begin{bmatrix}
+		1 & 1 &  & \\
+		1 & i^{2} &  & \\
+		 &  & 1 & 1\\
+		 &  & 1 & i^{2} \\
+	\end{bmatrix}
+	\begin{bmatrix}
+		1 &  &  & \\
+		 &  & 1 & \\
+		 & 1 &  & \\
+		 &  &  & 1 \\
+	\end{bmatrix}
+	\begin{bmatrix}
+		1 \\
+		0 \\
+		1 \\
+		0 \\
+	\end{bmatrix} \\
+		& = \begin{bmatrix}
+		1 &  & 1 & \\
+		 & 1 &  & i \\
+		1 &  & -1 & \\
+		 & 1 &  & -i \\
+	\end{bmatrix} 
+	\begin{bmatrix}
+		1 & 1 &  & \\
+		1 & i^{2} &  & \\
+		 &  & 1 & 1\\
+		 &  & 1 & i^{2} \\
+	\end{bmatrix}
+	\begin{bmatrix}
+		1 \\
+		1 \\
+		\\
+		\\
+	\end{bmatrix} \\
+		& = \begin{bmatrix}
+		1 &  & 1 & \\
+		 & 1 &  & i \\
+		1 &  & -1 & \\
+		 & 1 &  & -i \\
+	\end{bmatrix} 
+	\begin{bmatrix}
+		2 \\
+		\\
+		\\
+		\\
+	\end{bmatrix} \\
+		& = \begin{bmatrix}
+			2 \\
+			0 \\
+			2 \\
+			0 \\
+		\end{bmatrix}
+\end{align*}
+\begin{align*}
+	F_{4}c_{2} & = \begin{bmatrix}
+		1 &  & 1 & \\
+		 & 1 &  & i \\
+		1 &  & -1 & \\
+		 & 1 &  & -i \\
+	\end{bmatrix} 
+	\begin{bmatrix}
+		1 & 1 &  & \\
+		1 & i^{2} &  & \\
+		 &  & 1 & 1\\
+		 &  & 1 & i^{2} \\
+	\end{bmatrix}
+	\begin{bmatrix}
+		1 &  &  & \\
+		 &  & 1 & \\
+		 & 1 &  & \\
+		 &  &  & 1 \\
+	\end{bmatrix}
+	\begin{bmatrix}
+		0 \\
+		1 \\
+		0 \\
+		1 \\
+	\end{bmatrix} \\
+	 & = \begin{bmatrix}
+		1 &  & 1 & \\
+		 & 1 &  & i \\
+		1 &  & -1 & \\
+		 & 1 &  & -i \\
+	\end{bmatrix} 
+	\begin{bmatrix}
+		1 & 1 &  & \\
+		1 & i^{2} &  & \\
+		 &  & 1 & 1\\
+		 &  & 1 & i^{2} \\
+	\end{bmatrix}
+	\begin{bmatrix}
+		\\
+		\\
+		1 \\
+		1 \\
+	\end{bmatrix} \\
+	 & = \begin{bmatrix}
+		1 &  & 1 & \\
+		 & 1 &  & i \\
+		1 &  & -1 & \\
+		 & 1 &  & -i \\
+	\end{bmatrix} 
+	\begin{bmatrix}
+		\\
+		\\
+		2 \\
+		\\
+	\end{bmatrix} \\
+	 & = \begin{bmatrix}
+	 	2 \\
+	 	0 \\
+	 	-2 \\
+	 	0 \\
+	 \end{bmatrix}
+\end{align*}
+
+% QUESTION 8
+\qs{8.2.8}{Compute \( \pmb{y} = F_{8}\pmb{c} \) by the three FFT steps for \( \pmb{c} = \!\left( 1,0,1,0,1,0,1,0 \right) \). Repeat the computation for \( \pmb{c} = \!\left( 0,1,0,1,0,1,0,1 \right) \).}
+
+Let \( w = w_{8} \). We have
+\[
+	F_{8} = \begin{bmatrix}
+		I_{4} & D_{4} \\
+		I_{4} & -D_{4} \\
+	\end{bmatrix}
+	\begin{bmatrix}
+		F_{4} & \\
+		 & F_{4} \\
+	\end{bmatrix}
+	\left[
+		\hphantom{\begin{bmatrix} F_{4} \end{bmatrix}} \\
+		\vphantom{\begin{bmatrix} F_{4} & \\ & F_{4} \end{bmatrix}} \\
+		P_{8}
+		\hphantom{\begin{bmatrix} F_{4} \end{bmatrix}} \\
+	\right]
+\]
+\[
+	I_{4} = \begin{bmatrix}
+		1 &  &  & \\
+		 & 1 &  & \\
+		 &  & 1 & \\
+		 &  &  & 1 \\
+	\end{bmatrix}, \quad
+	D_{4} = \begin{bmatrix}
+		1 &  &  & \\
+		 & w^{2} &  & \\
+		 &  & \!\left( w^{2} \right)^{2} & \\
+		 &  &  & \!\left( w^{2} \right)^{4} \\
+	\end{bmatrix}
+\]
+where we use the fact that \( \!\left( w_{8} \right)^{2} = w_{4} \). The permutation matrix is
+\[
+	P_{8} = \begin{bmatrix}
+		1 &  &  &  &  &  &  & \\
+		 &  & 1 &  &  &  &  & \\
+		 &  &  &  & 1 &  &  & \\
+		 &  &  &  &  &  & 1 & \\
+		 & 1 &  &  &  &  &  & \\
+		 &  &  & 1 &  &  &  & \\
+		 &  &  &  &  & 1 &  & \\
+		 &  &  &  &  &  &  & 1 \\
+	\end{bmatrix} 
+\]
+Through recursion, and further exploiting that \( \!\left( w_{4} \right)^{2} = w_{2} = w^{4} \), we further decompose into
+\[
+	\begin{bmatrix}
+		F_{4} & \\
+		 & F_{4} \\
+	\end{bmatrix} = 
+	\begin{bmatrix}
+		I_{2} & D_{2} &  & \\
+		I_{2} & -D_{2} &  & \\
+		 &  & I_{2} & D_{2} \\
+		 &  & I_{2} & -D_{2} \\
+	\end{bmatrix}
+	\begin{bmatrix}
+		F_{2} &  &  & \\
+		 & F_{2} &  & \\
+		 &  & F_{2} & \\
+		 &  &  & F_{2} \\
+	\end{bmatrix}
+	\begin{bmatrix}
+		\text{pick} & 0, 4 \\
+		\text{pick} & 2, 6 \\
+		\text{pick} & 1, 5 \\
+		\text{pick} & 3, 7 \\
+	\end{bmatrix}
+\]
+\[
+	I_{2} = \begin{bmatrix}
+		1 & \\
+		 & 1 \\
+	\end{bmatrix}, \quad
+	D_{2} = \begin{bmatrix}
+		1 & \\
+		 & w^{4} \\
+	\end{bmatrix}, \quad
+	F_{2} = \begin{bmatrix}
+		1 & 1 \\
+		1 & w^{4} \\
+	\end{bmatrix}
+\]
+
+Computing, \( \pmb{c}_{1} \) outputs \( \!\left( 4,0,0,0,4,0,0,0 \right) \) and \( \pmb{c}_{2} \) gives \( \!\left( 4,0,0,0,-4,0,0,0 \right) \).
+
+\vspace{12pt}
+
+% QUESTION 9
+\qs{8.2.9}{If \( w = e^{2 \pi i / 64} \) then \( w^{2} \) and \( \sqrt{w} \) are among the \underline{\quad} and \underline{\quad} roots of 1.}
+
+We have \( w^{2} \) is a primitive \( 32^{nd} \) root of unity and \( \sqrt{w} \) is a primitive \( 128^{th} \) root of unity. Both generate the other roots of unity for their respective \( N \).
+
+\vspace{12pt}
+
+% QUESTION 10
+\qs{8.2.10}{\( F \) is a symmetric matrix. Its eigenvalues aren't real. How is this possible?}
+The theorem requires that the symmetric matrix itself must be real to have real eigenvalues. By contrast, \( F \) definitionally has imaginary components in its entries, so that assumption is not satisfied.
+
+\vspace{12pt}
+
+% QUESTION 11
+\qs{8.2.11}{The eigenvectors of \( K_{N} \) and \( B_{N} \) are the discrete sines \( \pmb{s}_{1} \), ..., \( \pmb{s}_{N} \) and the discrete cosines \( \pmb{c}_{0} \), .., \( \pmb{c}_{N - 1}\). Notice the eigenvector \( \pmb{c}_{0} = \!\left( 1,1, ..., 1 \right) \). Here are the \( \pmb{s}_{k} \) and \( \pmb{c}_{k} \)--these vectors are samples of \( \sin\!\left(kx\right) \) and \( \cos\!\left(kx\right) \) from \( 0 \) to \( \pi \).
+
+\[
+	\!\left( \sin\!\left(\frac{\pi k}{N + 1}\right), \sin\!\left(\frac{2 \pi k}{N + 1}\right), ..., \sin\!\left(\frac{N \pi k}{N + 1}\right) \right) 
+\]
+\[
+	\text{and} 
+\]
+\[
+	\!\left( \cos\!\left(\frac{\pi k}{2N}\right), \cos\!\left(\frac{3 \pi k}{2N}\right), ..., \cos\!\left(\frac{\!\left( 2N - 1 \right) \pi k}{2N}\right) \right) 
+\]
+For 2 by 2 matrices \( K_{2} \) and \( B_{2} \), verify that \( \pmb{s}_{1} \), \( \pmb{s}_{2} \) and \( \pmb{c}_{0} \), \( \pmb{c}_{1} \) are eigenvectors.}
+
+See the inset on the symmetric tridiagonal matrices in the textbook. In the cases of \( K_{2} \) and \( B_{2} \), we have
+\[
+	K_{2} = \begin{bmatrix}
+		2 & -1 \\
+		-1 & 2 \\
+	\end{bmatrix}, \quad
+	B_{2} = \begin{bmatrix}
+		1 & -1 \\
+		-1 & 1 \\
+	\end{bmatrix}
+\]
+The eigenvectors are
+\begin{alignat*}{2}
+	\pmb{s}_{1} & = \begin{bmatrix}
+		 \sqrt{3} / 2 \\
+		 \sqrt{3} / 2 \\
+	\end{bmatrix}, & \quad \pmb{s}_{2} & = \begin{bmatrix}
+		\sqrt{3} / 2 \\
+		-\sqrt{3} / 2 \\
+	\end{bmatrix} \\
+	\pmb{c}_{0} & = \begin{bmatrix}
+		1 \\
+		1 \\
+	\end{bmatrix}, & \quad \pmb{c}_{1} & = \begin{bmatrix}
+		\sqrt{2} / 2 \\
+		-\sqrt{2} / 2 \\
+	\end{bmatrix} \\ 
+\end{alignat*}
+
+Multiplying, we find
+\begin{alignat*}{2}
+	K_{2}\pmb{s}_{1} & = \pmb{s}_{1}, & \quad K_{2}\pmb{s}_{2} & = 3\pmb{s}_{2} \\
+	B_{2}\pmb{c}_{0} & = \pmb{0}, & \quad B_{2}\pmb{c}_{1} & = 2 \pmb{c}_{1} 
+\end{alignat*}
+
+% QUESTION 12
+\qs{8.2.12}{Show that \( C_{3} \) has eigenvalues \( \lambda = 0, 3, 3 \) with eigenvectors \( \pmb{e}_{0} = \!\left( 1,1,1 \right) \), \( \pmb{e}_{1} = \!\left( 1, w, w^{2} \right) \), \( \pmb{e}_{2} = \!\left( 1, w^{2}, w^{4} \right) \). You  may prefer the real eigenvectors \( \!\left( 1,1,1 \right) \) and \( \!\left( 1,0,-1 \right) \) and \( \!\left( 1, -2, 1 \right) \).}
+
+We have
+\[
+	C_{3} = \begin{bmatrix}
+		2 & -1 & -1 \\
+		-1 & 2 & -1 \\
+		-1 & -1 & 2 \\
+	\end{bmatrix} 
+\]
+Now, let \( w = w_{3} \) be a third root of unity. This is easiest if we rely on our geometric intuition. Envision the roots of unity as complex vectors tracing out the unit circle. Treat each equation as a vector addition problem. Doing so allows us to easily calculate
+\begin{align*}
+	C_{3}\pmb{e}_{0} & = \pmb{0} \\
+	C_{3}\pmb{e}_{1} & = \begin{bmatrix}
+		2 & -1 & -1 \\
+		-1 & 2 & -1 \\
+		-1 & -1 & 2 \\
+	\end{bmatrix}
+	\begin{bmatrix}
+		1 \\
+		w \\
+		w^{2} \\
+	\end{bmatrix} = 
+	\begin{bmatrix}
+		2 - w - w^{2} \\
+		-1 + 2w - w^{2} \\
+		-1 -w + 2w^{2} \\
+	\end{bmatrix} = 3 \pmb{e}_{1} \\
+	C_{3}\pmb{e}_{2} & = \begin{bmatrix}
+		2 & -1 & -1 \\
+		-1 & 2 & -1 \\
+		-1 & -1 & 2 \\
+	\end{bmatrix}
+	\begin{bmatrix}
+		1 \\
+		w^{2} \\
+		w^{4} \\
+	\end{bmatrix} = 
+	\begin{bmatrix}
+		2 - w^{2} - w^{4} \\
+		-1 + 2w^{2} - w^{4} \\
+		-1 - w^{2} + 2w^{4} \\
+	\end{bmatrix} = 3 \pmb{e}_{2}
+\end{align*}
+
+% QUESTION 13
+\qs{8.2.13}{Multiply to see the eigenvectors \( \pmb{e}_{k} \) and eigenvalues \( \lambda_{k} \) of \( C_{N} \). Simplify to \( \lambda_{k} = 2 - 2 \cos\!\left(2 \pi k / N\right) \). Explain why \( C_{N} \) is only semidefinite. It is not positive definite.
+
+\[
+	C \pmb{e}_{k} = \begin{bmatrix}
+		2 & -1 &  & -1 \\
+		-1 & 2 & -1 & \\
+		 & -1 & 2 & -1 \\
+		-1 &  & -1 & 2 \\
+	\end{bmatrix}
+	\begin{bmatrix}
+		1 \\
+		w^{k} \\
+		w^{2k} \\
+		w^{\!\left( N - 1 \right)k}\\
+	\end{bmatrix}
+	= \!\left( 2 - w^{k} - w^{-k} \right)
+	\begin{bmatrix}
+		1 \\
+		w^{k} \\
+		w^{2k} \\
+		w^{\!\left( N - 1 \right)k} \\
+	\end{bmatrix}
+\]}
+
+We can derive
+\[
+	\lambda_{k} = 2 - w^{k} - w^{-k} = 2 - \!\left( e^{i 2 \pi k / N} + e^{-i 2 \pi k / N} \right) = 2 - 2 \cos\!\left(2 \pi k / N \right) 
+\]
+
+Immediately, we can conclude that \( \lambda_{k} \ge 0 \) for all \( k \), as the cosine term is bounded by 1. We have \( \lambda_{k} = 0 \) only when \( k \) is a multiple of \( N \). Equivalently, \( C_{N} \) is semidefinite.
+
+\vspace{12pt}
+
+% QUESTION 14
+\qs{8.2.14}{The eigenvectors \( \pmb{e}_{k} \) of \( C \) are automatically perpendicular because \( C \) is a \underline{\quad} matrix. (To tell the truth, \( C \) has repeated eigenvalues as in Problem 12. There was a plane of eigenvectors for \( \lambda = 3 \) and we chose orthogonal \( \pmb{e}_{1} \) and \( \pmb{e}_{2} \) in that plane.)}
+
+\( C \) is a \textbf{symmetric} matrix, which always has orthogonal eigenvectors.
+
+\vspace{12pt}
+
+% QUESTION 15
+\qs{8.2.15}{Write the 2 eigenvalues for \( K_{2} \) and the 3 eigenvalues for \( B_{3} \). Always \( K_{N} \) and \( B_{N + 1} \) have the same \( N \) eigenvalues, with the extra eigenvalue \underline{\quad} for \( B_{N + 1} \). (This is because \( K = A^{\textsc{T}}A \) and \( B = AA^{\textsc{T}} \).)}
+
+The characteristic polynomials are
+\begin{align*}
+	K_{2} & = \begin{bmatrix}
+		2 & -1 \\
+		-1 & 2 \\
+	\end{bmatrix} \\
+	      & \implies \quad \!\left( 2 - \lambda \right)^{2} - 1 = 0 \\
+	      & \implies \quad \lambda_{1,2} = 1, 3 \\
+	B_{3} & = \begin{bmatrix}
+		1 & -1 & \\
+		-1 & 2 & -1 \\
+		 & -1 & 1 \\
+	\end{bmatrix} \\ 
+	      & \implies \quad \!\left( 1 - \lambda \right)\!\left[ \!\left( 2 - \lambda \right)\!\left( 1 - \lambda \right) - 1 \right] - \!\left( 1 - \lambda \right) = 0 \\
+	      & = \!\left( 1 - \lambda \right) \!\left[ \!\left( 2 - \lambda \right)\!\left( 1 - \lambda \right) - 2 \right] = 0 \\
+	      & \implies \lambda_{1,2,3} = 0, 1, 3
+\end{align*}
+
+The extra eigenvalue of \( B_{3} \) is \( \lambda = 0 \).
+
+\newpage
+
+\subsection{\textsf{8.3 - The Heat Equation}}
+
+
 \end{document}
