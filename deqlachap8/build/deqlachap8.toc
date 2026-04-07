@@ -2,4 +2,5 @@
 \contentsline {subsection}{\textsf {8.1 - Fourier Series}}{3}{section*.2}%
 \contentsline {subsection}{\textsf {8.2 - The Fast Fourier Transform}}{21}{section*.3}%
 \contentsline {subsection}{\textsf {8.3 - The Heat Equation}}{29}{section*.4}%
+\contentsline {subsection}{\textsf {8.4 - The Wave Equation}}{37}{section*.5}%
 \contentsfinish 

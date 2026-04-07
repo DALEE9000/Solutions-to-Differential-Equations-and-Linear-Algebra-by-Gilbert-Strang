@@ -1302,6 +1302,218 @@ The extra eigenvalue of \( B_{3} \) is \( \lambda = 0 \).
 \newpage
 
 \subsection{\textsf{8.3 - The Heat Equation}}
+% QUESTION 1
+\qs{8.3.1}{Solve the heat equation \( u_{t} = cu_{xx} \) on an infinite bar with coefficient \( c \), starting from \( u = e^{ikx} \) at \( t = 0 \). As in (10) the solution has the product form \( u = e^{i \omega t}e^{ikx} \). With \( c \) in the equation, \textit{find} \( \omega \) \textit{for each} \( k \).}
 
+With the given solution form, write
+\[
+	u_{t} = \!\left( i \omega \right)e^{i \omega t}e^{ikx} = c \!\left( ik \right)^{2}e^{i \omega t}e^{ikx} = u_{xx} 
+\]
+Setting the coefficients equal gives us
+\[
+	i \omega = c \!\left( ik \right)^{2} \quad \implies \quad i \omega = -ck^{2}
+\]
+
+% QUESTION 2
+\qs{8.3.2}{Solve the same equation \( u_{t} = cu_{xx} \) starting from the point source \( u = \delta \!\left( x \right) = \int e^{ikx} \, dk / 2 \pi \) at \( t = 0 \). By superposition, you integrate over all \( k \) the solutions \( u \) in Problem 1. The result is the heat kernel as in equation (14) but adjusted for \( c \).}
+
+By superposition, the solution with the given initial condition is
+\[
+	U \!\left( t,x \right) = \frac{1}{2 \pi} \int^{\infty}_{-\infty} e^{-ck^{2}t}e^{ikx} \, dk
+\]
+To solve, differentiate by \( x \):
+\[
+	\frac{d }{d x}U \!\left( t,x \right) = \frac{1}{2 \pi} \int^{\infty}_{-\infty} e^{-ck^{2}t}\!\left( ik \right)e^{ikx} \, dk
+\]
+Proceed by integration by parts. Let \( a = ie^{ikx} \) and \( db = ke^{-ck^{2}t} \, dk \). Then \( da = -xe^{ikx} \, dk \) and \( b = -\!\left( 1 / 2ct \right)e^{-ck^{2}t} \), and we have
+\begin{align*}
+	\frac{d U}{d x} & = \frac{1}{2 \pi} \!\left( -\frac{i}{2}ct e^{ikx}e^{-ck^{2}t} \Big|^{\infty}_{-\infty} - \frac{x}{2ct} \int^{\infty}_{-\infty} e^{-ck^{2}t}e^{ikx} \, dk \right) \\
+	      & = -\frac{x}{2ct}U \\
+	\implies \frac{dU}{U} & = -\frac{x}{2ct} \, dx \\
+	\implies U & = Me^{-x^{2} / 4ct}
+\end{align*}
+Assume a heat kernel of \( \int \delta \!\left( x \right) \, dx = 1 \). To normalize this Gaussian integral, set \( M = 1 / \sqrt{4 \pi ct } \). Then our solution is
+\[
+	U = \frac{1}{\sqrt{4 \pi ct }}e^{-x^{2} / 4ct} 
+\]
+
+\begin{center}
+\includegraphics[width=1.0\textwidth]{../chap8/sec8.3/chap8sec8.3ex2.pdf}
+\end{center}
+
+% QUESTION 3
+\qs{8.3.3}{To solve \( u_{t} = cu_{xx} \) for a bar between \( x = 0 \) and \( x = 1 \), the basis functions are still \( \sin\!\left(k \pi x \right) \) (with \( u = 0 \) at the ends). What are the eigenvalues \( \lambda_{k} \) that go into the solution \( \sum b_{k}\!\left( 0 \right)e^{-\lambda_{k}t}\sin\!\left(k \pi x \right) \)?}
+
+With the diffusion constant, we now have
+\[
+	\lambda_{k} = ck^{2}\pi^{2}
+\]
+On the left, \( \partial u / \partial t \) gives us \( ck^{2}\pi^{2} \). On the right, \( \partial^{2}u / \partial x^{2} \) gives us \( k^{2}\pi^{2} \). Multiply by the diffusivity constant for equality.
+
+\vspace{12pt}
+
+\newpage
+% QUESTION 4
+\qs{8.3.4}{Following Problem 3, solve \( u_{t} = cu_{xx} \) when the initial temperature is \( u_{0} = 1 \) for \( \frac{1}{4} \le x \le \frac{3}{4} \) (and \( u_{0} = 0 \) on the first and last quarters of the bar). The problem is to find the coefficients \( b_{k}\!\left( 0 \right) \) for that initial temperature.}
+
+First, derive the Fourier series for the even square wave
+\[
+	SW \!\left( x \right) = \begin{cases}
+		1 & \text{for } -\frac{3}{4} < x < -\frac{1}{4} \\
+		0 & \text{for } -1 < x < -\frac{3}{4} \text{ and } -\frac{1}{4} < x < \frac{1}{4} \text{ and } \frac{3}{4} < x < 1 \\
+		1 & \text{for } \frac{1}{4} < x < \frac{3}{4}
+	\end{cases}
+\]
+An intuitive approach here is to alter the Fourier series for the square wave given in the book's equation (6):
+\[
+	\frac{4}{\pi} \sum_{k = 1}^{\infty} \frac{\sin\!\left[\!\left( 2k - 1 \right) \pi x \right] }{2k - 1} 
+\]
+First is to offset the horizontal position by \( 3 / 4 \) and adjust the periodicity by a factor of 2: instead of the width of the period being \( 1 \), it is now \( 1 / 2 \).
+
+\[
+	SW \!\left( x \right) = \frac{4}{\pi} \sum_{k = 1}^{\infty} \frac{\sin\!\left[\!\left( 4k - 2 \right) \pi \!\left( x + \frac{3}{4} \right)\right] }{2k - 1}
+\]
+By the angle difference identity for sine and reducing trigonometric functions to even-odd sign parity, this becomes
+\[
+	SW \!\left( x \right) = \frac{4}{\pi} \sum_{k = 1}^{\infty} \frac{\!\left( -1 \right)^{k}}{2k - 1} \cos\!\left[ \!\left( 4k - 2 \right)\pi x \right]
+\]
+Lastly, we need to scale the amplitude and vertically offset the square wave. For this problem, multiply the sum by \( 1 / 2 \) (since the wave peaks between \( 0 \) and \( 1 \)) and add \( 1 / 2 \) (since it is symmetric about \( u = 1 / 2 \)). This gives us our transformed square wave.
+\[
+	SW \!\left( x \right) = \frac{1}{2} + \frac{2}{\pi} \sum_{k = 1}^{\infty} \frac{\!\left( -1 \right)^{k}}{2k - 1}\cos\!\left[ \!\left( 4k - 2 \right) \pi x \right] 
+\]
+The corresponding coefficients are then
+\[
+	b_{k}\!\left( 0 \right) = \frac{2}{\pi}\frac{\!\left( -1 \right)^{k}}{2k - 1}
+\]
+
+\begin{center}
+\includegraphics[width=1.0\textwidth]{../chap8/sec8.3/chap8sec8.3ex4.pdf}
+\end{center}
+
+% QUESTION 5
+\qs{8.3.5}{Solve the heat equation \( u_{t} = u_{xx} \) from a point source \( u \!\left( x, 0 \right) = \delta \!\left( x \right) \) with free boundary conditions \( u'\!\left( \pi, t \right) = u'\!\left( -\pi, t \right) = 0 \). Use the infinite cosine series \( \delta \!\left( x \right) = \!\left( 1 + 2 \cos\!\left(x\right) + 2 \cos\!\left( 2x \right) + \cdots \right) / 2 \pi \) multiplied by time decay factors \( b_{k}\!\left( t \right) \).}
+
+Incorporating the time decay factors, the solution is
+\[
+	u \!\left( x,t \right) = \frac{1}{2 \pi} + \frac{1}{\pi} \sum_{k=1}^{\infty} e^{-k^{2}\pi^{2}t}\cos\!\left(kx\right)  
+\]
+Note that the Fourier coefficients to the cosines series provide us with the \( b_{k}\!\left( 0 \right) \) constants. Differentiating with respect to \( x \), we get
+\[
+	u'\!\left( x,t \right) = -\frac{1}{\pi} \sum^{\infty}_{k=1} e^{-k^{2}\pi^{2}t} k \sin\!\left(kx\right)
+\]
+From which it is immediately apparent that
+\[
+	u'\!\left( \pi, t \right) = u'\!\left( -\pi, t \right) = 0 
+\]
+
+\begin{center}
+\includegraphics[width=1.0\textwidth]{../chap8/sec8.3/chap8sec8.3ex5.pdf}
+\end{center}
+
+\vspace{12pt}
+% QUESTION 6
+\qs{8.3.6}{(Bar from \( x = 0 \) to \( x = \infty \)) Solve \( u_{t} = u_{xx} \) on the positive half of an infinite bar, starting from the shifted delta function \( u_{0} = \delta \!\left( x - a \right) \) at a point \( x = a > 0 \). Here is a way to use the full-bar heat kernel \( U \) in (14), and still keep \( u = 0 \) at \( x = 0 \).
+
+Imagine a negative point source at \( x = -a \). Solve the heat equation on the fully infinite bar, including both sources in \( u_{0} = \delta \!\left( x - a \right) - \delta \!\left( x + a \right) \) at \( t = 0 \). Your solution (a difference of heat kernels) will stay zero at the boundary \( x = 0 \) (\textit{Why}?). Then it must be the correct solution on the half-bar, since it started correctly.}
+
+Using equation (14) and invoking superposition, our solution is
+\[
+	u \!\left( t,x \right) = \frac{1}{\sqrt{4 \pi t}} \!\left[ e^{-\!\left( x - a \right)^{2} / 4t} - e^{-\!\left( x + a \right)^{2} / 4t} \right] 
+\]
+Note that at \( x = 0 \), \( u \!\left( t,0 \right) = 0 \). This method of solution is called the \textbf{method of images}. It is called so because of the trick in dropping in another source that generates the desired boundary condition.
+
+For \( a = 1 \), we can graph the solution as 
+\begin{center}
+\includegraphics[width=1.0\textwidth]{../chap8/sec8.3/chap8sec8.3ex6.pdf}
+\end{center}
+
+\vspace{12pt}
+% QUESTION 7
+\qs{8.3.7}{Check that the basis functions \( s_{k} = \sin\!\left(k + \frac{1}{2}\right) \pi x \) are orthogonal over \( 0 \le x \le 1 \). Find a formula for the coefficient \( B_{4} \) in the Fourier series \( F \!\left( x \right) = \sum B_{k}s_{k} \). (Multiply by \( s_{4}\!\left( x \right) \) and integrate, to isolate \( B_{4} \).)}
+
+Let \( k_{1} \neq k_{2} \) be integers. Then we can ascertain
+\begin{align*}
+	\int^{1}_{0} \sin\!\left( k_{1} + \frac{1}{2} \right) \pi x \sin\!\left( k_{2} + \frac{1}{2} \right) \pi x \, dx & = \frac{1}{2} \int^{1}_{0} \!\left[ \cos\!\left( k_{1} - k_{2} \right) \pi x - \cos\!\left( k_{1} + k_{2} + 1 \right) \pi x \right] \, dx \\
+	 & = \frac{1}{2 \pi} \!\left[ \frac{\sin\!\left( k_{1} - k_{2} \right) \pi}{k_{1} - k_{2}} - \frac{\sin\!\left( k_{1} + k_{2} + 1 \right) \pi}{k_{1} + k_{2} + 1} \right] \\
+	 & = 0
+\end{align*}
+This is true for any choice of \( k_{1} \), \( k_{2} \). Invoking orthogonality, we can then calculate
+\begin{align*}
+	\int^{1}_{0} F \!\left( x \right) s_{4}\!\left( x \right) \, dx & = \int^{1}_{0} \sum B_{k}s_{k}s_{4} \, dx \\
+	 & = B_{4} \int^{1}_{0} \sin^{2}\!\left( \frac{9 \pi x}{2} \right) \, dx \\ 
+	 & = \frac{B_{4}}{2} \\
+\end{align*}
+Leaving us with
+\[
+	B_{4} = 2 \int^{1}_{0} F \!\left( x \right)s_{4}\!\left( x \right) \, dx  
+\]
+
+% QUESTION 8
+\qs{8.3.8}{The basis functions \( \sin\!\left(k + \frac{1}{2}\right) \pi x \) are for \textbf{fixed-free} boundaries (\( u = 0 \) at \( x = 0 \) and \( u' = 0 \) at \( x = 1 \)). What are the basis functions for \textbf{free-fixed boundaries} (\( u' = 0 \) at \( x = 0 \) and \( u = 0 \) at \( x = 1 \))?}
+
+For free-fixed boundaries, our basis functions are \( \cos\!\left(k + \frac{1}{2}\right) \pi x \). Easy to verify that the free-fixed boundary conditions are met.
+
+\vspace{12pt}
+% QUESTION 9
+\qs{8.3.9}{Suppose \( \pmb{u_{t} = u_{xx} - u} \) with boundary condition \( u = 0 \) at \( x = 0 \) and \( x = 1 \). Find the new numbers \( \lambda_{k} \) in the general solution \( u = \sum b_{k}\!\left( 0 \right) e^{-\lambda_{k}t} \sin\!\left(k \pi x\right) \). (Previously \( \lambda_{k} = -k^{2}\pi^{2} \), now there is a new term in \( \lambda \) because of \( -u \).)}
+
+The additional \( -u \) term adds one to the eigenvalue after canceling the negative, giving us \( \lambda_{k} = k^{2}\pi^{2} + 1 \).
+
+\vspace{12pt}
+% QUESTION 10
+\qs{8.3.10}{Explain each step in equation (13). Solve \( dU / dx = -xU / 2t \) to reach \( U = e^{-x^{2} / 4t} \). How do the known infinite integrals \( \int e^{-x^{2}} \, dx = \sqrt{\pi} \) and \( \int u \, dx = 1 \) lead to the factor \( 1 / \sqrt{4 \pi t} \)?}
+
+The integration by parts proceeds as follows: let \( a = ie^{ikx} \) and \( db = e^{-k^{2}t}k \, dk \). Then \( da = -xe^{ikx} \, dk \) and \( b = -e^{-k^{2}t} / 2t \). Combining the parts (don't forget the \( 1 / 2 \pi \) term) gives
+\begin{align*}
+	\frac{d U}{d x} & = -ie^{-k^{2}t}e^{ikx} \Big|^{\infty}_{-\infty} - \frac{1}{4 \pi t}\int^{\infty}_{-\infty} \!\left( e^{-k^{2}t} \right)\!\left( xe^{ikx} \right) \, dk \\
+			& = -\frac{1}{4 \pi t}\int^{\infty}_{-\infty} \!\left( e^{-k^{2}t} \right)\!\left( xe^{ikx} \right) \, dk \\
+			& = -\frac{xU}{2t}
+\end{align*}
+Separating variables, we can deduce from \( dU / dx = -xU / 2t \) that
+\[
+	\int \frac{dU}{U} = -\int \frac{x}{2t} \, dx \quad \implies \quad \ln\!\left(U\right) = -\frac{x^{2}}{2t} + C \quad \implies \quad U = ce^{-x^{2} / 2t}
+\]
+The normalization constant \( c \) follows from the requirement that
+\[
+	\int^{\infty}_{-\infty} ce^{-x^{2} / 2t} \, dx = 1 
+\]
+which is true only when \( c = 1 / \sqrt{4 \pi t} \).
+
+\vspace{12pt}
+% QUESTION 11
+\qs{8.3.11}{(\textbf{Shift invariance}) What is the solution to \( u_{t} = u_{xx} \) starting from \( \pmb{\delta \!\left( x - a \right)} \) at \( t = 0 \)?}
+
+Equation (18): an integral of shifted heat kernels.
+\[
+	u \!\left( t,x \right) = \frac{1}{\sqrt{4 \pi t}} \int^{\infty}_{-\infty} u_{0}\!\left( a \right)e^{-\!\left( x - a \right)^{2} / 4t} \, da  
+\]
+
+% QUESTION 12
+\qs{8.3.12}{What are basis functions \( A \!\left( x,y \right) \) for heat flow in a square plate, when \( u = 0 \) along the four sides \( x = 0 \), \( x = 1 \), \( y = 0 \), \( y = 1 \)? The heat equation is \( u_{t} = u_{xx} + u_{yy} \). Find eigenfunctions for \( A_{xx} + A_{yy} = \lambda A \) that satisfy the boundary conditions.
+
+The first eigenfunction is \( A_{11} = \sin\!\left(\pi x\right) \sin\!\left(\pi y\right) \). Find the eigenvalues \( \lambda \).}
+
+For heat flowing out of the perimeter of the square, we have basis functions
+\[
+	A \!\left( x,y \right) = \sin\!\left(m \pi x\right) \sin\!\left(n \pi y\right) 
+\]
+The eigenfunctions and corresponding eigenvalues are
+\[
+	- \pi^{2} \!\left( m^{2} + n^{2} \right) \sin\!\left(m \pi x\right) \sin\!\left(n \pi y\right) = \lambda_{m,n} \sin\!\left(m \pi x\right) \sin\!\left(n \pi y\right) 
+\]
+\[
+	\implies \quad \lambda_{m,n} = -\pi^{2} \!\left( m^{2} + n^{2} \right)
+\]
+
+% QUESTION 13
+\qs{8.3.13}{Substitute \( U = e^{-x^{2} / 4t} / \sqrt{4 \pi t} \) to show that this heat kernel solves \( U_{t} = U_{xx} \).}
+
+Calculate
+\[
+	U_{t} = \!\left[ \frac{x^{2}}{4t^{2}} - \frac{1}{2t} \right] \frac{e^{-x^{2} / 4t}}{\sqrt{4 \pi t}} = U_{xx} 
+\]
+
+\newpage
+\subsection{\textsf{8.4 - The Wave Equation}}
 
 \end{document}
