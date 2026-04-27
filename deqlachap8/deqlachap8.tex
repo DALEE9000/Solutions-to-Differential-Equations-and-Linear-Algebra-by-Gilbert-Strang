@@ -1516,4 +1516,866 @@ Calculate
 \newpage
 \subsection{\textsf{8.4 - The Wave Equation}}
 
+\textbf{Problems 1-4 are about the one-way wave equation \( \pmb{\partial u / \partial t = c \partial u / \partial x} \).}
+
+% QUESTION 1
+\qs{8.4.1}{Suppose \( u \!\left( 0,x \right) = \sin\!\left(2x\right) \). What is the solution to \( u_{t} = cu_{x} \)? At which times \( t_{1} \), \( t_{2} \), ... will the solution return to the initial condition \( \sin\!\left(2x\right) \)?}
+
+The solution is \( u \!\left( t,x \right) = \sin\!\left(2 \!\left( x + ct\right) \right) \). The initial condition is returned to for all times \( t_{k} = k \pi / c \).
+
+\vspace{12pt}
+
+% QUESTION 2
+\qs{8.4.2}{Suppose \( u_{0}\!\left( x \right) = \delta \!\left( x \right) \), a big bang at the origin of the one-dimensional universe. At time \( t \) the bang is heard at the point \( x = \) \underline{\qquad}. For \( u_{tt} = c^{2}u_{xx} \) the bang will reach the two points \( x = \) \underline{\qquad} and \( x = \) \underline{\qquad} at time \( t \).}
+
+In the one-directional case, the solution is \( u \!\left( t,x \right) = \delta \!\left( x + ct \right) \) and the bang will be heard at \( x = -ct \). For two directions, we have
+\[
+	u \!\left( t,x \right) = \frac{1}{2} \!\left[ \delta \!\left( x - ct \right) + \delta \!\left( x + ct \right) \right]
+\]
+in which the bang is heard at \( x = ct \) and \( x = -ct \) at time \( t \).
+
+\vspace{12pt}
+% QUESTION 3
+\qs{8.4.3}{\begin{enumerate}[label=(\alph*)]
+	\item Integrate both sides of \( u_{t} = cu_{x} \) from \( x = -\infty \) to \( \infty \) to prove that the total mass \( M = \int u \, dx \) is constant: \( dM / dt = 0 \).
+	\item Multiply by \( u \) and integrate both sides of \( uu_{t} = cuu_{x} \) to prove that \( E = \int u^{2} \, dx \) is constant.
+\end{enumerate}}
+
+\begin{enumerate}[label=(\alph*)]
+	\item The problem should specify that \( u \rightarrow 0 \) as \( \abs{x} \rightarrow 0 \). Intuitively, we should also conceive of \( u \) as a ``density'' of sorts. Combined, these insights suggest a spatial localization of the source of the wave (for instance, if I perturb the water of the Atlantic Ocean off of the coast of Coney Island, New York, it is completely unlikely that someone at Normandy beach in France will know about it). Derive
+		\begin{align*}
+			\int^{\infty}_{-\infty} u_{t} \, dx & = \frac{d }{d t} \int^{\infty}_{-\infty} u \, dx \\
+			\int^{\infty}_{-\infty} cu_{x} \, dx & = \int^{\infty}_{-\infty} cu_{0}'\!\left( x + ct \right) \, dx \\
+							     & = c \!\left[ u_{0}\!\left( \infty + ct \right) - u_{0}\!\left( -\infty + ct \right) \right] \\
+							     & = 0
+		\end{align*}
+		Equating the two sides establishes conservation of mass.
+	\item Now we derive conservation of energy.
+		\begin{align*}
+			\int^{\infty}_{-\infty} uu_{t} \, dx & = \frac{1}{2} \frac{d }{d t} \int^{\infty}_{-\infty} u^{2} \, dx \\
+			\int^{\infty}_{-\infty} cuu_{x} \, dx & = \frac{c}{2} \int^{\infty}_{-\infty} \frac{d }{d x} u^{2} \, dx \\
+							      & = 0
+		\end{align*}
+\end{enumerate}
+
+% QUESTION 4
+\qs{8.4.4}{Is the wave \( u \!\left( t,x \right) = u_{0}\!\left( x + ct \right) \) traveling left or right if \( c > 0 \)? To solve \( u_{t} = cu_{x} \) on the halfline \( 0 \le x \le \infty \), why is a boundary condition \( u \!\left( t,0 \right) = 0 \) \textit{not wanted}? With \( c < 0 \) and waves in the opposite direction, that condition is appropriate.}
+
+For positive \( c \), the wave is traveling left. The given boundary condition is problematic as it forces \( u = 0 \) for all \( t \) at \( x = 0 \). In other words, whichever initial conditions the solution as, its profile at the outflow must be zero. With negative \( c \), the wave travels right from the inflow point at \( x = 0 \), and the boundary condition simply requires that \( u \) begins at zero.
+
+\vspace{12pt}
+\textbf{Problems 5-9 are about the one-dimensional wave equation 
+\[
+	\pmb{\partial^{2}u / \partial t^{2} = c^{2}\partial^{2}u / \partial x^{2}}
+\]}
+
+% QUESTION 5
+\qs{8.4.5}{A ``box of water'' has \( u_{0}\!\left( x \right) = 1 \) for \( -1 \le x \le 1 \). Starting with zero velocity \( v_{0}\!\left( x \right) \), the wave equation \( u_{tt} = c^{2}u_{xx} \) is solved by \( u \!\left( t,x \right) = \frac{1}{2}u_{0}\!\left( x + ct \right) + \frac{1}{2}u_{0}\!\left( x - ct \right) \). Graph this solution for small \( t = \frac{1}{2}c \) and large \( t = 3c \).}
+
+For simplicity, set \( c = 1 \). The intuition is clear: the box of water ``separates'' into two waves, propagating anti-parallel from the center.
+
+\begin{center}
+\includegraphics[width=1.0\textwidth]{../chap8/sec8.4/chap8sec8.4ex5.pdf}
+\end{center}
+
+% QUESTION 6
+\qs{8.4.6}{Under a flat ocean with \( u_{0}\!\left( x \right) = 1 \), an earthquake produces \( v_{0}\!\left( x \right) = \delta \!\left( x \right) \). A one-dimensional tsunami starts moving with speed \( c \). What is the solution (7) at time \( t \)?}
+
+In equation (7), the last term becomes
+\[
+	\frac{1}{2c} \int^{x + ct}_{x - ct} \delta \!\left( x \right) \, dx = \begin{cases}
+		0, & 0 \not\in \!\left[ x - ct, x + ct \right] \\
+		1, & 0 \in \!\left[ x - ct, x + ct \right]
+	\end{cases}  
+\]
+And since the ocean is flat, the first two terms simply sum to unity.
+This all corresponds to solution
+\[
+	u \!\left( t,x \right) = 1 + \begin{cases}
+		\frac{1}{2c}, & \abs{x} \le ct \\
+		0 & \text{otherwise} \\
+	\end{cases}
+\]
+
+% QUESTION 7
+\qs{8.4.7}{Separation of variables gives \( u \!\left( t,x \right) = \sin\!\left(nx\right) \sin\!\left(nct\right) \) and three other similar solutions to \( u_{tt} = c^{2}u_{xx} \). \textit{What are those three}? Which complex functions \( e^{ikx}e^{i \omega t} \) solve the wave equation?}
+
+We also have
+\begin{align*}
+	u \!\left( t,x \right) & = \cos\!\left(nx\right) \cos\!\left(nct\right) \\
+	u \!\left( t,x \right) & = \sin\!\left(nx\right) \cos\!\left(nct\right) \\ 
+	u \!\left( t,x \right) & = \cos\!\left(nx\right) \sin\!\left(nct\right) 
+\end{align*}
+From superposition, we may deduce that complex functions of the form
+\[
+	u \!\left( t,x \right) = e^{inx}e^{inct} 
+\]
+comprehensively encapsulate the four trigonometric solutions to the wave equation.
+
+\vspace{12pt}
+
+% QUESTION 8
+\qs{8.4.8}{The 3D wave equation \( u_{tt} = u_{xx} + u_{yy} + u_{zz} \) becomes 1D when \( u \) has spherical symmetry: \( u \) depends only on \( r \) and \( t \).
+\[
+	r = \sqrt{x^{2} + y^{2} + z^{2}} \quad \text{and} \quad \frac{\partial^{2}u}{\partial t^{2}} = \frac{\partial^{2}u}{\partial r^{2}} + \frac{2}{r}\frac{\partial u}{\partial r} 
+\]
+\begin{enumerate}[label=(\alph*)]
+	\item \textit{Multiply by} \( r \) \textit{to find} \( \!\left( ru \right)_{tt} = \!\left( ru \right)_{rr} \)! Then \( ru \) is a function of \( r + t \) and \( r - t \).
+	\item Describe the solution \( ru = \delta \!\left( r - t - 1 \right) \). This spherical sound wave has the radius \( r = \) \underline{\qquad} at \( t = 8 \).
+\end{enumerate}}
+
+\begin{enumerate}[label=(\alph*)]
+	\item Derive
+	\begin{align*}
+		\!\left( ru \right)_{tt} & = r_{tt}u + ru_{tt} \\
+					 & = ru_{tt} \\
+		\!\left( ru \right)_{r} & = u + ru_{r} \\ 
+		\!\left( ru \right)_{rr} & = u_{r} + \!\left( u_{r} + ru_{rr} \right) \\
+					& = 2u_{r} + ru_{rr}
+	\end{align*}
+	\item We can analogize this to the front of an ``explosion'' with initial radius 1. As time progresses to \( t = 8 \), the explosion front grows to \( r = 9 \).
+\end{enumerate}
+
+\vspace{12pt}
+
+% QUESTION 9
+\qs{8.4.9}{The wave equation along a bar with density \( \rho \) and stiffness \( k \) is \( \pmb{\!\left( \rho u_{t} \right)_{t} = \!\left( ku_{x} \right)_{x}} \). What is the velocity \( c \) in \( u_{tt} = c^{2}u_{xx} \)? What is \( \omega \) in \( u = \sin\!\left(\pi x / L\right) \cos\!\left(\omega t\right) \)?}
+
+Assuming constancy in the density and stiffness, we have \( c = \sqrt{k / \rho} \). It follows that
+\[
+	\omega = \frac{\pi}{L}\sqrt{\frac{k}{\rho}} 
+\]
+
+% QUESTION 10
+\qs{8.4.10}{The small vibrations of a beam satisfy the fourth order equation \( u_{tt} = -c^{2}u_{xxxx} \). Look for solutions \( u = X \!\left( x \right) T \!\left( t \right) \) and find separate equations for the functions \( X \) and \( T \). Then find four solutions \( X \!\left( x \right) \) when \( T \!\left( t \right) = \cos\!\left(\omega t\right) \).}
+
+For our setup, we have in this equation
+\[
+	X \!\left( x \right)T''\!\left( t \right) = -c^{2}X''''\!\left( x \right)T \!\left( t \right) 
+\]
+Divide through by \( c^{2}X \!\left( x \right)T \!\left( t \right) \) and set equal to \( -\omega^{2} \) to get
+\[
+	\frac{T''\!\left( t \right)}{c^{2}T \!\left( t \right)} = -\frac{X''''\!\left( x \right)}{X \!\left( x \right)} = -\omega^{2}
+\]
+Then to solve the temporal and spatial component respectively, we satisfy
+\[
+	T''\!\left( t \right) = -c^{2}\omega^{2}T \!\left( t \right) \qquad X''''\!\left( x \right) = \omega^{2}X \!\left( x \right)
+\]
+Then \( T \!\left( t \right) = \sin\!\left(c \omega t\right) \) or \( \cos\!\left(c \omega t\right) \), and \( X \!\left( x \right) = \sin\!\left(\sqrt{\omega}x\right) \), \( \cos\!\left(\sqrt{\omega}x\right) \), \( e^{\sqrt{\omega}x} \), or \( e^{-\sqrt{\omega}x} \).
+
+When \( T \!\left( t \right) = \cos\!\left(\omega t\right) \), solutions for \( X \!\left( x \right) \) include \( \sin\!\left(ax\right) \), \( \cos\!\left(ax\right) \), \( e^{ax} \), and \( e^{-ax} \), where \( a = \sqrt{\omega / c} \).
+
+The key difference here is whether you divide through by \( c^{2} \) in deriving the temporal and spatial equations, which will determine whether \( c \) shows up in one or the other.
+
+\vspace{12pt}
+
+% QUESTION 11
+\qs{8.4.11}{If that beam is clamped (\( u = 0 \) and \( \partial u / \partial x = 0\) at both ends \( x = 0 \) and \( x = L \)), show that the frequencies \( \omega \) in Problem 10 must have \( \cos\!\left(\omega L\right) \cosh\!\left(\omega L\right) = 1 \).}
+
+In setting up the solution, we will rewrite the basis functions \( e^{ax} \) and \( e^{-ax} \) in terms of \( \cosh\!\left(ax\right) \) and \( \sinh\!\left(ax\right) \). The general set of solutions of the spatial component and its derivative will be of form
+\begin{align*}
+	X \!\left( x \right) & = a_{1}\sin\!\left(\omega x\right) + a_{2}\cos\!\left(\omega x\right) + a_{3}\sinh\!\left(\omega x\right) + a_{4}\cosh\!\left(\omega x\right) \\
+	X'\!\left( x \right) & = \omega \!\left[ a_{1}\cos\!\left(\omega x\right) - a_{2}\sin\!\left(\omega x\right) + a_{3}\cosh\!\left(\omega x\right) + a_{4}\sinh\!\left(\omega x\right) \right]
+\end{align*}
+We do not wish to impose any constraints on the coefficients beyond those that stem from the boundary conditions; remember this fact for later.
+
+Now, impose the boundary conditions at \( x = 0 \).
+\begin{align*}
+	X \!\left( 0 \right) & = a_{2} + a_{4} = 0 \\
+	X'\!\left( 0 \right) & = \omega \!\left( a_{1} + a_{3} \right) = 0
+\end{align*}
+Immediately, we reduce four unknowns to two: \( a_{4} = -a_{2} \) and \( a_{3} = -a_{1} \). Taking this into account while incorporating the boundary conditions at \( x = L \), we derive the system of equations
+\begin{align*}
+	X \!\left( L \right) & = a_{1}\!\left[ \underbrace{\sin\!\left(\omega L\right) - \sinh\!\left(\omega L\right)}_{p} \right] + a_{2}\!\left[ \underbrace{\cos\!\left(\omega L\right) - \cosh\!\left(\omega L\right)}_{q} \right] = 0 \\
+	X'\!\left( L \right) & = a_{1}\!\left[ \underbrace{\cos\!\left(\omega L\right) - \cosh\!\left(\omega L\right)}_{q} \right] - a_{2}\!\left[ \underbrace{\sin\!\left(\omega L\right) + \sinh\!\left(\omega L\right)}_{r} \right] = 0
+\end{align*}
+where we divide the second equation through by \( \omega \) as we won't need that. Rewriting this as a matrix equation, we have
+\[
+	\begin{bmatrix}
+		p & q \\
+		q & -r \\
+	\end{bmatrix}
+	\begin{bmatrix}
+		a_{1} \\
+		a_{2} \\
+	\end{bmatrix} = 
+	\begin{bmatrix}
+		0 \\
+		0 \\
+	\end{bmatrix}
+\]
+Now, recall that we have to account for a \textit{general} set of solutions. This means that there cannot be a unique solution for this system of equations. Specifically, we must have infinitely many solutions (coefficients). Therefore, we can immediately conclude that we must have \textit{zero determinant}. Calculating, we can come to our final deduction:
+\begin{align*}
+	\det & = -pr - q^{2} \\
+	 & = -\!\left[ \sin\!\left(\omega L\right) - \sinh\!\left(\omega L\right) \right]\!\left[ \sin\!\left(\omega L\right) + \sinh\!\left(\omega L\right) \right] - \!\left[ \cos\!\left(\omega L\right) - \cosh\!\left(\omega L\right) \right]^{2} \\ 
+	 & = -\!\left[ \sin^{2}\!\left(\omega L\right) + \cos^{2}\!\left(\omega L\right) \right] - \!\left[ \cosh^{2}\!\left(\omega L\right) - \sinh^{2}\!\left(\omega L\right) \right] + 2 \cos\!\left(\omega L\right) \cosh\!\left(\omega L\right) \\
+	 & = -2 + 2 \cos\!\left(\omega L\right) \cosh\!\left(\omega L\right) \\
+	 & = 0
+\end{align*}
+which forces \( \cos\!\left(\omega L\right) \cosh\!\left(\omega L\right) = 1 \).
+
+\vspace{12pt}
+
+\textbf{Problems 12-16 solve the wave equation with boundary conditions at \( \pmb{x = 0} \) and \( \pmb{x = L} \).}
+
+\vspace{12pt}
+
+% QUESTION 12
+\qs{8.4.12}{A string plucked halfway along has \( u_{0}\!\left( x \right) = \delta \!\left( x - \frac{L}{2} \right) \) and \( v_{0}\!\left( x \right) = 0 \). Find the Fourier coefficients \( b_{k} \) from equation (18). Write the first three terms of the Fourier series solution in (16).}
+
+The Fourier coefficients are
+\[
+	b_{k} = \frac{\displaystyle{\int^{L}_{0} \delta \!\left( x - \frac{L}{2} \right)\sin\!\left(\frac{k \pi x}{L}\right) \, dx}}{\displaystyle{\int^{L}_{0} \sin^{2}\!\left(\frac{k \pi x}{L}\right) \, dx}} = \frac{\displaystyle{4k \pi \sin\!\left(\frac{k \pi}{2}\right)}}{2kL \pi - L \sin\!\left(2k \pi\right)} = \frac{2}{L}\sin\!\left(\frac{k \pi}{2}\right) 
+\]
+We see that \( b_{k} \) vanishes for even \( k \). Therefore, the full Fourier series is
+\[
+	u \!\left( t,x \right) = \sum^{\infty}_{k = 1} \frac{2}{L}\!\left( -1 \right)^{k + 1} \sin\!\left(\frac{\!\left( 2k - 1 \right)\pi x}{L}\right) \cos\!\left(\frac{\!\left( 2k - 1 \right)\pi ct}{L}\right) 
+\]
+And its first three terms are
+\[
+	u \!\left( t,x \right) \approx \frac{2}{L} \!\left[ \sin\!\left(\frac{\pi x}{L}\right) \cos\!\left(\frac{\pi ct}{L}\right) - \sin\!\left(\frac{3 \pi x}{L}\right) \cos\!\left(\frac{3 \pi ct}{L}\right) + \sin\!\left(\frac{5 \pi x}{L}\right) \cos\!\left(\frac{5 \pi ct}{L}\right) \right]
+\]
+
+\begin{center}
+\includegraphics[width=1.0\textwidth]{../chap8/sec8.4/chap8sec8.4ex12.pdf}
+\end{center}
+
+% QUESTION 13
+\qs{8.4.13}{Suppose the string starts with zero velocity \( v_{0}\!\left( x \right) \) from a \textit{hat function}: \( u_{0}\!\left( x \right) = 2x/L \) for \( x < L/2 \) and \( u_{0}\!\left( x \right) = 2 \!\left( L - x \right)/L \) for \( x > L/2 \). Find the Fourier coefficients \( b_{k} \) from (18) and the first two nonzero terms of \( u \!\left( t,x \right) \) in (16).}
+
+Calculate
+\[
+	\frac{2}{L} \!\left[ \int^{L/2}_{0} x \sin\!\left(\frac{k \pi x}{L}\right) \, dx + \int^{L}_{L/2} \!\left( L - x \right)\sin\!\left(\frac{k \pi x}{L}\right) \, dx \right] = \frac{4L}{k^{2}\pi^{2}}\sin\!\left(\frac{k \pi}{2}\right)
+\]
+Divide through by \( \int^{L}_{0} \sin^{2}\!\left(k \pi x / L\right) \, dx = L / 2 \) to get as our Fourier coefficients
+\[
+	b_{k} = \frac{8}{k^{2}\pi^{2}}\sin\!\left(\frac{k \pi}{2}\right)  
+\]
+The coefficients vanish for even \( k \). Let \( k = 2n - 1 \). Then the solution is
+\[
+	u \!\left( t,x \right) = \sum^{\infty}_{n = 1} \frac{8}{\!\left( 2n - 1 \right)^{2}\pi^{2}} \!\left( -1 \right)^{n - 1}\sin\!\left(\frac{\!\left( 2n - 1 \right)\pi x}{L}\right) \cos\!\left(\frac{\!\left( 2n - 1 \right)\pi ct}{L}\right) 
+\]
+
+\begin{center}
+\includegraphics[width=1.0\textwidth]{../chap8/sec8.4/chap8sec8.4ex13.pdf}
+\end{center}
+
+% QUESTION 14
+\qs{8.4.14}{Suppose the string starts with zero velocity \( v_{0}\!\left( x \right) \) from a \textit{box function}: \( u_{0}\!\left( x \right) = 1 \) for \( x < L/2 \). Find all the \( b_{k} \) in the solution \( u = \sum b_{k}\sin\!\left(k \pi x / L\right)\cos\!\left(k \pi ct / L\right) \).}
+
+Calculate the Fourier coefficients
+\[
+	b_{k} = \frac{\displaystyle{\int^{L/2}_{0} \sin\!\left(\frac{k \pi x}{L}\right) \, dx }}{\displaystyle{\int^{L}_{0} \sin^{2}\!\left(\frac{k \pi x}{L}\right) \, dx}} = \frac{2}{k \pi} \!\left[ 1 - \cos\!\left(\frac{k \pi}{2}\right) \right]
+\]
+
+\begin{center}
+\includegraphics[width=1.0\textwidth]{../chap8/sec8.4/chap8sec8.4ex14.pdf}
+\end{center}
+
+% QUESTION 15
+\qs{8.4.15}{The boundary condition at a \textit{free end} \( x = L \) is \( \partial u / \partial x = 0 \) instead of \( u = 0 \). Solve \( X'' + \omega^{2}X = 0 \) to find \( X \!\left( x \right) \) and all allowable \( \omega \)'s with this new condition. Then solve \( T'' + \omega^{2}c^{2}T = 0 \) to complete the solution \( u = \sum a_{n}X \!\left( x \right) T \!\left( t \right) \).}
+
+Two null solutions: \( \sin\!\left(\omega x\right) \) and \( \cos\!\left(\omega x\right) \). Imposing the boundary conditions: \( u = 0 \) at \( x = 0 \) and \( \partial u / \partial x = 0 \) at \( x = L \), we must have \( X \!\left( x \right) = \sin\!\left(\omega x\right) \) where \( \omega L = \pi / 2 + n \pi \). We can then deduce the values of \( \omega_{n} \) are
+\[
+	\omega_{n} = \frac{\pi \!\left( 2n + 1 \right)}{2L} 
+\]
+For \( T \!\left( t \right) \), once again we have two null solutions: \( \sin\!\left(\omega c t\right) \) and \( \cos\!\left(\omega c t\right) \). Assuming initial condition of \( T' = v_{0} = 0 \), only the cosine term will survive. Our full solution is then
+\[
+	u = \sum^{\infty}_{n=0} a_{n}\sin\!\left(\omega_{n}x\right)\cos\!\left(\omega_{n}ct\right)  
+\]
+with \( \omega_{n} \) defined as above. Note the summation beginning at \( n = 0 \) in this case, so we start from \( \omega_{0} = \pi / 2L \).
+
+\vspace{12pt}
+
+% QUESTION 16
+\qs{8.4.16}{What is the solution \( u \!\left( t,x \right) \) on a string of length \( L = 2 \) if \( u \!\left( 0,x \right) = \delta \!\left( x - 1 \right) \)? The end \( x = 0 \) is fixed by \( u \!\left( t,0 \right) = 0 \) and the end \( x = 2 \) is free: \( \partial u / \partial x \!\left( t,0 \right) = 0 \).}
+
+Using the solution form of Problem 15, we calculate the Fourier coefficients as (note the denominator here is simply 1 with \( L = 2 \))
+\[
+	b_{n} = \int^{2}_{0} \delta \!\left( x - 1 \right)\sin\!\left(\omega_{n}x\right) \, dx = \sin\!\left(\omega_{n}\right) = \sin\!\left(\frac{\pi \!\left( 2n + 1 \right)}{4}\right)   
+\]
+With the boundary conditions, the solution is
+\[
+	u \!\left( t,x \right) = \sum^{\infty}_{n=0} \sin\!\left(\frac{\pi \!\left( 2n + 1 \right)}{4}\right) \sin\!\left(\frac{\pi \!\left( 2n + 1 \right)x}{4}\right) \cos\!\left(\frac{\pi \!\left( 2n + 1 \right)t}{4}\right) 
+\]
+
+\begin{center}
+\includegraphics[width=1.0\textwidth]{../chap8/sec8.4/chap8sec8.4ex16.pdf}
+\end{center}
+
+\newpage
+
+\subsection{\textsf{8.5 - The Laplace Transform}}
+% QUESTION 1
+\qs{8.5.1}{When the driving function is \( f \!\left( t \right) = \delta \!\left( t \right) \), the solution starting from rest is the \textbf{impulse response}. The impulse is \( \delta \!\left( t \right) \), the response is \( y \!\left( t \right) \). Transform this equation to find the \textbf{transfer function} \( Y \!\left( s \right) \). Invert to find the impulse response \( y \!\left( t \right) \).
+\[
+	y'' + y = \delta \!\left( t \right) \text{ with } y \!\left( 0 \right) = 0 \text{ and } y'\!\left( 0 \right) = 0 
+\]}
+
+Since \( \mathcal{L}\!\left[ y' \right] = s Y \!\left( s \right) - y \!\left( 0 \right) \), it follows that 
+\[
+	\mathcal{L}\!\left[ y'' \right] = s \mathcal{L}\!\left[ y' \right] - y'\!\left( 0 \right) = s^{2} \mathcal{L}\!\left[ y \right] - sy \!\left( 0 \right) - y'\!\left( 0 \right) 
+\]
+The Laplace transform of the delta function can be derived as 
+\[
+	\mathcal{L}\!\left[ \delta \!\left( t \right) \right] = \int^{\infty}_{0} \delta \!\left( t \right) e^{-st} \, dt = 1  
+\]
+Then we have
+\[
+	s^{2}Y \!\left( s \right) + Y \!\left( s \right) = 1 \quad \implies \quad Y \!\left( s \right) = \frac{1}{s^{2} + 1} 
+\]
+Inverting back, we can conclude
+\[
+	y \!\left( t \right) = \sin\!\left(t\right)  
+\]
+One confusion that might arise here is why \( y'\!\left( 0 \right) = \cos\!\left(0\right) = 1 \) appears to be inconsistent with the initial condition. Recall that \( y \!\left( t \right) \) and its derivative are defined as zero for \( t < 0 \). Thus for \( y'\!\left( t \right) \), we have a jump at \( t = 0 \) from 0 to 1. I will get a little hand-wavey here, but imagine an instant before the impulse response kicks in, we do indeed start from an initial condition of rest, and then once the impulse hits, that derivative jumps to 1.
+
+\vspace{12pt}
+
+% QUESTION 2
+\qs{8.5.2}{(Important) Find the first derivative and second derivative of \( f \!\left( t \right) = \sin\!\left(t\right) \) for \( t \ge 0 \). Watch for a jump at \( t = 0 \) which produces a spike (delta function) in the derivative.}
+
+We have
+\begin{align*}
+	f'\!\left( t \right) & = \begin{cases}
+		0 & t < 0 \\
+		\cos\!\left(t\right) & t \ge 0 \\
+	\end{cases} \\
+	f''\!\left( t \right) & = \begin{cases}
+		0 & t < 0 \\
+		-\sin\!\left(t\right) + \delta \!\left( t \right) & t \ge 0 \\
+	\end{cases}
+\end{align*}
+
+As we alluded to in the previous exercise, there is indeed a jump in \( f'\!\left( t \right) \) as we cross the threshold over \( t = 0 \), hence the \( \delta \!\left( t \right) \) term in the second derivative.
+
+\vspace{12pt}
+
+% QUESTION 3
+\qs{8.5.3}{Find the Laplace transform of the unit box function 
+\[ 
+	b \!\left( t \right) = \!\left\{ 1 \text{ for } 0 \le t < 1 \right\} = H \!\left( t \right) - H \!\left( t - 1 \right) 
+\]
+The unit step function is \( H \!\left( t \right) \) in honor of Oliver Heaviside.}
+
+The Laplace transform of the Heaviside function \( H \!\left( t - T \right) \) is \( e^{-sT} / s \). By linearity of the Laplace transform, we have
+\[
+	\mathcal{L}\!\left[ b \!\left( t \right) \right] = \frac{1}{s} - \frac{e^{-s}}{s}
+\]
+
+% QUESTION 4
+\qs{8.5.4}{If the Fourier transform of \( f \!\left( t \right) \) is defined by \( \hat{f}\!\left( k \right) = \int f \!\left( t \right)e^{-ikt} \, dt \) and \( f \!\left( t \right) = 0 \) for \( t < 0 \), what is the connection between \( \hat{f}\!\left( k \right) \) and the Laplace transform \( F \!\left( s \right) \)?}
+
+When \( k = s / i \), \( \hat{f}\!\left( k \right) = F \!\left( s \right) \).
+
+\vspace{12pt}
+
+% QUESTION 5
+\qs{8.5.5}{What is the Laplace transform \( R \!\left( s \right) \) of the standard \textbf{ramp function} \( r \!\left( t \right) = t \)? For \( t < 0 \) all functions are zero. The derivative of \( r \!\left( t \right) \) is the unit step \( H \!\left( t \right) \). Then multiplying \( R \!\left( s \right) \) by \( s \) gives \underline{\qquad}.}
+
+From the transform for \( t^{n}e^{ct} \), we have \( \mathcal{L}\!\left[ r \!\left( t \right) \right] = 1 / s^{2} \). Multiplying by \( s \) gives \( 1 / s \), for which the inverse transform takes us to 1 on \( t \ge 0 \): the derivative of \( r \!\left( t \right) = t \), or the step function.
+
+\vspace{12pt}
+
+% QUESTION 6
+\qs{8.5.6}{Find the Laplace transform \( F \!\left( s \right) \) of each \( f \!\left( t \right) \), and the poles of \( F \!\left( s \right) \):
+\begin{enumerate}[label=(\alph*)]
+	\item \( f = 1 + t \)
+	\item \( f = t \cos\!\left(\omega t\right) \)
+	\item \( f = \cos\!\left(\omega t - \theta\right) \)
+	\item \( f = \cos^{2}\!\left(t\right) \)
+	\item \( f = e^{-2t}\cos\!\left(t\right) \)
+	\item \( f = te^{-t}\sin\!\left(\omega t\right) \)
+\end{enumerate}}
+Let us attempt to derive these transforms without the use of integrals; that is, refer to Strang's Table of Transforms and attempt to build on these results.
+\begin{enumerate}[label=(\alph*)]
+	\item \( \displaystyle{F \!\left( s \right) = \frac{1}{s} + \frac{1}{s^{2}}} = \frac{1 + s}{s^{2}} \), double pole \( s = 0 \)
+	\item Consider \( g \!\left( t \right) = te^{i \omega t} \). Its Laplace transform is
+	\[
+		\mathcal{L}\!\left[ g \!\left( t \right) \right] = \frac{1}{\!\left( s - i \omega \right)^{2}} = \frac{1}{s^{2} - \omega^{2} - 2i \omega s} = \frac{s^{2} - w^{2} + 2i \omega s}{\!\left( s^{2} - \omega^{2} \right)^{2} + 4 \omega^{2}s^{2}} = \frac{s^{2} - \omega^{2} + 2i \omega s}{\!\left( s^{2} + \omega^{2} \right)^{2}}
+	\]
+	Take the real part, which indeed is the desired transform.
+	\[
+		\mathcal{L}\!\left[ f \!\left( t \right) \right] = \frac{s^{2} - \omega^{2}}{\!\left( s^{2} + \omega^{2} \right)^{2}} 
+	\]
+	which has poles \( s = \pm i \omega \).
+	\item Use the cosine angle difference identity:
+	\[
+		\cos\!\left(\omega t - \theta\right) = \cos\!\left(\omega t\right) \cos\!\left(\theta\right) + \sin\!\left(\omega t\right) \sin\!\left(\theta\right)
+	\]
+	Then we can conclude
+	\[
+		\mathcal{L}\!\left[ f \!\left( t \right) \right] = \cos\!\left(\theta\right) \frac{s}{s^{2} + \omega^{2}} + \sin\!\left(\theta\right) \frac{\omega}{s^{2} + \omega^{2}} 
+	\]
+	which has poles \( s = \pm i \omega \).
+	\item From the double-angle cosine identity, we have
+	\[
+		\cos^{2}\!\left(t\right) = \frac{1 + \cos\!\left(2t\right)}{2} 
+	\]
+	which corresponds to transform
+	\[
+		\mathcal{L}\!\left[ f \!\left( t \right) \right] = \frac{1}{2s} + \frac{1}{2}\frac{s}{s^{2} + 4} = \frac{s^{2} + 2}{s \!\left( s^{2} + 4 \right)}
+	\]
+	and has poles \( s = 0 \) and \( s = \pm 2i \).
+	\item Consider \( g \!\left( t \right) = e^{\!\left( -2 + i \right)t} \), which has transform
+	\[
+		\mathcal{L}\!\left[ g \!\left( t \right) \right] = \frac{1}{s + 2 - i} = \frac{s + 2 + i}{\!\left( s + 2 \right)^{2} + 1} 
+	\]
+	The real part corresponds to our desired transform.
+	\[
+		\mathcal{L}\!\left[ f \!\left( t \right) \right] = \frac{s + 2}{\!\left( s + 2 \right)^{2} + 1}
+	\]
+	which has poles \( s = -2 \pm i \).
+	\item Consider \( g \!\left( t \right) = te^{\!\left( -1 + i \omega \right)t} \), which has transform
+	\begin{align*}
+		\mathcal{L}\!\left[ g \!\left( t \right) \right] & = \frac{1}{\!\left( s + 1 - i \omega \right)^{2}} = \frac{1}{\!\left( s + 1 \right)^{2} - \omega^{2} - 2 i \omega \!\left( s + 1 \right)} \\
+								 & = \frac{\!\left( s + 1 \right)^{2} - \omega^{2} + 2i \omega \!\left( s + 1 \right)}{\!\left( \!\left( s + 1 \right)^{2} - \omega^{2} \right)^{2} + 4 \omega^{2}\!\left( s + 1 \right)^{2}} \\
+								 & = \frac{\!\left( s + 1 \right)^{2} - \omega^{2} + 2i \omega \!\left( s + 1 \right)}{\!\left( \!\left( s + 1 \right)^{2} + \omega^{2} \right)^{2}}
+	\end{align*}
+	Whittling this down to the real part, the desired transform is
+	\[
+		\mathcal{L}\!\left[ f \!\left( t \right) \right] = \frac{\!\left( s + 1 \right)^{2} - \omega^{2}}{\!\left( \!\left( s + 1 \right)^{2} + \omega^{2} \right)^{2}} 
+	\]
+	which has poles \( s = -1 \pm i \omega \).
+\end{enumerate}
+
+% QUESTION 7
+\qs{8.5.7}{Find the Laplace transform \( s \) of \( f \!\left( t \right) = \) next integer above \( t \) and \( f \!\left( t \right) = t \delta \!\left( t \right) \).}
+
+Fundamentally, the ceiling function is a staircase: a bunch of \textbf{step functions} joined together. It has a summation expression, namely
+\[
+	f \!\left( t \right) = \sum^{\infty}_{k = 0} H \!\left( t - k \right) 
+\]
+By linearity, the Laplace transform is
+\[
+	F \!\left( s \right) = \sum^{\infty}_{k = 0} \frac{e^{-sk}}{s} = \frac{1}{s \!\left( 1 - e^{-s} \right)}
+\]
+As for the second function, observe that it is zero everywhere. Therefore, its transform is also zero.
+
+\vspace{12pt}
+
+% QUESTION 8
+\qs{8.5.8}{\textit{Inverse Laplace Transform}: Find the function \( f \!\left( t \right) \) from its transform \( F \!\left( s \right) \):
+\begin{enumerate}[label=(\alph*)]
+	\item \( \displaystyle{\frac{1}{s - 2 \pi i}} \)
+	\item \( \displaystyle{\frac{s + 1}{s^{2} + 1}} \)
+	\item \( \displaystyle{\frac{1}{\!\left( s - 1 \right)\!\left( s - 2 \right)}} \)
+	\item \( 1 / \!\left( s^{2} + 2s + 10 \right) \)
+	\item \( e^{-s} / \!\left( s - a \right) \)
+	\item \( 2s \)
+\end{enumerate}}
+
+\begin{enumerate}[label=(\alph*)]
+	\item \( f \!\left( t \right) = e^{2 \pi i t} \)
+	\item \( f \!\left( t \right) = \cos\!\left(t\right) + \sin\!\left(t\right) \)
+	\item By partial fractions, we have
+	\[
+		F \!\left( s \right) = \frac{1}{\!\left( s - 1 \right)\!\left( s - 2 \right)} = \frac{1}{s - 2} - \frac{1}{s - 1} 
+	\]
+	which corresponds to \( f \!\left( t \right) = e^{2t} - e^{t} \).
+	\item Decompose with partial fractions to get
+	\[
+		F \!\left( s \right) = \frac{1}{s^{2} + 2s + 10} = \frac{1}{\!\left( s + 1 - 3i \right)\!\left( s + 1 + 3i \right)} = \frac{1}{6i} \!\left( \frac{1}{s + 1 - 3i} - \frac{1}{s + 1 + 3i} \right)
+	\]
+	and derive corresponding function
+	\begin{align*}
+		f \!\left( t \right) & = \frac{1}{6i}\!\left( e^{\!\left( -1 + 3i \right)t} - e^{\!\left( -1 - 3i \right)t} \right) \\
+				     & = \frac{1}{3}e^{-t}\sin\!\left(3t\right) 
+	\end{align*}
+	\item The numerator indicates a temporal shift by \( T = 1 \). The function begins at \( t = 1 \), and we can express this as \( f \!\left( t \right) = e^{a \!\left( t - 1 \right)}H \!\left( t - 1 \right) \). Verify by solving
+	\[
+		\int^{\infty}_{0} e^{a \!\left( t - 1 \right)}H \!\left( t - 1 \right)e^{-st} \, dt = \int^{\infty}_{1} e^{a \!\left( t - 1 \right)}e^{-st} \, dt = \frac{e^{-s}}{s - a}   
+	\]
+	\item Recall that for any \( f \!\left( t \right) \), the transform of its derivative is
+	\[
+		\mathcal{L}\!\left[ f'\!\left( t \right) \right] = sF \!\left( s \right) - f \!\left( 0 \right) 
+	\]
+	If we can find an \( f \!\left( t \right) \) such that its transform is 1, then its derivative will be our solution. We previously derived that \( \mathcal{L}\!\left[ \delta \!\left( t \right) \right] = 1 \), which implies that \( \delta'\!\left( t \right) \) is our target function. Indeed, it is true that
+	\[
+		\int^{\infty}_{0} \delta'\!\left( t \right)e^{-st} \, dt = -\!\left( -se^{-st} \right)_{\!\left( t = 0 \right)} = s  
+	\]
+	You may be wondering how this is consistent with the presence of the \( -f \!\left( 0 \right) \) term, when clearly \( \delta \!\left( 0 \right) \neq 0 \). The reason for this is subtle and beyond the scope of this textbook, but one point to consider is the delta function is a misnomer: it is technically \textit{not a function in the traditional sense}. Rather, it is what we call a \textbf{generalized function}. This obviates the need for the \( f \!\left( 0 \right) \) condition.
+\end{enumerate}
+
+% QUESTION 9
+\qs{8.5.9}{Solve \( y'' + y = 0 \) from \( y \!\left( 0 \right) \) and \( y'\!\left( 0 \right) \) by expressing \( Y \!\left( s \right) \) as a combination of \( s / \!\left( s^{2} + 1 \right) \) and \( 1 / \!\left( s^{2} + 1 \right) \). Find the inverse transform \( y \!\left( t \right) \) from the table.}
+
+In the \( s \)-domain, this equation is
+\[
+	\!\left( s^{2} + 1 \right)\mathcal{L}\!\left[ y \right] - sy \!\left( 0 \right) - y'\!\left( 0 \right) = 0 
+\]
+Isolating \( \mathcal{L}\!\left[ y \right] \) gives us
+\[
+	\mathcal{L}\!\left[ y \right] = \frac{s}{s^{2} + 1}y \!\left( 0 \right) + \frac{1}{s^{2} + 1}y'\!\left( 0 \right) 
+\]
+Transforming back to the \( t \)-domain, we have
+\[
+	y \!\left( t \right) = \cos\!\left(t\right) y \!\left( 0 \right) + \sin\!\left(t\right) y'\!\left( 0 \right) 
+\]
+
+% QUESTION 10
+\qs{8.5.10}{Solve \( y'' + 3y' + 2y = \delta \) starting from \( y \!\left( 0 \right) = 0 \) and \( y'\!\left( 0 \right) = 1 \) by Laplace transform. Find the poles and partial fractions for \( Y \!\left( s \right) \) and invert to find \( y \!\left( t \right) \).}
+
+Transforming to \( s \)-domain, we find
+\[
+	s^{2}\mathcal{L}\!\left[ y \right] - 1 + 3s \mathcal{L}\!\left[ y \right] + 2 \mathcal{L}\!\left[ y \right] = \!\left( s^{2} + 3s + 2 \right)\mathcal{L}\!\left[ y \right] - 1 =  1 
+\]
+Isolating \( \mathcal{L}\!\left[ y \right] \) gives us
+\[
+	\mathcal{L}\!\left[ y \right] = \frac{2}{s^{2} + 3s + 2} = \frac{2}{\!\left( s + 2 \right)\!\left( s + 1 \right)} = -\frac{2}{s + 2} + \frac{2}{s + 1}
+\]
+In the \( t \)-domain, this is
+\[
+	y \!\left( t \right) = -2e^{-2t} + 2e^{-t} 
+\]
+
+\newpage
+% QUESTION 11
+\qs{8.5.11}{Solve these initial-value problems by Laplace transform:
+\begin{enumerate}[label=(\alph*)]
+	\item \( y' + y = e^{i \omega t} \), \( y \!\left( 0 \right) = 8 \)
+	\item \( y'' - y = e^{t} \), \( y \!\left( 0 \right) = 0 \), \( y'\!\left( 0 \right) = 0 \)
+	\item \( y' + y = e^{-t} \), \( y \!\left( 0 \right) = 2 \)
+	\item \( y'' + y = 6t \), \( y \!\left( 0 \right) = 0 \), \( y'\!\left( 0 \right) = 0 \)
+	\item \( y' - i \omega y = \delta \!\left( t \right) \), \( y \!\left( 0 \right) = 0 \)
+	\item \( my'' + cy' + ky = 0 \), \( y \!\left( 0 \right) = 1 \), \( y'\!\left( 0 \right) = 0 \)
+\end{enumerate}}
+
+\begin{enumerate}[label=(\alph*)]
+	\item \begin{align*}
+		s \mathcal{L}\!\left[ y \right] - 8 + \mathcal{L}\!\left[ y \right] & = \!\left( s + 1 \right) \mathcal{L}\!\left[ y \right] - 8 \\
+										    & = \displaystyle{\frac{1}{s - i \omega}} \\
+		\implies \mathcal{L}\!\left[ y \right] & = \frac{1}{\!\left( s + 1 \right)\!\left( s - i \omega \right)} + \frac{8}{s + 1} \\
+						       & = \frac{1}{1 + i \omega}\!\left( -\frac{1}{s + 1} + \frac{1}{s - i \omega} \right) + \frac{8}{s + 1} \\
+		         \implies y \!\left( t \right) & = \frac{1}{1 + i \omega} \!\left( -e^{-t} + e^{i \omega t} \right) + 8e^{-t}
+	\end{align*}
+	\item \begin{align*}
+		s^{2}\mathcal{L}\!\left[ y \right] - \mathcal{L}\!\left[ y \right] & = \!\left( s^{2} - 1 \right)\mathcal{L}\!\left[ y \right] \\
+		 & = \frac{1}{s - 1} \\ 
+		\implies \mathcal{L}\!\left[ y \right] & = \frac{1}{\!\left( s^{2} - 1 \right)\!\left( s - 1 \right)} \\
+						       & = \frac{1}{4 \!\left( s + 1 \right)} - \frac{1}{4 \!\left( s - 1 \right)} + \frac{1}{2 \!\left( s - 1 \right)^{2}} \\
+			 \implies y \!\left( t \right) & = \frac{1}{4}e^{-t} - \frac{1}{4}e^{t} + \frac{1}{2}te^{t}
+	\end{align*}
+	\item \begin{align*}
+		s \mathcal{L}\!\left[ y \right] - 2 + \mathcal{L}\!\left[ y \right] & = \!\left( s + 1 \right)\mathcal{L}\!\left[ y \right] - 2 \\
+										& = \frac{1}{s + 1} \\
+		 \implies \mathcal{L}\!\left[ y \right] & = \frac{1}{\!\left( s + 1 \right)^{2}} + \frac{2}{s + 1} \\
+			  \implies y \!\left( t \right) & = te^{-t} + 2e^{-t}
+	\end{align*}
+	\item \begin{align*}
+		s^{2}\mathcal{L}\!\left[ y \right] + \mathcal{L}\!\left[ y \right] & = \!\left( s^{2} + 1 \right)\mathcal{L}\!\left[ y \right] \\
+										   & = \frac{6}{s^{2}} \\
+	\implies \mathcal{L}\!\left[ y \right] & = \frac{6}{s^{2}\!\left( s^{2} + 1 \right)} \\ 
+					       & = \frac{6}{s^{2}} + \frac{3i}{s - i} - \frac{3i}{s + i} \\
+		 \implies y \!\left( t \right) & = 6t + 3ie^{it} - 3ie^{-it} \\
+					       & = 6t - 6 \sin\!\left(t\right) 
+	\end{align*}
+	\item \begin{align*}
+		s \mathcal{L}\!\left[ y \right] - i \omega \mathcal{L}\!\left[ y \right] & = \!\left( s - i \omega \right) \mathcal{L}\!\left[ y \right] \\
+		 & = 1 \\ 
+	\implies \mathcal{L}\!\left[ y \right] & = \frac{1}{s - i \omega} \\
+	\implies y \!\left( t \right) & = e^{i \omega t}
+	\end{align*}
+	\item \begin{align*}
+		m \!\left( s^{2}\mathcal{L}\!\left[ y \right] - s \right) + c \!\left( s \mathcal{L}\!\left[ y \right] - 1 \right) + k \mathcal{L}\!\left[ y \right] & = 0 \\
+		\implies \mathcal{L}\!\left[ y \right] & = \frac{ms + c}{ms^{2} + cs + k} \\ 
+		 & = \frac{s + c / m}{s^{2} + \!\left( c / m \right)s + k / m}
+	\end{align*}
+	The roots of the denominator are
+	\[
+		s_{1,2} = \frac{-c \pm \sqrt{c^{2} - 4mk}}{2m} 
+	\]
+	The partial fractions decomposition is
+	\[
+		\mathcal{L}\!\left[ y \right] = \frac{s + c/m}{\!\left( s - s_{1} \right)\!\left( s - s_{2} \right)} = \!\left[ \frac{-\!\left( c/m + s_{1} \right)}{s_{2} - s_{1}} \right] \frac{1}{s - s_{1}} - \!\left[ \frac{-\!\left( c/m + s_{2} \right)}{s_{1} - s_{2}} \right]\frac{1}{s - s_{2}}
+	\]
+	By Vieta, we know that \( s_{1} + s_{2} = -c/m \). Then we can simplify to
+	\[
+		\mathcal{L}\!\left[ y \right] = -\!\left( \frac{s_{2}}{s_{1} - s_{2}} \right)\frac{1}{s - s_{1}} - \!\left( \frac{s_{1}}{s_{1} - s_{2}} \right)\frac{1}{s - s_{2}} 
+	\]
+	Which corresponds to the \( t \)-domain function
+	\[
+		y \!\left( t \right) = -\!\left( \frac{s_{2}}{s_{1} - s_{2}} \right)e^{s_{1}t} - \!\left( \frac{s_{1}}{s_{1} - s_{2}} \right)e^{s_{2}t}
+	\]
+\end{enumerate}
+
+% QUESTION 12
+\qs{8.5.12}{The transform of \( e^{At} \) is \( \!\left( sI - A \right)^{-1} \). Compute that matrix (the transfer function) when \( A = \!\left[ 1 \quad 1; \, 1 \quad 1 \right] \). Compare the poles of the transform to the eigenvalues of \( A \).}
+
+Compute
+\begin{align*}
+	\!\left( sI - A \right)^{-1} & = \begin{bmatrix}
+		s - 1 & -1 \\
+		-1 & s - 1 \\
+	\end{bmatrix}^{-1} \\
+	 & = \frac{1}{\!\left( s - 1 \right)^{2} - 1}
+	 \begin{bmatrix}
+	 	s - 1 & 1 \\
+	 	1 & s - 1 \\
+	 \end{bmatrix}
+\end{align*}
+Here, we have poles \( s = 0 \) and \( s = 2 \). These also turn out to be the eigenvalues.
+
+\vspace{12pt}
+
+% QUESTION 13
+\qs{8.5.13}{If \( dy / dt \) decays exponentially, show that \( sY \!\left( s \right) \rightarrow y \!\left( 0 \right) \) as \( s \rightarrow \infty \).}
+
+We calculate, using integration of parts:
+\begin{align*}
+	sY \!\left( s \right) & = \int^{\infty}_{0} se^{-st} y \!\left( t \right) \, dt \\
+	 & = \int^{\infty}_{0} e^{-st}\frac{d y}{d t} \, dt - e^{-st}y \!\left( t \right) \Big|^{\infty}_{0} \\ 
+	 & = \int^{\infty}_{0} e^{-st}\frac{d y}{d t} \, dt + y \!\left( 0 \right) 
+\end{align*}
+Now, by premise, \( dy / dt \) decays exponentially. Critically, that means it will not ``overpower'' the \( e^{-st} \) term, which means for large \( s \) the integral converges to \( 0 \).
+\[
+	\lim\limits_{s \to \infty} s Y \!\left( s \right) = \lim\limits_{s \to \infty} \int^{\infty}_{0} e^{-st}\frac{d y}{d t} \, dt + y \!\left( 0 \right) = y \!\left( 0 \right)
+\]
+
+The conclusion here is that as \( s \) approaches infinity, the \( s \)-domain transform under these conditions approaches zero.
+\[
+	\lim\limits_{s \to \infty} \mathcal{L}\!\left[ y'\!\left( t \right) \right] = \lim\limits_{s \to \infty} \!\left[ s \mathcal{L}\!\left[ y \!\left( t \right) \right] - y \!\left( 0 \right) \right] = 0 
+\]
+
+% QUESTION 14
+\qs{8.5.14}{Transform Bessel's time-varying equation \( ty'' + y' + ty = 0 \) using \( \mathcal{L}\!\left[ ty \right] = -dY / ds \) to find a first-order equation for \( Y \). By separating variables or by substituting \( Y \!\left( s \right) = C / \sqrt{1 + s^{2}} \), find the Laplace transform of the Bessel function \( y = J_{0} \).}
+
+Since \( \mathcal{L}\!\left[ y''\!\left( t \right) \right] = s^{2}Y \!\left( s \right) - sy \!\left( 0 \right) - y'\!\left( 0 \right) \), it follows that (using the author's notation of \( \mathcal{L}\!\left[ y \right] = Y \!\left( s \right) \)
+\[
+	\mathcal{L}\!\left[ ty''\!\left( t \right) \right] = -2s \mathcal{L}\!\left[ y \right]- s^{2}Y'\!\left( s \right) + y \!\left( 0 \right) 
+\]
+Transforming to the \( s \)-domain (using the author's notation of \( \mathcal{L}\!\left[ y \right] = Y \!\left( s \right) \)), we have
+\[
+	\!\left( 1 + s^{2} \right)Y'\!\left( s \right) + sY \!\left( s \right) = 0
+\]
+By separable variables, solve
+\begin{align*}
+	\int \frac{dY}{Y} & = -\int \frac{s \, ds}{1 + s^{2}} \\
+	\ln Y \!\left( s \right) & = -\frac{1}{2} \ln\!\left(1 + s^{2}\right) + C \\
+				 & = \ln \frac{1}{\sqrt{1 + s^{2}}} + C \\
+   \implies Y \!\left( s \right) & = \frac{C}{\sqrt{1 + s^{2}}}
+\end{align*}
+
+% QUESTION 15
+\qs{8.5.15}{Find the Laplace transform of a single arch of \( f \!\left( t \right) = \sin\!\left(\pi t\right) \).}
+
+The first arch spans \( 0 \le t \le 1 \), but let us approach this by considering \( g \!\left( t \right) = e^{i \pi t} \), and so we derive
+\begin{align*}
+	\mathcal{L}\!\left[ g \!\left( t \right) \right] & = \int^{1}_{0} e^{-st}e^{i \pi t} \, dt \\
+	 & = \int^{1}_{0} e^{\!\left( -s + i \pi \right)t} \, dt \\
+	 & = \frac{e^{\!\left( -s + i \pi \right)t}}{-s + i \pi} \Big|^{1}_{0} \\
+	 & = \frac{e^{\!\left( -s + i \pi \right)} - 1}{-s + i \pi} \\
+	 & = \frac{\!\left( e^{-s + i \pi} - 1 \right)\!\left( -s - i \pi \right)}{s^{2} + \pi^{2}} \\
+	 & = \frac{-se^{-s + i \pi} + s - i \pi e^{-s + i \pi} + i \pi}{s^{2} + \pi^{2}} \\
+	 & = \frac{se^{-s} + s + i \pi e^{-s} + i \pi}{s^{2} + \pi^{2}}
+\end{align*}
+Taking the imaginary part, we have
+\[
+	\mathcal{L}\!\left[ f \!\left( t \right) \right] = \frac{\pi \!\left( e^{-s} + 1 \right)}{s^{2} + \pi^{2}} 
+\]
+
+\newpage
+% QUESTION 16
+\qs{8.5.16}{Your acceleration \( v' = c \!\left( v^{*} - v \right) \) depends on the velocity \( v^{*} \) of the car ahead:
+\begin{enumerate}[label=(\alph*)]
+	\item Find the ratio of Laplace transforms \( V^{*}\!\left( s \right) / V \!\left( s \right) \).
+	\item If that car has \( v^{*} = t \) find your velocity \( v \!\left( t \right) \) starting from \( v \!\left( 0 \right) = 0 \).
+\end{enumerate}}
+
+\begin{enumerate}[label=(\alph*)]
+	\item 
+	Rewrite as \( v^{*} = v' / c + v \) and take the transform to get (assume \( v \!\left( 0 \right) = 0 \))
+	\[
+		V^{*}\!\left( s \right) = \frac{sV \!\left( s \right)}{c} + V \!\left( s \right)
+	\]
+	Next, divide through by \( V \!\left( s \right) \) to find
+	\[
+		\frac{V^{*}\!\left( s \right)}{V \!\left( s \right)} = \frac{s + c}{c} 
+	\]
+	\item Rewrite the equation as 
+	\[
+		v' + cv = ct  
+	\]
+	Transforming to the \( s \)-domain, we can derive
+	\[
+		sV \!\left( s \right) + cV \!\left( s \right) = \!\left( s + c \right)V \!\left( s \right) = \frac{c}{s^{2}} \quad \implies \quad V \!\left( s \right) = \frac{c}{s^{2}\!\left( s + c \right)}
+	\]
+	The partial fraction decomposition gives us
+	\[
+		V \!\left( s \right) = -\frac{1}{cs} + \frac{1}{s^{2}} + \frac{1}{c \!\left( s + c \right)}
+	\]
+	Transforming back to the \( t \)-domain finally offers the solution
+	\[
+		v \!\left( t \right) = -\frac{1}{c} + t + \frac{1}{c}e^{-ct} 
+	\]
+\end{enumerate}
+
+\newpage
+% QUESTION 17
+\qs{8.5.17}{A line of cars has \( v'_{n} = c \!\left[ v_{n - 1}\!\left( t - T \right) - v_{n}\!\left( t - T \right) \right] \) with \( v_{0}\!\left( t \right) = \cos\!\left(\omega t\right) \) in front.
+\begin{enumerate}[label=(\alph*)]
+	\item Find the growth factor \( A = 1 / \!\left( 1 + i \omega e^{i \omega T} / c \right) \) in oscillation \( v_{n} = A^{n}e^{i \omega t} \).
+	\item Show that \( \abs{A} < 1 \) and the amplitudes are safely decreasing if \( cT < \frac{1}{2} \).
+	\item If \( cT > \frac{1}{2} \) show that \( \abs{A} > 1 \) (dangerous) for small \( \omega \). (Use \( \sin\!\left(\theta\right) < \theta \).) Human reaction time is \( T \ge 1 \) sec and human aggressiveness is \( c = 0.4 \) / sec. Danger is pretty close. Probably drivers adjust to be barely safe.
+\end{enumerate}}
+
+\begin{enumerate}[label=(\alph*)]
+	\item Using \( v_{n} = A^{n}e^{i \omega t} \), substitute into the equation to find
+	\begin{align*}
+		v'_{n} & = A^{n}i \omega e^{i \omega t} \\
+		v_{n - 1}\!\left( t - T \right) & = A^{n - 1}e^{i \omega \!\left( t - T \right)} \\ 
+		v_{n}\!\left( t - T \right) & = A^{n}e^{i \omega \!\left( t - T \right)} \\
+		A^{n}i \omega e^{i \omega t} & = c \!\left[ A^{n - 1}e^{i \omega \!\left( t - T \right)} - A^{n}e^{i \omega \!\left( t - T \right)} \right] \\
+		\implies A \!\left[ i \omega e^{i \omega t} + ce^{i \omega \!\left( t - T \right)} \right] & = ce^{i \omega \!\left( t - T \right)} \\
+		\implies A \!\left[ i \omega + ce^{-i \omega T} \right] & = ce^{-i \omega T} \\
+		\implies A & = \frac{ce^{-i \omega T}}{i \omega + ce^{-i \omega T}} \\
+			   & = \frac{1}{1 + \displaystyle{\frac{i \omega e^{i \omega T}}{c}}}
+	\end{align*}
+	\item There is a great deal of algebra evolved, but at the end of it we find the amplitude
+	\[
+		\abs{A} = \frac{c^{2}}{c^{2} - 2c \omega \sin\!\left(\omega T\right) + \omega^{2}} 
+	\]
+	However, we will make the approximation that \( \omega T \ll 1 \), so \( \sin\!\left(\omega T\right) \approx \omega T \). This allows us the much-needed simplification of
+	\[
+		\abs{A} \approx \frac{c^{2}}{c^{2} - 2cT \omega^{2} + \omega^{2}} 
+	\]
+	Observe that when \( cT = 1 \), we have \( \abs{A} \approx 1 \). Therefore, we see that \( \abs{A} < 1 \) ensues when \( cT < 1 / 2 \).
+	\item Conversely, when \( cT > 1 / 2 \), \( \abs{A} > 1 \).
+\end{enumerate}
+
+% QUESTION 18
+\qs{8.5.18}{For \( f \!\left( t \right) = \delta \!\left( t \right) \), the transform \( F \!\left( s \right) = 1 \) is the limit of transforms of tall thin box functions \( b \!\left( t \right) \). The boxes have width \( \epsilon \rightarrow 0 \) and height \( 1 / \epsilon \) and area 1.
+\[
+	\text{Inside integrals, } b \!\left( t \right) = \begin{cases}
+		1 / \epsilon & \text{for } 0 \le t < \epsilon \\
+		0 & \text{otherwise} \\
+	\end{cases} \text{ approaches } \delta \!\left( t \right)
+\]
+Find the transform \( B \!\left( s \right) \), depending on \( \epsilon \). Compute the limit of \( B \!\left( s \right) \) as \( \epsilon \rightarrow 0 \).}
+
+Derive
+\begin{align*}
+	\mathcal{L}\!\left[ b \!\left( t \right) \right] & = \int^{\epsilon}_{0} \frac{1}{\epsilon}e^{-st} \, dt \\
+	 & = -\frac{1}{\epsilon s}e^{-st} \Big|^{\epsilon}_{0} \\ 
+	 & = \frac{1 - e^{-s \epsilon}}{\epsilon s}
+\end{align*}
+Using l'H\^opital's rule, the limit is computed as 
+\[
+	\lim\limits_{\epsilon \to 0} \frac{1 - e^{-s \epsilon}}{\epsilon s} = \lim\limits_{\epsilon \to 0} \frac{\epsilon e^{-s \epsilon}}{\epsilon} = \lim\limits_{\epsilon \to 0} e^{-s \epsilon} = 1
+\]
+which turns out to be the transform of the delta function, as anticipated.
+
+\vspace{12pt}
+
+% QUESTION 19
+\qs{8.5.19}{The transform \( 1 / s \) of the unit step function \( H \!\left( t \right) \) comes from the limit of the transforms of short steep ramp functions \( r_{\epsilon}\!\left( t \right) \). These ramps have slope \( 1 / \epsilon \). Compute
+\[
+	R_{\epsilon}\!\left( s \right) = \int^{\epsilon}_{0} \frac{t}{\epsilon} e^{-st} \, dt + \int^{\infty}_{\epsilon} e^{-st} \, dt   
+\]
+Let \( \epsilon \rightarrow 0 \).}
+
+Compute
+\begin{align*}
+	R_{\epsilon}\!\left( s \right) & = \int^{\epsilon}_{0} \frac{t}{\epsilon} e^{-st} \, dt + \int^{\infty}_{\epsilon} e^{-st} \, dt \\
+	 & = \int^{\epsilon}_{0} \frac{e^{-st}}{\epsilon s} \, dt - \frac{te^{-st}}{\epsilon s} \Big|^{\epsilon}_{0} - \frac{e^{-st}}{s} \Big|^{\infty}_{\epsilon} \\
+	 & = -\frac{e^{-st}}{\epsilon s^{2}} \Big|^{\epsilon}_{0} - \frac{e^{-s \epsilon}}{s} + \frac{e^{-s \epsilon}}{s} \\
+	 & = \frac{1 - e^{-s \epsilon}}{\epsilon s^{2}}
+\end{align*}
+
+By l'H\^opital's rule, we conclude
+\[
+	\lim\limits_{\epsilon \to 0} \frac{1 - e^{-s \epsilon}}{\epsilon s^{2}} = \lim\limits_{\epsilon \to 0} \frac{se^{-s \epsilon}}{s^{2}} = \frac{1}{s} 
+\]
+which is the transform of \( H \!\left( t \right) \).
+
+\vspace{12pt}
+
+% QUESTION 20
+\qs{8.5.20}{In Problems 18 and 19, show that the derivative of the ramp function \( r_{\epsilon}\!\left( t \right) \) is the box function \( b \!\left( t \right) \). The ``generalized derivative'' of a step is the \underline{\qquad} function.}
+
+The definition of the ramp function is
+\[
+	r_{\epsilon} = \begin{cases}
+		t / \epsilon & \text{for } 0 \le t < \epsilon \\
+		0 & \text{otherwise} \\
+	\end{cases} 
+\]
+Differentiating in each case produces the box function. One issue here is in the ``jumps'' of the derivative at \( t = 0 \) and \( t = \epsilon \): immediately to the left of \( t = 0 \), the derivative is 0, and to the right, \( 1 / \epsilon \). So in the true sense, we do not have differentiability. The notion of a generalized derivative is to extend the idea of differentiability. For more, see distribution theory in real analysis.
+
+\vspace{12pt}
+
+% QUESTION 21
+\qs{8.5.21}{What is the Laplace transform of \( y'''\!\left( t \right) \) when you are given \( Y \!\left( s \right) \) and \( y \!\left( 0 \right) \), \( y'\!\left( 0 \right) \), \( y''\!\left( 0 \right) \)?}
+
+\begin{align*}
+	\mathcal{L}\!\left[ y'''\!\left( t \right) \right] & = s \mathcal{L}\!\left[ y''\!\left( t \right) \right] - y''\!\left( 0 \right) \\
+	 & = s^{3}\mathcal{L}\!\left[ y \right] - s^{2}y \!\left( 0 \right) - sy'\!\left( 0 \right) - y''\!\left( 0 \right)
+\end{align*}
+In general,
+\[
+	\mathcal{L}\!\left[ y^{\!\left( n \right)}\!\left( t \right) \right] = s^{n}\mathcal{L}\!\left[ y \right] - \sum^{n - 1}_{k = 0} s^{n - k - 1}y^{\!\left( k \right)}\!\left( 0 \right) 
+\]
+
+% QUESTION 22
+\qs{8.5.22}{The \textit{Pontryagin maximum principle} says that the optimal control is ``bang-bang'' -- it only takes on the extreme values permitted by the constraints. To go from rest at \( x = 0 \) to rest at \( x = 1 \) in minimum time, use maximum acceleration \( A \) and deceleration \( -B \). At what time \( t \) do you change from the accelerator to the brake? (This is the fastest driving between two red lights.)}
+
+It is imperative that we are organized with our constraints. They are
+\[
+	x_{A} + x_{B} = 1, \quad v_{0,A} = v_{f,B} = 0 
+\]
+Where \( v_{0} \) and \( v_{f} \) correspond to the initial and final velocity, respectively. Now, refer to the below illustration. Let \( T \) be the time we hit the breaks, but it is also the time spent accelerating at \( A \). And \( t - T \) is the time decelerating at \( -B \). The total time to get from \( x = 0 \) to \( x = 1 \) is \( t \).
+
+\begin{center}
+\begin{tikzpicture}
+
+% main line
+\draw[thick] (0,0) -- (6,0);
+
+% end ticks
+\draw[thick] (0,-0.15) -- (0,0.15);
+\draw[thick] (6,-0.15) -- (6,0.15);
+
+% split point
+\draw[thick] (3,0.15) -- (3,-0.15);
+
+% labels above (closer)
+\node at (1.5,0.25) {$A$};
+\node at (4.5,0.25) {$B$};
+
+% labels below (closer)
+\node at (1.5,-0.25) {$T$};
+\node at (4.5,-0.25) {$t - T$};
+
+\end{tikzpicture}
+\end{center}
+
+There are some immediate physical conclusions we can draw. The first is at the end of section \( A \), our final velocity is \( v_{f,A} = AT \), which is also equal to \( v_{0,B} \). Integrate that to get the distance traversed in that first section, which is \( x_{A} = \frac{1}{2}AT^{2} \).
+
+In the second leg, we can immediately deduce that we travel a distance \( x_{B} = 1 - \frac{1}{2}AT^{2} \). To bring the deceleration into the picture, we can also deduce that \( x_{B} \) can be written as 
+\[
+	x_{B} = AT \!\left( t - T \right) - \frac{1}{2}B \!\left( t - T \right)^{2} 
+\]
+where \( t - T \) corresponds to the time elapsed during the deceleration phase. This equation stems from the one-dimensional kinematics equations, although you can derive it by integrating the acceleration term twice. Combining our two derivations for \( x_{B} \), we can write
+\[
+	1 = -\frac{1}{2} \!\left( A + B \right)T^{2} + T \!\left( A + B \right)t - \frac{1}{2}Bt^{2} 
+\]
+So far, we have one equation and two unknowns. A second equation is needed. We have satisfied the distance constraint, but now we need a \textit{velocity constraint}. Given the initial velocity at the start of section \( B \), the deceleration constant, and knowledge that the final velocity must be zero, then we can build our second equation as such:
+\[
+	AT - B \!\left( t - T \right) = 0
+\]
+Isolating \( t \) gives us
+\[
+	 t = \frac{1}{B}T \!\left( A + B \right)
+\]
+Finally, we may substitute back into our first equation and solve for the brake time \( T \) to get
+\[
+	T = \sqrt{\frac{2B}{A \!\left( A + B \right)}} 
+\]
+In short, the kernel of this problem setup is in understanding that we have two unknowns, \( t \) and \( T \), and thus we will need two constraint equations (distance and velocity) to solve for them.
+
+Note that having the acceleration and deceleration constants given to us as constants simplifies the problem drastically. Otherwise, calculus of variations would have been needed.
+
+\newpage
+\subsection{\textsf{8.6 - Convlution (Fourier and Laplace)}}
+
 \end{document}

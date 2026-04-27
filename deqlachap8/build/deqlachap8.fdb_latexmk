@@ -1,10 +1,10 @@
 # Fdb version 3
-["makeindex build/deqlachap8.idx"] 1770671899 "build/deqlachap8.idx" "build/deqlachap8.ind" "build/deqlachap8" 1775560411
-  "build/deqlachap8.idx" 1775560408 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+["makeindex build/deqlachap8.idx"] 1776013001 "build/deqlachap8.idx" "build/deqlachap8.ind" "build/deqlachap8" 1777323555
+  "build/deqlachap8.idx" 1777323550 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   (generated)
   "build/deqlachap8.ilg"
   "build/deqlachap8.ind"
-["pdflatex"] 1775560407 "deqlachap8.tex" "build/deqlachap8.pdf" "deqlachap8" 1775560411
+["pdflatex"] 1777323549 "deqlachap8.tex" "build/deqlachap8.pdf" "deqlachap8" 1777323555
   "../chap8/sec8.1/chap8sec8.1ex19.pdf" 1771896893 112143 e093973ff0a361bfa761e684722a031e ""
   "../chap8/sec8.1/chap8sec8.1ex2.pdf" 1771565032 134268 3bca5bab92c3df38c401152b2dae2c42 ""
   "../chap8/sec8.1/chap8sec8.1ex6.pdf" 1771720173 98583 e77e77646689aa1692785a4ad11dbab9 ""
@@ -14,6 +14,11 @@
   "../chap8/sec8.3/chap8sec8.3ex4.pdf" 1775484074 1912615 00c5aacfbc9014dc4cb0dbb0d210b981 ""
   "../chap8/sec8.3/chap8sec8.3ex5.pdf" 1775484497 1729142 28f1b88cbb973df162f778bb6b1aaa34 ""
   "../chap8/sec8.3/chap8sec8.3ex6.pdf" 1775493037 4762019 1615a028ba7e5f0a8ca60f9d77b5ccd7 ""
+  "../chap8/sec8.4/chap8sec8.4ex12.pdf" 1776026286 1912935 a7d26e2a9ce3007f47acd4772b8b1f70 ""
+  "../chap8/sec8.4/chap8sec8.4ex13.pdf" 1776027494 2104257 fe56e228a1229868e3b950e8293d019f ""
+  "../chap8/sec8.4/chap8sec8.4ex14.pdf" 1776029430 2078115 77132d3d26075e2bd0e2b76195e579e1 ""
+  "../chap8/sec8.4/chap8sec8.4ex16.pdf" 1776033628 1949128 559c86a64b1b6b0e02311f672fbc89d0 ""
+  "../chap8/sec8.4/chap8sec8.4ex5.pdf" 1777095411 164593 9bbfa99b308b47788482d253995f9f63 ""
   "../headerdeqla.tex" 1759006835 10155 fc003c04edcfff93876d3eea7a4201ed ""
   "/etc/texmf/web2c/texmf.cnf" 1713906074 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/home/cantorian_infinity/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/ecbx1000.600pk" 1759006847 25396 f507c77a46a165d86fc795eb75d784a9 ""
@@ -442,10 +447,10 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1759006686 4073834 3c52fac3aa7c800a8a3283e75bdba0e4 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1769947089 1442194 29a51f5875371c0a59209fa02fe86892 ""
-  "build/deqlachap8.aux" 1775560411 3282 a7c28187911c496f7359395d515e469e "pdflatex"
-  "build/deqlachap8.ind" 1770671899 0 d41d8cd98f00b204e9800998ecf8427e "makeindex build/deqlachap8.idx"
-  "build/deqlachap8.toc" 1775560411 424 b6b100cac5c22ea0311722917d94ba10 "pdflatex"
-  "deqlachap8.tex" 1775560401 67129 e31103db8d2fa360dc61bb3204fee610 ""
+  "build/deqlachap8.aux" 1777323555 4425 bb18aa9d5483e69cee297cf757907b40 "pdflatex"
+  "build/deqlachap8.ind" 1776013001 0 d41d8cd98f00b204e9800998ecf8427e "makeindex build/deqlachap8.idx"
+  "build/deqlachap8.toc" 1777323555 601 4bd04453390698e332d1acacd67f8d11 "pdflatex"
+  "deqlachap8.tex" 1777323543 118487 867e9c8e7055eac5e8a7e0205457d186 ""
   (generated)
   "build/deqlachap8.aux"
   "build/deqlachap8.idx"
