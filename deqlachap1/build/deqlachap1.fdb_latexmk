@@ -1,10 +1,10 @@
 # Fdb version 3
-["makeindex build/deqla.idx"] 1767163406 "build/deqla.idx" "build/deqla.ind" "build/deqla" 1767163692
-  "build/deqla.idx" 1767163684 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+["makeindex build/deqlachap1.idx"] 1778434329 "build/deqlachap1.idx" "build/deqlachap1.ind" "build/deqlachap1" 1778434346
+  "build/deqlachap1.idx" 1778434338 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
   (generated)
-  "build/deqla.ilg"
-  "build/deqla.ind"
-["pdflatex"] 1767163683 "deqla.tex" "build/deqla.pdf" "deqla" 1767163692
+  "build/deqlachap1.ilg"
+  "build/deqlachap1.ind"
+["pdflatex"] 1778434338 "deqlachap1.tex" "build/deqlachap1.pdf" "deqlachap1" 1778434346
   "../chap1/sec1.1/chap1sec1.1ex8.eps" 1719387503 128962 f98a138c001b5cfc1282bbe39026f52d ""
   "../chap1/sec1.3/chap1sec1.3ex11.eps" 1720168787 99890 009497e9239b644881b8a162d19b4dbc ""
   "../chap1/sec1.3/chap1sec1.3ex2.eps" 1719425087 78422 6935ff7a0fbfa694616acaeac754f783 ""
@@ -491,19 +491,18 @@
   "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
   "/usr/share/texmf/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1759006686 4073834 3c52fac3aa7c800a8a3283e75bdba0e4 ""
-  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1759006533 1442255 474c6c4b03d38f5324e22b719d6432b0 ""
+  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1769947089 1442194 29a51f5875371c0a59209fa02fe86892 ""
   "build/../../chap1/sec1.1/chap1sec1.1ex1-eps-converted-to.pdf" 1719384408 13171 cf49574f486237aef9ae0cb1dfe50fb2 ""
   "build/../../chap1/sec1.1/chap1sec1.1ex1.eps" 1719384245 130094 34198134cdcd6e78b6aef473ee294675 ""
   "build/../../chap1/sec1.1/chap1sec1.1ex2-eps-converted-to.pdf" 1719385210 12326 d1c4611cf77c5d3ff78b3a54d299e08a ""
   "build/../../chap1/sec1.1/chap1sec1.1ex2.eps" 1719385148 129091 cede58573d9f2108fe4832e11ba06e1a ""
-  "build/../headerdeqla.tex" 1731176985 10140 0700f16592168582f0f93ce0e7dcd097 ""
-  "build/deqla.aux" 1767163692 5550 9466e0f9b4fba9fa1f56e6723fd4c0df "pdflatex"
-  "build/deqla.ind" 1767163406 0 d41d8cd98f00b204e9800998ecf8427e "makeindex build/deqla.idx"
-  "build/deqla.toc" 1767163692 743 0aa486a28fecdf494e46119523bfcd95 "pdflatex"
-  "deqla.tex" 1767163671 193543 c61d5afb4bd8d619108377ada2868e31 ""
+  "build/deqlachap1.aux" 1778434345 5550 9466e0f9b4fba9fa1f56e6723fd4c0df "pdflatex"
+  "build/deqlachap1.ind" 1778434329 0 d41d8cd98f00b204e9800998ecf8427e "makeindex build/deqlachap1.idx"
+  "build/deqlachap1.toc" 1778434345 743 0aa486a28fecdf494e46119523bfcd95 "pdflatex"
+  "deqlachap1.tex" 1767163746 193543 c61d5afb4bd8d619108377ada2868e31 ""
   (generated)
-  "build/deqla.aux"
-  "build/deqla.idx"
-  "build/deqla.log"
-  "build/deqla.pdf"
-  "build/deqla.toc"
+  "build/deqlachap1.aux"
+  "build/deqlachap1.idx"
+  "build/deqlachap1.log"
+  "build/deqlachap1.pdf"
+  "build/deqlachap1.toc"

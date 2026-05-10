@@ -1,0 +1,24 @@
+\contentsline {section}{\textsf {1 - First Order Equations}}{3}{section*.1}%
+\contentsline {subsection}{\textsf {1.1 - Four Examples: Linear versus Nonlinear}}{3}{section*.2}%
+\contentsline {subsection}{\textsf {1.3 - The Exponentials \(e^{t}\) and \(e^{at}\)}}{8}{section*.3}%
+\contentsline {subsection}{\textsf {1.4 - Four Particular Solutions}}{19}{section*.4}%
+\contentsline {subsection}{\textsf {1.5 - Real and Complex Sinusoids}}{48}{section*.5}%
+\contentsline {subsection}{\textsf {1.6 - Models of Growth and Decay}}{66}{section*.6}%
+\contentsline {subsection}{\textsf {1.7 - The Logistic Equation}}{79}{section*.7}%
+\contentsline {subsection}{\textsf {1.8 - Separable Equations and Exact Equations}}{105}{section*.8}%
+\contentsline {section}{\textsf {2 - Second Order Equations}}{119}{section*.9}%
+\contentsline {subsection}{\textsf {2.1 - Second Derivatives in Science and Engineering}}{119}{section*.10}%
+\contentsline {subsection}{\textsf {2.2 - Key Facts About Complex Numbers}}{130}{section*.11}%
+\contentsline {subsection}{\textsf {2.3 - Constant Coefficients \(\pmb {A}\), \(\pmb {B}\), \(\pmb {C}\)}}{141}{section*.12}%
+\contentsline {subsection}{\textsf {2.4 - Forced Oscillations and Exponential Response}}{150}{section*.13}%
+\contentsline {subsection}{\textsf {2.5 - Electrical Networks and Mechanical Systems}}{162}{section*.14}%
+\contentsline {subsection}{\textsf {2.6 - Solutions to Second Order Equations}}{174}{section*.15}%
+\contentsline {subsection}{\textsf {2.7 - Laplace Transforms \( Y \!\left ( s \right ) \) and \( F \!\left ( s \right ) \)}}{189}{section*.16}%
+\contentsline {section}{\textsf {8 - Fourier and Laplace Transforms}}{204}{section*.17}%
+\contentsline {subsection}{\textsf {8.1 - Fourier Series}}{204}{section*.18}%
+\contentsline {subsection}{\textsf {8.2 - The Fast Fourier Transform}}{222}{section*.19}%
+\contentsline {subsection}{\textsf {8.3 - The Heat Equation}}{230}{section*.20}%
+\contentsline {subsection}{\textsf {8.4 - The Wave Equation}}{238}{section*.21}%
+\contentsline {subsection}{\textsf {8.5 - The Laplace Transform}}{248}{section*.22}%
+\contentsline {subsection}{\textsf {8.6 - Convolution (Fourier and Laplace)}}{263}{section*.23}%
+\contentsfinish 
