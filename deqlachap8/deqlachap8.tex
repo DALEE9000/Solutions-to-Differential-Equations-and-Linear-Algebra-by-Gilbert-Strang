@@ -2376,6 +2376,532 @@ In short, the kernel of this problem setup is in understanding that we have two 
 Note that having the acceleration and deceleration constants given to us as constants simplifies the problem drastically. Otherwise, calculus of variations would have been needed.
 
 \newpage
-\subsection{\textsf{8.6 - Convlution (Fourier and Laplace)}}
+\subsection{\textsf{8.6 - Convolution (Fourier and Laplace)}}
+% QUESTION 1
+\qs{8.6.1}{Find the convolution \( \pmb{v * w} \) and also the cyclic convolution \( \pmb{v \circledast w} \):
+\begin{enumerate}[label=(\alph*)]
+	\item \( \pmb{v} = \!\left( 1,2 \right) \) and \( \pmb{w} = \!\left( 2,1 \right) \)
+	\item \( \pmb{v} = \!\left( 1,2,3 \right) \) and \( \pmb{w} = \!\left( 4,5,6 \right) \)
+\end{enumerate}}
+
+\begin{enumerate}[label=(\alph*)]
+	\item \begin{alignat*}{2}
+	      		\pmb{v * w} & = \begin{bmatrix}
+	      			1 & \\
+	      			2 & 1 \\
+	      			 & 2 \\
+	      		\end{bmatrix}
+			\begin{bmatrix}
+				2 \\
+				1 \\
+			\end{bmatrix} && = 
+			\begin{bmatrix}
+				2 \\
+				5 \\
+				2 \\
+			\end{bmatrix} \\
+			\pmb{v \circledast w} & = \begin{bmatrix}
+				1 & 2 \\
+				2 & 1 \\
+			\end{bmatrix}
+			\begin{bmatrix}
+				2 \\
+				1 \\
+			\end{bmatrix} && = 
+			\begin{bmatrix}
+				4 \\
+				5 \\
+			\end{bmatrix}
+	      \end{alignat*}
+	\item \begin{alignat*}{2}
+			\pmb{v * w} & = \begin{bmatrix}
+				1 &  & \\
+				2 & 1 & \\
+				3 & 2 & 1 \\
+				 & 3 & 2 \\
+				 &  & 3 \\
+			\end{bmatrix}
+			\begin{bmatrix}
+				4\\
+				5\\
+				6\\
+			\end{bmatrix} && = 
+			\begin{bmatrix}
+				4\\
+				13\\
+				28\\
+				27\\
+				18\\
+			\end{bmatrix} \\
+			\pmb{v \circledast w} & = \begin{bmatrix}
+				1 & 3 & 2\\
+				2 & 1 & 3\\
+				3 & 2 & 1\\
+			\end{bmatrix}
+			\begin{bmatrix}
+				4\\
+				5\\
+				6\\
+			\end{bmatrix} && = 
+			\begin{bmatrix}
+				31\\
+				31\\
+				28\\
+			\end{bmatrix}
+	\end{alignat*}
+\end{enumerate}
+As a rule, the length of the convolution of two vectors of length \( n \) is \( 2n - 1 \). The cyclic convolution of two vectors of length \( n \) is also length \( n \).
+
+\vspace{12pt}
+
+% QUESTION 2
+\qs{8.6.2}{Compute the convolution \( \!\left( 1,3,1 \right) * \!\left( 2,2,3 \right) = \!\left( a,b,c,d,e \right) \). To check your answer, add \( a + b + c + d + e \). That total should be 35 since \( 1 + 3 + 1 = 5 \) and \( 2 + 2 + 3 = 7 \) and \( 5 \times 7 = 35 \).}
+\[
+	\!\left( 1,3,1 \right) * \!\left( 2,2,3 \right) = \begin{bmatrix}
+		1 &  & \\
+		3 & 1 & \\
+		1 & 3 & 1\\
+		 & 1 & 3\\
+		 &  & 1\\
+	\end{bmatrix}
+	\begin{bmatrix}
+		2\\
+		2\\
+		3\\
+	\end{bmatrix} = 
+	\begin{bmatrix}
+		2\\
+		8\\
+		11\\
+		11\\
+		3\\
+	\end{bmatrix}
+\]
+Confirm that \( 2 + 8 + 11 + 11 + 3 = 35 \).
+
+\vspace{12pt}
+
+% QUESTION 3
+\qs{8.6.3}{Multiply \( 1 + 3x + x^{2} \) times \( 2 + 2x + 3x^{2} \) to find \( a + bx + cx^{2} + dx^{3} + ex^{4} \). Your multiplication was the same as the convolution \( \!\left( 1,3,1 \right) * \!\left( 2,2,3 \right) \) in Problem 2. When \( x = 1 \), your multiplication shows why \( 1 + 3 + 1 = 5 \) times \( 2 + 2 + 3 = 7 \) agrees with \( a + b + c + d + e = 35 \).}
+
+\begin{align*}
+	\!\left( 1 + 3x + x^{2} \right) \times \!\left( 2 + 2x + 3x^{2} \right) & = \!\left( 2 + 2x + 3x^{2} \right) + \!\left( 6x + 6x^{2} + 9x^{3} \right) + \!\left( 2x^{2} + 2x^{3} + 3x^{4} \right) \\
+	 & = 2 + 8x + 11x^{2} + 11x^{3} + 3x^{4}
+\end{align*}
+
+% QUESTION 4
+\qs{8.6.4}{(Deconvolution) Which vector \( \pmb{v} \) would you convolve with \( \pmb{w} = \!\left( 1,2,3 \right) \) to get \( \pmb{v * w} = \!\left( 0,1,2,3,0 \right) \)? Which \( \pmb{v} \) gives \( \pmb{v \circledast w} = \!\left( 3,1,2 \right) \)?}
+
+The identity vector in this instance is \( \pmb{v} = \!\left( 0,1,0 \right) \). Confirm by calculating
+\[
+	\pmb{v * w} = \begin{bmatrix}
+		 &  & \\
+		1 &  & \\
+		 & 1 & \\
+		 &  & 1\\
+		 &  & \\
+	\end{bmatrix} 
+	\begin{bmatrix}
+		1\\
+		2\\
+		3\\
+	\end{bmatrix} = 
+	\begin{bmatrix}
+		\\
+		1\\
+		2\\
+		3\\
+		\\
+	\end{bmatrix}
+\]
+Observing how the elements of \( \pmb{w} \) are permuted, we can conclude
+\[
+	\pmb{v \circledast w} = \begin{bmatrix}
+		 &  & 1\\
+		1 &  & \\
+		 & 1 & \\
+	\end{bmatrix} 
+	\begin{bmatrix}
+		1\\
+		2\\
+		3\\
+	\end{bmatrix} = 
+	\begin{bmatrix}
+		3\\
+		1\\
+		2\\
+	\end{bmatrix}
+	\quad \implies \quad
+	\pmb{v} = 
+	\begin{bmatrix}
+		\\
+		1\\
+		\\
+	\end{bmatrix}
+\]
+
+% QUESTION 5
+\qs{8.6.5}{\begin{enumerate}[label=(\alph*)]
+	\item For the periodic functions \( f \!\left( x \right) = 4 \) and \( g \!\left( x \right) = 2 \cos\!\left(x\right) \), show that \( f * g \) is \textbf{zero} (the zero function)! 
+	\item In frequency space (\( k \)-space) you are multiplying the Fourier coefficients of \( 4 \) and \( 2 \cos\!\left(x\right) \). Those coefficients are \( c_{0} = 4 \) and \( d_{1} = d_{-1} = 1 \). Therefore every product \( c_{k}d_{k} \) is \underline{\qquad}.
+\end{enumerate}}
+
+\begin{enumerate}[label=(\alph*)]
+	\item Calculate
+	\[
+		\!\left( f * g \right)\!\left( x \right) = \int^{2 \pi}_{0} g \!\left( y \right)f \!\left( x - y \right) \, dy = \int^{2 \pi}_{0} 8 \cos\!\left(y\right) \, dy = 8 \sin\!\left(y\right) \Big|^{2 \pi}_{0} = 0 
+	\]
+	\item Every product \( c_{k}d_{k} = 0 \).
+\end{enumerate}
+
+% QUESTION 6
+\qs{8.6.6}{For periodic functions \( f = \sum c_{k}e^{ikx} \) and \( g = \sum d_{k}e^{ikx} \), the Fourier coefficients of \( f * g \) are \( \pmb{2 \pi c_{k}d_{k}} \). Test this factor \( 2 \pi \) when \( f \!\left( x \right) = 1 \) and \( g \!\left( x \right) = 1 \) by computing \( f * g \) from its definition (4).}
+
+\[
+	\!\left( f * g \right)\!\left( x \right) = \int^{2 \pi}_{0} dy = 2 \pi  
+\]
+
+% QUESTION 7
+\qs{8.6.7}{Show by integration that the periodic convolution 
+\[ 
+	\int^{2 \pi}_{0} \cos\!\left(x\right) \cos\!\left(t - x\right) \, dx
+\]
+is \( \pi \cos\!\left(t\right) \).
+
+In \( k \)-space you are squaring Fourier coefficients \( c_{1} = c_{-1} = \frac{1}{2} \) to get \( \frac{1}{4} \) and \( \frac{1}{4} \); these are the coefficients of \( \frac{1}{2}\cos\!\left(t\right) \). The \( 2 \pi \) in Problem 6 makes \( \pi \cos\!\left(t\right) \) correct.}
+
+Calculate
+\begin{align*}
+	\int^{2 \pi}_{0} \cos\!\left(x\right) \cos\!\left(t - x\right) \, dx & = \frac{1}{2}\int^{2 \pi}_{0} \!\left[ \cos\!\left(2x - t\right) + \cos\!\left(t\right) \right] \, dx \\
+									     & = \frac{1}{4}\sin\!\left(2x - t\right) + \frac{1}{2}x \cos\!\left(t\right) \Big|^{2 \pi}_{0} \\
+									     & = \pi \cos\!\left(t\right) 
+\end{align*}
+
+% QUESTION 8
+\qs{8.6.8}{Explain why \( f * g \) is the same as \( g * f \) (periodic or infinite convolution).}
+
+One intuitive explanation is to consider two sheets of paper, and overlapping one with the other. It does not matter which sheet is moved to overlap with the other; the overlapped area will be the same irrespective of that choice.
+
+Mathematically, a simple variable substitution \( \tau = x - y \) allows one to switch between \( f * g \) or \( g * f \). Additionally, convolution in function space corresponds to multiplication in frequency space, and since the product of coefficients commutes, it follows that convolution also commutes.
+
+\newpage
+
+% QUESTION 9
+\qs{8.6.9}{What 3 by 3 circulant matrix \( C \) produces cyclic convolution with the vector \( \pmb{c} = \!\left( 1,2,3 \right) \)? Then \( C \pmb{d} \) equals \( \pmb{c \circledast d} \) for every vector \( \pmb{d} \). Compute \( \pmb{c \circledast d} \) for \( \pmb{d} = \!\left( 0,1,0 \right) \).}
+
+\[
+	C = \begin{bmatrix}
+		1 & 3 & 2\\
+		2 & 1 & 3\\
+		3 & 2 & 1\\
+	\end{bmatrix} \quad \implies \quad
+	C \pmb{d} = \begin{bmatrix}
+		1 & 3 & 2\\
+		2 & 1 & 3\\
+		3 & 2 & 1\\
+	\end{bmatrix} 
+	\begin{bmatrix}
+		\\
+		1\\
+		\\
+	\end{bmatrix} = 
+	\begin{bmatrix}
+		3\\
+		1\\
+		2\\
+	\end{bmatrix} = 
+	\pmb{c \circledast d}
+\]
+
+% QUESTION 10
+\qs{8.6.10}{What 2 by 2 circulant matrix \( C \) produces cyclic convolution with \( \pmb{c} = \!\left( 1,1 \right) \)? Show in four ways that this \( C \) is not invertible. Deconvolution is impossible.
+\begin{enumerate}[label=(\arabic*)]
+	\item Find the determinant of \( C \).
+	\item Find the eigenvalues of \( C \).
+	\item Find \( \pmb{d} \) so that \( C \pmb{d} = \pmb{c \circledast d} \) is zero.
+	\item \( F \pmb{c} \) has a zero component.
+\end{enumerate}}
+
+The circulant matrix is
+\[
+	C = \begin{bmatrix}
+		1 & 1\\
+		1 & 1\\
+	\end{bmatrix} 
+\]
+\begin{enumerate}[label=(\arabic*)]
+	\item \( \det C = 1 - 1 = 0 \), zero determinant implies non-invertibility.
+	\item \[
+		\det \begin{bmatrix}
+			1 - \lambda & 1\\
+			1 & 1 - \lambda\\
+		\end{bmatrix} = \!\left( 1 - \lambda \right)^{2} - 1 = 0 \quad \implies \quad \lambda_{1,2} = 2, 0
+	\]
+	A zero eigenvalue implies non-invertibility.
+	\item Observe that
+	\[
+		\pmb{d} = \begin{bmatrix}
+			1\\
+			-1\\
+		\end{bmatrix} \quad \implies \quad C \pmb{d} =
+		\begin{bmatrix}
+			1 & 1\\
+			1 & 1\\
+		\end{bmatrix}
+		\begin{bmatrix}
+			1\\
+			-1\\
+		\end{bmatrix} = 
+		\begin{bmatrix}
+			0\\
+			0\\
+		\end{bmatrix} = 
+		\pmb{c \circledast d}
+	\]
+	which implies linear dependence in the rows and thus non-invertibility.
+	\item \[
+		F \pmb{c} = \begin{bmatrix}
+			1 & 1\\
+			1 & w\\
+		\end{bmatrix} 
+		\begin{bmatrix}
+			1\\
+			1\\
+		\end{bmatrix}
+		= 
+		\begin{bmatrix}
+			2\\
+			1 + w\\
+		\end{bmatrix}
+		= 
+		\begin{bmatrix}
+			2\\
+			0\\
+		\end{bmatrix}
+	\]
+	where \( w = e^{-\pi i} \). Observe that \( \pmb{c} \) is one of the eigenvectors (corresponding to eigenvalue \( \lambda = 2 \)), and the Fourier matrix times that eigenvector restores the eigenvalues.
+\end{enumerate}
+
+% QUESTION 11
+\qs{8.6.11}{\begin{enumerate}[label=(\alph*)]
+	\item Change \( b \!\left( x \right) * \delta \!\left( x - 1 \right) \) to a multiplication \( \hat{b}\hat{d} \). Transform the box function
+	\[
+		b \!\left( x \right) = \!\left\{ 1 \text{ for } 0 \le x \le 1 \right\} \text{ to } \hat{b}\!\left( k \right) = \int^{1}_{0} e^{-ikx} \, dx  
+	\]
+	The shifted delta transforms to 
+	\[
+		\hat{d}\!\left( k \right) = \int \delta \!\left( x - 1 \right)e^{-ikx} \, dx 
+	\]
+	\item Show that your result \( \hat{b}\hat{d} \) is the transform of a shifted box function. Then convolution with \( \delta \!\left( x - 1 \right) \) shifts the box.
+\end{enumerate}}
+
+\begin{enumerate}[label=(\alph*)]
+	\item Convolving without working in frequency space gives us
+	\[
+		 b \!\left( x \right) * \delta \!\left( x - 1 \right) = \int^{\infty}_{-\infty} b \!\left( y \right) \delta \!\left( x - 1 - y \right) \, dy = b \!\left( x - 1 \right) = \begin{cases}
+		 	1, & 1 \le x \le 2 \\
+		 	0, & \text{else} \\
+		 \end{cases}
+	\]
+	which corresponds to a one-step shift in \( b \!\left( x \right) \). Meanwhile, multiplication in frequency space gives
+	\[
+		\hat{b}\hat{d} = \int^{1}_{0} e^{-ikx} \, dx \int^{\infty}_{-\infty} \delta \!\left( x - 1 \right)e^{-ikx} \, dx = \!\left[ -\frac{e^{-ikx}}{ik} \Big|^{1}_{0} \right]e^{-ik} = \!\left[ \frac{1 - e^{-ik}}{ik} \right]e^{-ik}
+	\]
+	\item The transform of the one-step shifted \( b \!\left( x \right) \) is
+	\[
+		\hat{b}\!\left( k \right) = \int^{2}_{1} e^{-ikx} \, dx = \!\left[ \frac{1 - e^{-ik}}{ik} \right]e^{-ik} 
+	\]
+\end{enumerate}
+
+% QUESTION 12
+\qs{8.6.12}{Take the Laplace transform of these equations to find the transfer function \( G \!\left( s \right) \):
+\begin{enumerate}[label=(\alph*)]
+	\item \( Ay'' + By' + Cy = \delta \!\left( t \right) \)
+	\item \( y' - 5y = \delta \!\left( t \right) \)
+	\item \( 2y \!\left( t \right) - y \!\left( t - 1 \right) = \delta \!\left( t \right) \)
+\end{enumerate}}
+Assume zero for all initial conditions.
+\begin{enumerate}[label=(\alph*)]
+	\item \( As^{2}Y + BsY + CY = 1 \quad \implies \quad Y \!\left( s \right) = \displaystyle{\frac{1}{As^{2} + Bs + C}} \)
+	\item \( sY - 5Y = 1 \quad \implies \quad Y \!\left( s \right) = \displaystyle{\frac{1}{s - 5}} \)
+	\item \( 2Y - Ye^{-s} = 1 \quad \implies \quad Y \!\left( s \right) = \displaystyle{\frac{1}{2 - e^{-s}}} \)
+\end{enumerate}
+
+% QUESTION 13
+\qs{8.6.13}{Take the Laplace transform of \( y'''' = \delta \!\left( t \right) \) to find \( Y \!\left( s \right) \). From the Transform Table in Section 8.5 find \( y \!\left( t \right) \). You will see \( y''' = 1 \) and \( y'''' = 0 \). But \( y \!\left( t \right) = 0 \) for negative \( t \), so your \( y''' \) is actually a unit step function and your \( y'''' \) is actually \( \delta \!\left( t \right) \).}
+
+We have \( s^{4}Y = 1 \) which gives us
+\[
+	Y \!\left( s \right) = \frac{1}{s^{4}} 
+\]
+This corresponds to \( y \!\left( t \right) = t^{3} / 6 \). By the discontinuity at \( t = 0 \) since \( y \!\left( t \right) = 0 \) for negative \( t \), we must have \( y'''' = \delta \!\left( t \right) \) and not \( y'''' = 0 \).
+
+\vspace{12pt}
+
+% QUESTION 14
+\qs{8.6.14}{Solve these equations by Laplace transform to find \( Y \!\left( s \right) \). Invert that transform with the Table in Section 8.5 to recognize \( y \!\left( t \right) \).
+\begin{enumerate}[label=(\alph*)]
+	\item \( y' - 6y = e^{-t}, y \!\left( 0 \right) = 2 \)
+	\item \( y'' + 9y = 1, y \!\left( 0 \right) = y'\!\left( 0 \right) = 0 \)
+\end{enumerate}}
+
+\begin{enumerate}[label=(\alph*)]
+	\item \( sY - 2 - 6Y = \displaystyle{\frac{1}{s + 1}} \quad \implies \quad Y \!\left( s \right) = \displaystyle{\frac{1}{\!\left( s + 1 \right)\!\left( s - 6 \right)} + \frac{2}{s - 6}} \)
+
+	By partial fractions,
+	\[
+		Y \!\left( s \right) = -\frac{1}{7 \!\left( s + 1 \right)} + \frac{15}{7 \!\left( s - 6 \right)}
+	\]
+	which corresponds to time domain solution
+	\[
+		y \!\left( t \right) = \frac{15}{7}e^{6t} - \frac{1}{5}e^{-t}
+	\]
+	\item \( s^{2}Y + 9Y = \displaystyle{\frac{1}{s}} \quad \implies \quad Y \!\left( s \right) = \frac{1}{s \!\left( s^{2} + 9 \right)} \)
+
+	By partial fractions,
+	\[
+		Y \!\left( s \right) = \frac{1}{3s} - \frac{s}{3 \!\left( s^{2} + 3 \right)} 
+	\]
+	which corresponds to time domain solution
+	\[
+		y \!\left( t \right) = \frac{1}{9} - \frac{1}{9}\cos\!\left(3t\right)  
+	\]
+\end{enumerate}
+
+\newpage
+
+% QUESTION 15
+\qs{8.6.15}{Find the Laplace transform of the shifted step \( H \!\left( t - 3 \right) \) that jumps from 0 to 1 at \( t = 3 \). Solve \( y' - ay = H \!\left( t - 3 \right) \) with \( y \!\left( 0 \right) = 0 \) by finding the Laplace transform \( Y \!\left( s \right) \) and then its inverse transform \( y \!\left( t \right) \): one part for \( t < 3 \), second part for \( t \ge 3 \).}
+\[
+	sY - aY = \frac{e^{-3s}}{s} \quad \implies \quad Y \!\left( s \right) = \frac{e^{-3s}}{s \!\left( s - a \right)} = e^{-3s}\!\left[ -\frac{1}{as} + \frac{1}{a \!\left( s - a \right)} \right]
+\]
+which corresponds to time domain solution
+\[
+	y \!\left( t \right) = \frac{1}{a} \!\left[ e^{a \!\left( t - 3 \right)} - 1 \right] H \!\left( t - 3 \right)
+\]
+
+% QUESTION 16
+\qs{8.6.16}{Solve \( y' = 1 \) with \( y \!\left( 0 \right) = 4 \)-- a trivial question. Then solve this problem the slow way by finding \( Y \!\left( s \right) \) and inverting that transform.}
+
+The solution can be derived on inspection: \( y \!\left( t \right) = t + 4 \). By transforms, we have
+\[
+	sY - 4 = \frac{1}{s} \quad \implies \quad Y \!\left( s \right) = \frac{1}{s^{2}} + \frac{4}{s} 
+\]
+which has time domain solution (as expected)
+\[
+	y \!\left( t \right) = t + 4 
+\]
+
+% QUESTION 17
+\qs{8.6.17}{The solution \( y \!\left( t \right) \) is the convolution of the input \( f \!\left( t \right) \) with what function \( g \!\left( t \right) \)?
+\begin{enumerate}[label=(\alph*)]
+	\item \( y' - ay = f \!\left( t \right) \) with \( y \!\left( 0 \right) = 3 \)
+	\item \( y' - \!\left( \text{integral of } y \right) = f \!\left( t \right) \)
+\end{enumerate}}
+
+The task is to identify the transfer function \( G \!\left( s \right) \) and its corresponding Green's function \( g \!\left( t \right) \).
+
+\begin{enumerate}[label=(\alph*)]
+	\item \( sY - 3 - aY = F \!\left( s \right) \quad \implies \quad Y \!\left( s \right) = \displaystyle{\frac{F \!\left( s \right) + 3}{s - a}} \) which has time domain solution
+	\[
+		y \!\left( t \right) = f \!\left( t \right) * e^{at} + 3e^{at} 
+	\]
+	Appreciate the elegance of this operation: even in ignorance of \( f \!\left( t \right) \), we may still write a solution \( y \!\left( t \right) \) thanks to the switch between the \( s \)- and \( t \)-domains corresponding to a switch between multiplication and convolution.
+	\item Two ways to solve: first, attempt to derive the Laplace transform of \( \int y \, dt \):
+	\[
+		\mathcal{L}\!\left[ \int y \!\left( T \right) \, dT \right] = \int^{\infty}_{0} \!\left[ \int^{t}_{0} y \!\left( T \right) \, dT \right]e^{-st} \, dt 
+	\]
+	Solve by integration by parts. Let \( u = \displaystyle{\int^{t}_{0} y \!\left( T \right) \, dT } \) and \( dv = e^{-st} \, dt \). Then \( du = y \!\left( t \right) \) and \( v = -e^{-st} / s \). We have
+	\begin{align*}
+		\mathcal{L}\!\left[ \int y \!\left( T \right) \, dT \right] & = -\frac{e^{-st}}{s} \int^{t}_{0} y \!\left( T \right) \, dT \Big|^{\infty}_{0} + \int^{\infty}_{0} y \!\left( t \right) \frac{e^{-st}}{s} \, dt \\
+		 & = \frac{Y \!\left( s \right)}{s}
+	\end{align*}
+	A convenient result: differentiation produces \( s \), and integration gives us \( 1 / s \). The rest is straightforward.
+	\[
+		sY - \frac{Y}{s} = F \!\left( s \right) \quad \implies \quad Y \!\left( s \right) = \frac{F \!\left( s \right)}{s - \frac{1}{s}}, \quad G \!\left( s \right) = \frac{1}{s - \frac{1}{s}}
+	\]
+	It is clearer if we rewrite \( G \!\left( s \right) \) as 
+	\[
+		G \!\left( s \right) = \frac{s}{s^{2} - 1} 
+	\]
+	which is the transform of \( g \!\left( t \right) = \cos\!\left(it\right) \).
+	Alternatively, we can differentiate through to annihlate the integral. Equivalently, we solve
+	\[
+		y'' - y = f'\!\left( t \right) 
+	\]
+	Applying the transform gets us
+	\[
+		s^{2}Y - Y = s F \!\left( s \right) \quad \implies \quad Y \!\left( s \right) = \frac{s F \!\left( s \right)}{s^{2} - 1}
+	\]
+	Either way, we derive \( y \!\left( t \right) = f \!\left( t \right) * \cos\!\left(it\right) \).
+\end{enumerate}
+
+% QUESTION 18
+\qs{8.6.18}{For \( y' - ay = f \!\left( t \right) \) with \( y \!\left( 0 \right) = 3 \), we could replace that initial value by adding \( 3 \delta \!\left( t \right) \) to the forcing function \( f \!\left( t \right) \). Explain that sentence.}
+
+In the \( s \)-domain, the transform of \( y' \) gets us \( sY - y \!\left( 0 \right) \). This produces \( 3 \) on the right-hand side. Equivalently, the transform of \( 3 \delta \!\left( t \right) \) is \( 3 \), landing us in the same place.
+
+\newpage
+
+% QUESTION 19
+\qs{8.6.19}{What is \( \delta \!\left( t \right) * \delta \!\left( t \right) \)? What is \( \delta \!\left( t - 1 \right) * \delta \!\left( t - 2 \right) \)? What is \( \delta \!\left( t - 1 \right) \) \textit{times} \( \delta \!\left( t - 2 \right) \)?}
+
+Equivalently, in \( s \)-space we have \( 1 \cdot 1 = 1 \), which maps back to \( \delta \!\left( t \right) \) in \( t \)-space. In the second equation, we have \( e^{-s} \cdot e^{-2s} = e^{-3s} \) in \( s \)-space, or \( \delta \!\left( t - 3 \right) \) in \( t \)-space. Lastly, \( \delta \!\left( t - 1 \right) \delta \!\left( t - 2 \right) = 0 \), as there is no \( t \) that satisfies a non-zero product of these delta functions.
+
+\vspace{12pt}
+
+% QUESTION 20
+\qs{8.6.20}{By Laplace transform, solve \( y' = y \) with \( y \!\left( 0 \right) = 1 \) to find a very familiar \( y \!\left( t \right) \).}
+
+\[
+	sY - 1 = Y \quad \implies \quad Y \!\left( s \right) = \frac{1}{s - 1} \quad \implies \quad y \!\left( t \right) = e^{t} 
+\]
+
+% QUESTION 21
+\qs{8.6.21}{By Fourier transform as in (9), solve \( -y'' + y = \) box function \( b \!\left( x \right) \) on \( 0 \le x \le 1 \).}
+
+Derive
+\[
+	-\!\left( ik \right)^{2}\hat{y} + \hat{y} = \int^{1}_{0} e^{-ikx} \, dx = \frac{1 - e^{-ik}}{ik} \quad \implies \quad \hat{y} = \frac{1 - e^{-ik}}{ik \!\left( k^{2} + 1 \right)}
+\]
+Decomposing \( \hat{y} \) into \( F \!\left( s \right)G \!\left( s \right) \), we have
+
+\begin{align*}
+	\hat{y} = \left( \frac{1 - e^{-ik}}{ik} \right)\left( \frac{1}{k^{2} + 1} \right) \quad \implies \quad y(x) & = \left[ H(x) - H(x - 1) \right] * \frac{1}{2}e^{-|x|} \\
+		      & = \frac{1}{2} \int_{0}^{1} e^{-|x - y|} \, dy
+\end{align*}
+This is the transform method for solving this equation. The alternative is to solve the equation piecewise, and deriving the coefficients from the junctions at \( x = 0 \) and \( x = 1 \). For students of quantum mechanics, you may find this reminiscent of solving the wave equation in ``particle-in-a-box'' scenarios.
+
+\vspace{12pt}
+
+% QUESTION 22
+\qs{8.6.22}{There is a big difference in the solutions to \( y'' + By' + Cy = f \!\left( x \right) \), between the cases \( B^{2} < 4C \) and \( B^{2} > 4C \). Solve \( y'' + y = \delta \) and \( y'' - y = \delta \) with \( y \!\left( \pm \infty \right) = 0 \).}
+
+Since we look at the full real line, we apply the Fourier transform to derive
+\[
+	\!\left( ik \right)^{2}\hat{y} + \hat{y} = 1 \quad \implies \quad \hat{y} = \frac{1}{1 - k^{2}}
+\]
+Taking the inverse Fourier transform gives
+\[
+	y \!\left( x \right) = \frac{1}{2}\sin\!\left(\abs{x}\right)  
+\]
+For this periodic function, we do not impose \( y \!\left( \pm \infty \right) = 0 \) at the extremes.
+
+In the second question, derive
+\[
+	\!\left( ik \right)^{2}\hat{y} - \hat{y} = 1 \quad \implies \quad \hat{y} = -\frac{1}{k^{2} + 1} 
+\]
+which corresponds to \( x \)-domain function
+\[
+	y \!\left( x \right) = -\frac{1}{2}e^{-\abs{x}} 
+\]
+and in this case, we see that the boundary conditions \( y \!\left( \pm \infty \right) = 0 \) hold.
+
+\vspace{12pt}
+
+% QUESTION 23
+\qs{8.6.23}{(\textit{Review}) Why do the constant \( f \!\left( t \right) = 1 \) and the unit step \( H \!\left( t \right) \) have the same Laplace transform \( 1 / s \)? Answer: Because the transform does not notice \underline{\qquad}.}
+
+The Laplace transform does not notice \( f \!\left( t \right) \) for \( t < 0 \), i.e. \( f \!\left( t \right) = 0 \) on that domain.
 
 \end{document}
