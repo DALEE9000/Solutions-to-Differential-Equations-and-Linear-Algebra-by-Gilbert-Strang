@@ -1,8 +1,0 @@
-\contentsline {section}{\textsf {8 - Fourier and Laplace Transforms}}{3}{section*.1}%
-\contentsline {subsection}{\textsf {8.1 - Fourier Series}}{3}{section*.2}%
-\contentsline {subsection}{\textsf {8.2 - The Fast Fourier Transform}}{21}{section*.3}%
-\contentsline {subsection}{\textsf {8.3 - The Heat Equation}}{29}{section*.4}%
-\contentsline {subsection}{\textsf {8.4 - The Wave Equation}}{37}{section*.5}%
-\contentsline {subsection}{\textsf {8.5 - The Laplace Transform}}{47}{section*.6}%
-\contentsline {subsection}{\textsf {8.6 - Convolution (Fourier and Laplace)}}{62}{section*.7}%
-\contentsfinish 
